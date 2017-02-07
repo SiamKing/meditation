@@ -7,7 +7,7 @@ class Api::V1::UsersController < ApplicationController
       render json: @user
     else
       render json: { message: "Could not find user", status: 404 }, status: 404
-    render json: User.first
+    end
   end
 
   def create

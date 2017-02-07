@@ -6,7 +6,7 @@
   - Create User Migration √
   - Create User API Routes √
   - Create User Controller √
-  - Create Serializer for User
+  - Create Serializer for User √
 
 ### Meditation (name, tradition, instructions)
   - Create Meditation Model
