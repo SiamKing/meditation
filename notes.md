@@ -23,9 +23,9 @@
   - Create Serializer for Event
 
 ## Prep Client
-  - Add package manager (bower)
-  - Add Angular, Angular-UI-Router, and Angular-Rails-Templates
-  - Add to Asset Pipeline
+  - Add package manager (bower) √
+  - Add Angular, Angular-UI-Router, and Angular-Rails-Templates √
+  - Add to Asset Pipeline √
 
 ## Client
 
