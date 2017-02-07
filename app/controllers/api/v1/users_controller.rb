@@ -1,6 +1,12 @@
 class Api::V1::UsersController < ApplicationController
 
+  before_action :find_user, only: [:show, :update, :destroy]
+
   def show
+    if @user
+      render json: @user
+    else
+      render json: { message: "Could not find user", status: 404 }, status: 404
     render json: User.first
   end
 
@@ -14,17 +20,21 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def update
-    user = User.find_by_id(params[:id])
-    if user.update(name: params[:name])
-      render json: user
+    if @user.update(name: params[:name])
+      render json: @user
     else
       render json: { message: "User was not updated", status: 500 }, status: 500
     end
   end
 
   def destroy
-    user = User.find_by_id(params[:id])
-    user.destroy
+    @user.destroy
     render json: { message: 'User was destroyed', status: 200 }, status: 200
   end
+
+  private
+
+    def find_user
+      @user = User.find_by_id(params[:id])
+    end
 end

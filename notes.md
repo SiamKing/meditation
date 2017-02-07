@@ -4,8 +4,8 @@
 ### User (name, total_time_meditating)
   - Create User Model √
   - Create User Migration √
-  - Create User API Routes
-  - Create User Controller
+  - Create User API Routes √
+  - Create User Controller √
   - Create Serializer for User
 
 ### Meditation (name, tradition, instructions)
