@@ -6,7 +6,8 @@
     .factory('UserService', ['$http', function($http) {
       return {
         all,
-        getUser
+        getUser,
+        create
       }
 
       function all() {
@@ -20,6 +21,22 @@
           .then(response => response.data)
           .catch(err => console.log(err))
       }
-    }])
 
+      function create(userInfo) {
+        const req = {
+          method: 'POST',
+          url: '/api/v1/users',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          data: {
+            user: userInfo
+          }
+        }
+        return $http(req)
+          .then(response => response.data)
+          .catch(err => console.log(err))
+      }
+
+    }])
 }())

@@ -4,5 +4,8 @@
     <a href="" ui-sref="user({ userId: 'user.id' })">{{user.name}}</a>
   </div>
   Or create a new user <br>
-  What's your name? <input ng-model="user" type="text" name="" value=""/>
+  <form ng-submit="vm.createUser()">
+    <label for="name">Name</label>
+    <input type="text" ng-model="vm.user.name">
+  </form>
 </div>
