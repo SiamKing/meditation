@@ -10,6 +10,11 @@
           templateUrl: 'meditations/meditations.html',
           controller: 'MeditationsController as vm'
         })
+        .state('meditation', {
+          url: 'meditations/:id',
+          templateUrl: 'meditations/meditation.html',
+          controller: 'MeditationsController as vm'
+        })
     }])
 
 }())

@@ -19,7 +19,7 @@
 
       function createUser(userInfo) {
         HttpService
-          .create(vm.user)
+          .create('users', vm.user)
           .then(user => vm.users.push(user))
           .then(function(user) {
             var user = user;

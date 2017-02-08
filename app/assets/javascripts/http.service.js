@@ -11,7 +11,6 @@
       }
 
       function all(param) {
-        console.log("Howdy")
         return $http.get('/api/v1/' + param)
           .then(response => response.data)
           .catch(err => console.log(err))
@@ -23,20 +22,37 @@
           .catch(err => console.log(err))
       }
 
-      function create(userInfo) {
-        const req = {
-          method: 'POST',
-          url: '/api/v1/users',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          data: {
-            user: userInfo
+      function create(param, info) {
+        if (param === "users") {
+          const req = {
+            method: 'POST',
+            url: '/api/v1/users',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            data: {
+              user: info
+            }
           }
+          return $http(req)
+            .then(response => response.data)
+            .catch(err => console.log(err))
+        } else if (param === "meditations") {
+          const req = {
+            method: 'POST',
+            url: '/api/v1/meditations',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            data: {
+              meditation: info
+            }
+          }
+          return $http(req)
+            .then(response => response.data)
+            .catch(err => console.log(err))
         }
-        return $http(req)
-          .then(response => response.data)
-          .catch(err => console.log(err))
+
       }
 
     }])
