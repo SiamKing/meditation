@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  meditation: one
+  minutes: 1
+  date: 2017-02-08
+
+two:
+  user: two
+  meditation: two
+  minutes: 1
+  date: 2017-02-08

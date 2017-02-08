@@ -36,11 +36,10 @@
   - Create a User Service to connect to the backend API √
 
 ### Meditation
-  - create root page with list of meditations
-  - add a nested route for showing single Meditations
-  - create search and filter functions for Meditations
-  - Create a Meditation Service to connect to backend API
-  - Add a method to delete a game
+  - create root page with list of meditations √
+  - add a nested route for showing single Meditations √
+  - create search and filter functions for Meditations √
+  - Create a Meditation Service to connect to backend API √
 
 ### Event
   - Create Event page with list of Events
