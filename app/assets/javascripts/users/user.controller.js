@@ -7,6 +7,11 @@
       var vm = this;
 
       UserService.all()
-        .then(data => $scope.games = data)
+        .then(data => $scope.users = data)
+
+        if ($stateParams.id) {
+          UserService.getUser($stateParams.id)
+            .then(data => vm.game = data)
+        }
     }])
 }())

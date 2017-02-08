@@ -1,3 +1,8 @@
-<div class="">
+<div class="welcome">
+  Choose your name
+  <div ng-repeat="user in users">
+    <a href="" ui-sref="user({ userId: 'user.id' })">{{user.name}}</a>
+  </div>
+  Or create a new user <br>
   What's your name? <input ng-model="user" type="text" name="" value=""/>
 </div>

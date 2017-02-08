@@ -13,7 +13,7 @@
           controller: 'UserController as vm'
         })
         .state('user', {
-          url: '/user',
+          url: '/user/:userId',
           templateUrl: 'users/user.html',
           controller: 'UserController as vm'
         })
