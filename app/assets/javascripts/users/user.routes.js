@@ -10,30 +10,30 @@
         .state('users', {
           url: '/users',
           templateUrl: 'users/users.html',
-          controller: 'UsersController as vm',
-          resolve: {
-            HttpService: 'HttpService',
-            users: function(HttpService) {
-              return HttpService.all('users');
-            },
-            user: function(HttpService, $stateParams) {
-              return HttpService.getObject('users', $stateParams.userId);
-            }
-          }
+          controller: 'UsersController as vm'
+          // resolve: {
+          //   HttpService: 'HttpService',
+          //   users: function(HttpService) {
+          //     return HttpService.all('users');
+          //   },
+          //   user: function(HttpService, $stateParams) {
+          //     return HttpService.getObject('users', $stateParams.userId);
+          //   }
+          // }
         })
         .state('user', {
           url: '/users/:userId',
           templateUrl: 'users/user.html',
-          controller: 'UsersController as vm',
-          resolve: {
-            HttpService: 'HttpService',
-            users: function(HttpService) {
-              return HttpService.all('users');
-            },
-            user: function(HttpService, $stateParams) {
-              return HttpService.getObject('users', $stateParams.userId);
-            }
-          }
+          controller: 'UsersController as vm'
+          // resolve: {
+          //   HttpService: 'HttpService',
+          //   users: function(HttpService) {
+          //     return HttpService.all('users');
+          //   },
+          //   user: function(HttpService, $stateParams) {
+          //     return HttpService.getObject('users', $stateParams.userId);
+          //   }
+          // }
         })
         .state('user.update', {
           url: 'users/update',

@@ -3,11 +3,19 @@
 
   angular
     .module('meditation')
-    .controller('UsersController', ['users', 'user', 'HttpService', '$state', function(users, user, UserService, $state) {
+    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', function(HttpService, $state, $stateParams, $scope) {
       var vm = this;
-      vm.users = users;
-      vm.user = user;
+
       vm.createUser = createUser;
+
+      HttpService.all('users')
+        .then(data => vm.users = data)
+
+        if($stateParams.userId) {
+          HttpService.getObject('users', $stateParams.userId)
+            .then(data => vm.user = data)
+        }
+
 
       function createUser(userInfo) {
         HttpService

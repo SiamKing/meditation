@@ -11,6 +11,7 @@
       }
 
       function all(param) {
+        console.log("Howdy")
         return $http.get('/api/v1/' + param)
           .then(response => response.data)
           .catch(err => console.log(err))
