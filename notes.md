@@ -9,8 +9,8 @@
   - Create Serializer for User √
 
 ### Meditation (name, tradition, instructions)
-  - Create Meditation Model
-  - Create Meditation Migration
+  - Create Meditation Model √
+  - Create Meditation Migration √
   - Create API Routes
   - Create Meditation Controller
   - Create Serializer for Meditations
@@ -30,10 +30,10 @@
 ## Client
 
 ### User
-  - create user profile page with name and total time meditating
-  - create a new user page
+  - create user profile page with name and total time meditating √
+  - create a new user page √
   - Add a nested route for editing user page
-  - Create a User Service to connect to the backend API
+  - Create a User Service to connect to the backend API √
 
 ### Meditation
   - create root page with list of meditations
