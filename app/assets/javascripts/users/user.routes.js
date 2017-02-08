@@ -1,10 +1,10 @@
 (function() {
-  "user strict";
+  "use strict";
 
   angular
     .module('meditation')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise('/users');
+      // $urlRouterProvider.otherwise('/users');
 
       $stateProvider
         .state('users', {
