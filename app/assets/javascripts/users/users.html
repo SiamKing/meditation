@@ -1,11 +1,12 @@
 <div class="welcome">
   Choose your name
-  <div ng-repeat="user in users">
-    <a href="" ui-sref="user({ userId: 'user.id' })">{{user.name}}</a>
+  <div ng-repeat="user in vm.users">
+    <a href="" ui-sref="user({ userId: user.id })" >{{user.name}}</a>
   </div>
   Or create a new user <br>
   <form ng-submit="vm.createUser()">
     <label for="name">Name</label>
     <input type="text" ng-model="vm.user.name">
   </form>
+
 </div>

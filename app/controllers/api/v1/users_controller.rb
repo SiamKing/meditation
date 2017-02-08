@@ -15,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    user = User.new(name: params[:name])
+    user = User.new(name: params[:user][:name])
     if user.save
       render json: user
     else
