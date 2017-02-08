@@ -12,12 +12,12 @@
           templateUrl: 'users/users.html',
           controller: 'UsersController as vm',
           resolve: {
-            UserService: 'UserService',
-            users: function(UserService) {
-              return UserService.all();
+            HttpService: 'HttpService',
+            users: function(HttpService) {
+              return HttpService.all('users');
             },
-            user: function(UserService, $stateParams) {
-              return UserService.getUser($stateParams.userId);
+            user: function(HttpService, $stateParams) {
+              return HttpService.getObject('users', $stateParams.userId);
             }
           }
         })
@@ -26,12 +26,12 @@
           templateUrl: 'users/user.html',
           controller: 'UsersController as vm',
           resolve: {
-            UserService: 'UserService',
-            users: function(UserService) {
-              return UserService.all();
+            HttpService: 'HttpService',
+            users: function(HttpService) {
+              return HttpService.all('users');
             },
-            user: function(UserService, $stateParams) {
-              return UserService.getUser($stateParams.userId);
+            user: function(HttpService, $stateParams) {
+              return HttpService.getObject('users', $stateParams.userId);
             }
           }
         })

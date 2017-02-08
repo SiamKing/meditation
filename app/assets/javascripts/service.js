@@ -3,10 +3,10 @@
 
   angular
     .module('meditation')
-    .factory('UserService', ['$http', function($http) {
+    .factory('HttpService', ['$http', function($http) {
       return {
         all,
-        getUser,
+        getObject,
         create
       }
 
@@ -16,8 +16,8 @@
           .catch(err => console.log(err))
       }
 
-      function getUser(id) {
-        return $http.get('api/v1/users/' + id)
+      function getObject(param, id) {
+        return $http.get('api/v1/' + param + '/' + id)
           .then(response => response.data)
           .catch(err => console.log(err))
       }
