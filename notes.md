@@ -11,9 +11,9 @@
 ### Meditation (name, tradition, instructions)
   - Create Meditation Model √
   - Create Meditation Migration √
-  - Create API Routes
-  - Create Meditation Controller
-  - Create Serializer for Meditations
+  - Create API Routes √
+  - Create Meditation Controller √
+  - Create Serializer for Meditations √
 
 ### Events (user_id, meditation_id, time(in minutes), date)
   - create Event Model
