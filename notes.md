@@ -16,11 +16,11 @@
   - Create Serializer for Meditations √
 
 ### Events (user_id, meditation_id, time(in minutes), date)
-  - create Event Model
-  - Create Event Migration
-  - Create API Routes
-  - Create Event Controller
-  - Create Serializer for Event
+  - create Event Model √
+  - Create Event Migration √
+  - Create API Routes √
+  - Create Event Controller √
+  - Create Serializer for Event √
 
 ## Prep Client
   - Add package manager (bower) √
