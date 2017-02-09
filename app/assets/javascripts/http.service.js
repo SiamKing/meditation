@@ -7,7 +7,8 @@
       return {
         all,
         getObject,
-        create
+        create,
+        addEvent
       }
 
       function all(param) {
@@ -52,8 +53,21 @@
             .then(response => response.data)
             .catch(err => console.log(err))
         }
-
       }
+
+      function addEvent(eventInfo) {
+        const req = {
+          method: 'POST',
+          url: '/api/v1/events',
+          data: {
+            event: eventInfo
+          }
+        }
+        return $http(req)
+          .then(response => response.data)
+          .catch(err => console.log(err))
+      }
+
 
     }])
 }())

@@ -11,29 +11,16 @@
           url: '/users',
           templateUrl: 'users/users.html',
           controller: 'UsersController as vm'
-          // resolve: {
-          //   HttpService: 'HttpService',
-          //   users: function(HttpService) {
-          //     return HttpService.all('users');
-          //   },
-          //   user: function(HttpService, $stateParams) {
-          //     return HttpService.getObject('users', $stateParams.userId);
-          //   }
-          // }
         })
         .state('user', {
           url: '/users/:userId',
           templateUrl: 'users/user.html',
           controller: 'UsersController as vm'
-          // resolve: {
-          //   HttpService: 'HttpService',
-          //   users: function(HttpService) {
-          //     return HttpService.all('users');
-          //   },
-          //   user: function(HttpService, $stateParams) {
-          //     return HttpService.getObject('users', $stateParams.userId);
-          //   }
-          // }
+        })
+        .state('user.addEvent', {
+          url: '/users/:userId/addEvent',
+          templateUrl: 'events/add.event.html',
+          controller: 'DatePicker as vm'
         })
         .state('user.update', {
           url: 'users/update',

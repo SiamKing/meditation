@@ -1,9 +1,16 @@
 {
+  "name": "meditation",
   "vendor": {
     "name": "bower-rails generated vendor assets",
     "dependencies": {
-      "angular" : "v1.6.1",
-      "angular-ui-router": "latest"
+      "angular": "v1.6.1",
+      "angular-ui-router": "latest",
+      "angular-bootstrap": "v2.5.0",
+      "angular-animate": "^1.6.2",
+      "angular-touch": "^1.6.2"
     }
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.7"
   }
 }

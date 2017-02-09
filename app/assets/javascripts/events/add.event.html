@@ -1,0 +1,36 @@
+<div ng-controller="DatePicker as vm">
+  <div class="row">
+    <div class="col-md-3">
+  <form  class="form" ng-submit="vm.addEvent()">
+        <input type="hidden">
+        Total time Meditating <input type="text" ng-model="vm.event.minutes">
+        <span class="btn-group" uib-dropdown keyboard-nav>
+        <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+            {{selectedMeditation}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+          <li ng-repeat="meditation in vm.meditations">
+              <a href="" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)" >{{meditation.name}}</a>
+          </li>
+        </ul>
+      </span>
+
+        <p class="input-group">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default"
+            ng-click="vm.valuationDatePickerOpen($event)">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </button>
+          </span>
+          <input type="text" class="form-control"
+            uib-datepicker-popup="mediumDate"
+            is-open="vm.valuationDatePickerIsOpen"
+            ng-click="vm.valuationDatePickerOpen()"
+            ng-model="vm.valuationDate" />
+
+        </p>
+      <input type="submit" value="Add Event">
+  </form>
+</div>
+</div>
+</div>

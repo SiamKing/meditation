@@ -7,3 +7,6 @@
     {{event.date | date: medium}} for {{event.minutes}} minutes --
     {{vm.user.meditations[$index].name}}
   </div>
+
+  <a ui-sref="user.addEvent">Add new calendar event</a>
+  <ui-view></ui-view>
