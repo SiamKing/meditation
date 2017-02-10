@@ -38,7 +38,7 @@ class Api::V1::EventsController < ApplicationController
   private
 
     def event_params
-      params.require(:event).permit(:name, :tradition, :instructions, :user_id)
+      params.require(:event).permit(:minutes, :date, :meditation_id, :user_id)
     end
 
     def find_event

@@ -13,5 +13,18 @@
           HttpService.getObject('meditations', $stateParams.id)
             .then(data => vm.user = data)
         }
+
+        vm.addEvent = function () {
+          vm.event = {
+            minutes: vm.event.minutes,
+            meditation_id: vm.meditationId,
+            user_id: $stateParams.userId,
+            date: vm.valuationDate
+          }
+          HttpService
+            .addEvent(vm.event)
+            .then(event => vm.events.push(event))
+            .then(vm.event = {})
+        }
     }])
 }())

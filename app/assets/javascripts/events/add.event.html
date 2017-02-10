@@ -1,20 +1,25 @@
-<div ng-controller="DatePicker as vm">
   <div class="row">
     <div class="col-md-3">
-  <form  class="form" ng-submit="vm.addEvent()">
-        <input type="hidden">
-        Total time Meditating <input type="text" ng-model="vm.event.minutes">
-        <span class="btn-group" uib-dropdown keyboard-nav>
-        <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-            {{selectedMeditation}} <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
-          <li ng-repeat="meditation in vm.meditations">
-              <a href="" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)" >{{meditation.name}}</a>
-          </li>
-        </ul>
-      </span>
+  <form  name="form" class="form" ng-submit="vm.addEvent()">
+        Total time Meditating <input type="text" ng-model="vm.minutes">
 
+        <!-- Start Meditation Dropdown -->
+        <div class="meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
+          <span class="btn-group" uib-dropdown keyboard-nav>
+            <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+              {{selectedMeditation}} <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+              <li ng-repeat="meditation in vm.meditations">
+                <a href="" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)">{{meditation.name}}</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+        <!-- End Meditation Dropdown -->
+
+        <!-- Date Picker -->
+        <div class="date-picker" ng-controller="DatePickerController as vm">
         <p class="input-group">
           <span class="input-group-btn">
             <button type="button" class="btn btn-default"
@@ -27,10 +32,10 @@
             is-open="vm.valuationDatePickerIsOpen"
             ng-click="vm.valuationDatePickerOpen()"
             ng-model="vm.valuationDate" />
-
         </p>
-      <input type="submit" value="Add Event">
+      </div>
+        <!-- End Date Picker -->
+      <input type="submit" value="Add Event" class="btn btn-default">
   </form>
-</div>
 </div>
 </div>

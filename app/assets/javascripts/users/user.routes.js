@@ -18,9 +18,9 @@
           controller: 'UsersController as vm'
         })
         .state('user.addEvent', {
-          url: '/users/:userId/addEvent',
+          url: '/addEvent',
           templateUrl: 'events/add.event.html',
-          controller: 'DatePicker as vm'
+          controller: 'UsersController as vm'
         })
         .state('user.update', {
           url: 'users/update',

@@ -2,7 +2,7 @@
 
   angular
     .module('meditation')
-    .controller('DatePicker', ['$scope', 'HttpService', '$log', function ($scope, HttpService, $log) {
+    .controller('DatPicker', ['$scope', 'HttpService', '$log', '$stateParams', function ($scope, HttpService, $log, $stateParams) {
       var vm = this;
 
       vm.valuationDate = new Date();
@@ -16,10 +16,13 @@
           vm.event = {
             minutes: vm.event.minutes,
             meditation_id: vm.meditationId,
+            user_id: $stateParams.userId,
             date: vm.valuationDate
           }
           HttpService
             .addEvent(vm.event)
+            .then(event => vm.events.push(event))
+            .then(vm.event = {})
         }
 
 // dropdown
