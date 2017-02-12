@@ -60,10 +60,9 @@
         }
         HttpService
           .addEvent(vm.event)
-          .then(function(event) {
-            $scope.$parent.vm.user.meditations.push(meditation);
-            $scope.$parent.vm.user.events.push(vm.event);
-          });
+          $scope.$parent.vm.user.meditations.push(meditation);
+          $scope.$parent.vm.user.events.push(vm.event);
+          $scope.$parent.vm.points += parseInt(vm.minutes)
           vm.minutes = ''
           $scope.$$childHead.selectedMeditation = "Meditations"
           $scope.$$childTail.vm.valuationDate = new Date();
