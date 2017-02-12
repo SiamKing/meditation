@@ -13,7 +13,6 @@
       };
 
       $scope.meditationId = function(meditationId) {
-        console.log(meditationId)
         vm.meditationId = meditationId;
       }
 

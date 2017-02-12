@@ -64,8 +64,8 @@
           }
         }
         return $http(req)
-          .then(response => response.data)
-          .catch(err => console.log(err))
+          // .then(response => response.data)
+          // .catch(err => console.log(err))
       }
 
 

@@ -8,6 +8,9 @@
       vm.addEvent = addEvent;
       vm.createUser = createUser;
       vm.enlightenmentPoints = enlightenmentPoints;
+      vm.hideLink = false;
+      vm.hideDiv = hideDiv;
+      // vm.getUser = getUser;
 
       HttpService.all('users')
         .then(data => vm.users = data)
@@ -17,7 +20,20 @@
             .then(data => vm.user = data)
             .then(data => vm.points = vm.enlightenmentPoints(data))
         }
-
+      // function getUser() {
+      //   console.log("getUser")
+      //   HttpService.getObject('users', $stateParams.userId)
+      //     .then(function(data) {
+      //       vm.user = data;
+      //
+      //     })
+      //     .then(data => console.log(data))
+      //     .then(data => vm.points = vm.enlightenmentPoints(data)
+      //   )
+      //   vm.hideLink = false;
+      //   console.log(vm.user)
+      //   return vm.user
+      // }
 
       function createUser(userInfo) {
         HttpService
@@ -30,17 +46,30 @@
       }
 
       function addEvent() {
+        let meditationName = $scope.$$childHead.selectedMeditation;
+        let meditationId = $scope.$$childHead.vm.meditationId;
+        let meditation = {
+          id: meditationId,
+          name: meditationName
+        }
         vm.event = {
           date: $scope.$$childTail.vm.valuationDate,
           minutes: vm.minutes,
           user_id: $stateParams.userId,
-          meditation_id: $scope.$$childHead.vm.meditationId
+          meditation_id: meditationId
         }
         HttpService
           .addEvent(vm.event)
-          .then(event => vm.user.events.push(event))
-          .then(event => console.log($scope))
-          $state.go('user', {userId: vm.event.user_id})
+          .then(function(event) {
+            $scope.$parent.vm.user.meditations.push(meditation);
+            $scope.$parent.vm.user.events.push(vm.event);
+          });
+          vm.minutes = ''
+          $scope.$$childHead.selectedMeditation = "Meditations"
+          $scope.$$childTail.vm.valuationDate = new Date();
+          $scope.form.$setPristine();
+          $scope.form.$setUntouched();
+          // console.log($scope.form.$$element)
       }
 
       function enlightenmentPoints(user) {
@@ -53,6 +82,10 @@
         return user.events.map(function(event) {
           return event.minutes
         })
+      }
+
+      function hideDiv() {
+        return vm.hideLink = true;
       }
 
     }])
