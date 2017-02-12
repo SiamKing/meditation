@@ -1,7 +1,7 @@
   <div class="row">
     <div class="col-md-3">
   <form  name="form" class="form" ng-submit="vm.addEvent()">
-        Total time Meditating <input type="text" ng-model="vm.minutes">
+        Total time Meditating <input type="text" name="minutes" ng-model="vm.minutes" required="required">
 
         <!-- Start Meditation Dropdown -->
         <div class="meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
