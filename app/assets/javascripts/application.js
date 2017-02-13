@@ -18,5 +18,6 @@
 //= require angular-bootstrap
 //= require angular-animate
 //= require angular-touch
+//= require angular-messages
 //= require bootstrap
 //= require_tree .

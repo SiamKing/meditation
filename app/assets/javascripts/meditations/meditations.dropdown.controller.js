@@ -6,7 +6,11 @@
       var vm = this;
 
       HttpService.all('meditations')
-        .then(data => vm.meditations = data);
+        .then(function(data) {
+          vm.meditations = data;
+          $scope.selectedMeditation = vm.meditations[0].name;
+          vm.meditationId = vm.meditations[0].id
+        });
 
       $scope.status = {
       isopen: false
@@ -20,7 +24,7 @@
       $log.log('Dropdown is now: ', open);
       };
 
-      $scope.selectedMeditation = "Meditations";
+
       $scope.meditationSelected = function (meditation) {
         $scope.selectedMeditation = meditation;
       }

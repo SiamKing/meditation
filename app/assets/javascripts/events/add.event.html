@@ -1,7 +1,15 @@
   <div class="row">
-    <div class="col-md-3">
-  <form  name="form" class="form" ng-submit="vm.addEvent()">
-        Total time Meditating <input type="text" name="minutes" ng-model="vm.minutes" required="required">
+    <div class="col-md-3 col-sm-3">
+      <form name="form" ng-submit="vm.addEvent()" novalidate>
+        <!-- Minutes -->
+        <div class="minutes" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
+          <input type="number" class="form-control" name="minutes" placeholder="Minutes Meditating" ng-model="vm.minutes" required="required" data-ng-pattern="/[0-9]/">
+          <div ng-if="form.minutes.$invalid && form.minutes.$dirty" ng-messages="form.minutes.$errors">
+            <div ng-message="pattern">Minutes must be an integer</div>
+          </div>
+        </div>
+        <!-- End Minutes -->
+
 
         <!-- Start Meditation Dropdown -->
         <div class="meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
@@ -34,8 +42,9 @@
             ng-model="vm.valuationDate" />
         </p>
       </div>
+
         <!-- End Date Picker -->
-      <input type="submit" value="Add Event" class="btn btn-default">
+      <input type="submit" value="Add Event" class="btn btn-default" ng-disabled="!form.$valid">
   </form>
 </div>
 </div>

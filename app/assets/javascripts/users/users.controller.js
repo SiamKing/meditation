@@ -48,6 +48,7 @@
       function addEvent() {
         let meditationName = $scope.$$childHead.selectedMeditation;
         let meditationId = $scope.$$childHead.vm.meditationId;
+        console.log($scope)
         let meditation = {
           id: meditationId,
           name: meditationName
@@ -64,7 +65,7 @@
           $scope.$parent.vm.user.events.push(vm.event);
           $scope.$parent.vm.points += parseInt(vm.minutes)
           vm.minutes = ''
-          $scope.$$childHead.selectedMeditation = "Meditations"
+          $scope.$$childHead.selectedMeditation = $scope.$$childHead.vm.meditations[0].name
           $scope.$$childTail.vm.valuationDate = new Date();
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
