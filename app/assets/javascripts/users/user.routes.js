@@ -27,6 +27,11 @@
           templateUrl: 'events/event.html',
           controller: 'EventsController as event'
         })
+        .state('user.event.update', {
+          url: '/update',
+          templateUrl: 'events/updateEvent.html',
+          controller: 'EventsController as event'
+        })
         .state('user.update', {
           url: 'users/update',
           templateUrl: 'users/user.update.html',

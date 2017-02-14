@@ -2,14 +2,14 @@
 
   angular
     .module('meditation')
-    .controller('MeditationsDropdownController', ['$scope', '$log', 'HttpService', function ($scope, $log, HttpService) {
+    .controller('MeditationsDropdownController', ['$scope', '$log', 'HttpService', '$stateParams', function ($scope, $log, HttpService, $stateParams) {
       var vm = this;
 
       HttpService.all('meditations')
         .then(function(data) {
           vm.meditations = data;
           $scope.selectedMeditation = vm.meditations[0].name;
-          vm.meditationId = vm.meditations[0].id
+          vm.meditationId = vm.meditations[0].id;
         });
 
       $scope.status = {

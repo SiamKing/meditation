@@ -2,7 +2,7 @@
 
   angular
     .module('meditation')
-    .controller('DatePickerController', ['$scope', function ($scope) {
+    .controller('DatePickerController', ['$scope', '$stateParams', function ($scope, $stateParams) {
       var vm = this;
 
       vm.valuationDate = new Date();

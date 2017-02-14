@@ -9,6 +9,7 @@
         getObject,
         create,
         addEvent,
+        updateEvent,
         destroy
       }
 
@@ -67,6 +68,18 @@
         return $http(req)
           // .then(response => response.data)
           // .catch(err => console.log(err))
+      }
+
+      function updateEvent(eventInfo, id) {
+        const req = {
+          method: 'PATCH',
+          url: `/api/v1/events/${id}`,
+          data: {
+            event: eventInfo
+          }
+        }
+        return $http(req)
+
       }
 
       function destroy(param, id) {

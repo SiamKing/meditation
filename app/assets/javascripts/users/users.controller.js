@@ -5,12 +5,10 @@
     .module('meditation')
     .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', function(HttpService, $state, $stateParams, $scope) {
       var vm = this;
-      vm.addEvent = addEvent;
       vm.createUser = createUser;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
       vm.hideDiv = hideDiv;
-      // vm.getUser = getUser;
 
       HttpService.all('users')
         .then(data => vm.users = data)
@@ -20,20 +18,6 @@
             .then(data => vm.user = data)
             .then(data => vm.points = vm.enlightenmentPoints(data))
         }
-      // function getUser() {
-      //   console.log("getUser")
-      //   HttpService.getObject('users', $stateParams.userId)
-      //     .then(function(data) {
-      //       vm.user = data;
-      //
-      //     })
-      //     .then(data => console.log(data))
-      //     .then(data => vm.points = vm.enlightenmentPoints(data)
-      //   )
-      //   vm.hideLink = false;
-      //   console.log(vm.user)
-      //   return vm.user
-      // }
 
       function createUser(userInfo) {
         HttpService
@@ -43,32 +27,6 @@
             var user = user;
             $state.go('user', {userId: user})
           })
-      }
-
-      function addEvent() {
-        let meditationName = $scope.$$childHead.selectedMeditation;
-        let meditationId = $scope.$$childHead.vm.meditationId;
-        let meditation = {
-          id: meditationId,
-          name: meditationName
-        }
-        vm.event = {
-          date: $scope.$$childTail.vm.valuationDate,
-          minutes: vm.minutes,
-          user_id: $stateParams.userId,
-          meditation_id: meditationId
-        }
-        HttpService
-          .addEvent(vm.event)
-          .then(data => vm.event.id = data.data.id)
-          $scope.$parent.vm.user.meditations.push(meditation);
-          $scope.$parent.vm.user.events.push(vm.event);
-          $scope.$parent.vm.points += parseInt(vm.minutes)
-          vm.minutes = ''
-          $scope.$$childHead.selectedMeditation = $scope.$$childHead.vm.meditations[0].name
-          $scope.$$childTail.vm.valuationDate = new Date();
-          $scope.form.$setPristine();
-          $scope.form.$setUntouched();
       }
 
       function enlightenmentPoints(user) {
