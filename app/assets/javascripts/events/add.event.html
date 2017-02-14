@@ -1,9 +1,9 @@
   <div class="row">
     <div class="col-md-3 col-sm-3">
-      <form name="form" ng-submit="vm.addEvent()" novalidate>
+      <form name="form" ng-submit="event.addEvent()" novalidate>
         <!-- Minutes -->
         <div class="minutes" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
-          <input type="number" class="form-control" name="minutes" placeholder="Minutes Meditating" ng-model="vm.minutes" required="required" data-ng-pattern="/^\d+$/">
+          <input type="number" class="form-control" name="minutes" placeholder="Minutes Meditating" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
           <div ng-if="form.minutes.$invalid && form.minutes.$dirty" ng-messages="form.minutes.$errors">
             <div ng-message="pattern">Minutes must be an integer</div>
           </div>

@@ -20,7 +20,7 @@
         .state('user.addEvent', {
           url: '/addEvent',
           templateUrl: 'events/add.event.html',
-          controller: 'UsersController as vm'
+          controller: 'EventsController as event'
         })
         .state('user.event', {
           url: '/event/:id',
