@@ -8,7 +8,8 @@
         all,
         getObject,
         create,
-        addEvent
+        addEvent,
+        destroy
       }
 
       function all(param) {
@@ -68,6 +69,15 @@
           // .catch(err => console.log(err))
       }
 
+      function destroy(param, id) {
+        const req = {
+          method: 'DELETE',
+          url: `/api/v1/${param}/${id}`
+        }
+        return $http(req)
+          .then(response => response.data)
+          .catch(err => console.log(err))
+      }
 
     }])
 }())

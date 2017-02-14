@@ -48,7 +48,6 @@
       function addEvent() {
         let meditationName = $scope.$$childHead.selectedMeditation;
         let meditationId = $scope.$$childHead.vm.meditationId;
-        console.log($scope)
         let meditation = {
           id: meditationId,
           name: meditationName
@@ -61,6 +60,7 @@
         }
         HttpService
           .addEvent(vm.event)
+          .then(data => vm.event.id = data.data.id)
           $scope.$parent.vm.user.meditations.push(meditation);
           $scope.$parent.vm.user.events.push(vm.event);
           $scope.$parent.vm.points += parseInt(vm.minutes)
@@ -69,7 +69,6 @@
           $scope.$$childTail.vm.valuationDate = new Date();
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
-          // console.log($scope.form.$$element)
       }
 
       function enlightenmentPoints(user) {

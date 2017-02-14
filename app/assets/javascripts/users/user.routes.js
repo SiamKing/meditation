@@ -22,6 +22,11 @@
           templateUrl: 'events/add.event.html',
           controller: 'UsersController as vm'
         })
+        .state('user.event', {
+          url: '/event/:id',
+          templateUrl: 'events/event.html',
+          controller: 'EventsController as event'
+        })
         .state('user.update', {
           url: 'users/update',
           templateUrl: 'users/user.update.html',
