@@ -9,13 +9,7 @@
       vm.deleteEvent = deleteEvent;
       vm.addEvent = addEvent;
       vm.updateEvent = updateEvent;
-      vm.date = new Date();
-      // if ($stateParams.id) {
-      //   HttpService.getObject('events', $stateParams.id)
-      //     .then(function(data) {
-      //       vm.event = data;
-      //     });
-      // }
+
 
       vm.setMeditationId = function(meditationId) {
         vm.meditationId = meditationId;
@@ -61,8 +55,17 @@
       }
 
       function updateEvent() {
-        let meditationName = $scope.event.selectedMeditation;
-        let meditationId = $scope.event.meditationId;
+        let meditationName;
+        let meditationId;
+
+        if ($scope.event.selectedMeditation) {
+          meditationName = $scope.event.selectedMeditation;
+          meditationId = $scope.event.meditationId;
+        } else {
+          meditationName = $scope.$parent.event.event.meditation.name;
+          meditationId = $scope.$parent.event.event.meditation_id;
+        }
+
         let meditation = {
           id: meditationId,
           name: meditationName
@@ -83,10 +86,6 @@
             return (index = i);
             }
           });
-          // var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
-          // var currentMeditations = $scope.$parent.vm.user.meditations.slice(eventIndex, 1)
-          // currentEvents.push(vm.event)
-          // currentMeditations.push(meditation)
           $scope.$parent.vm.user.meditations.splice(index, 1, meditation);
           $scope.$parent.vm.user.events.splice(index, 1, vm.event);
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;

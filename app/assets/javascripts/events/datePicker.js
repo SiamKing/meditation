@@ -5,7 +5,6 @@
     .controller('DatePickerController', ['$scope', '$stateParams', 'HttpService', function ($scope, $stateParams, HttpService) {
       var vm = this;
 
-
       vm.valuationDatePickerIsOpen = false;
       vm.opens = [];
 
