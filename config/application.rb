@@ -14,7 +14,9 @@ module Meditations
     # -- all .rb files in that directory are automatically loaded.
   end
 end
-
+class Application < Rails::Application
+  config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+end
 # via https://gist.github.com/afeld/5704079
 # Rails.application.configure do
 #   config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
