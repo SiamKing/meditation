@@ -10,8 +10,9 @@
         .then(data => vm.meditations = data)
 
         if ($stateParams.id) {
-          HttpService.getObject('meditations', $stateParams.id)
-            .then(data => vm.user = data)
+          HttpService
+            .getObject('meditations', $stateParams.id)
+            .then(data => vm.meditation = data)
         }
 
         vm.addEvent = function () {

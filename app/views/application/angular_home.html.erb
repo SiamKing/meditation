@@ -1,5 +1,5 @@
 <div ng-controller="CollapseDemoCtrl">
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default meditation-navbar" role="navigation">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
 				<span class="sr-only">Toggle navigation</span>
@@ -17,5 +17,8 @@
 		</div>
 	</nav>
 	<hr>
-	<ui-view></ui-view>
+  <div class="container">
+    <ui-view></ui-view>
+  </div>
+
 </div>
