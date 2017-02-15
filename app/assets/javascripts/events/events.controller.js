@@ -78,12 +78,19 @@
           .updateEvent(vm.event, $stateParams.id)
           .then((data) => {
           vm.event.id = data.data.id
-          var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
-          var currentMeditations = $scope.$parent.vm.user.meditations.filter(meditation => meditation.id !== meditationId)
-          currentEvents.push(vm.event)
-          currentMeditations.push(meditation)
-          $scope.$parent.vm.user.meditations = currentMeditations;
-          $scope.$parent.vm.user.events = currentEvents;
+          var index;
+          var eventIndex = $scope.$parent.vm.user.events.some(function(event, i) {
+            if (event.id === parseInt($stateParams.id)) {
+            return (index = i);
+            }
+          });
+          console.log(meditation)
+          // var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
+          // var currentMeditations = $scope.$parent.vm.user.meditations.slice(eventIndex, 1)
+          // currentEvents.push(vm.event)
+          // currentMeditations.push(meditation)
+          $scope.$parent.vm.user.meditations.splice(index, 1, meditation);
+          $scope.$parent.vm.user.events.splice(index, 1, vm.event);
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
           $scope.$parent.vm.points += parseInt(vm.minutes);
           $scope.$parent.vm.hideLink = false;
