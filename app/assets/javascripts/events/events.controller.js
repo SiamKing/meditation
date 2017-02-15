@@ -61,7 +61,6 @@
       }
 
       function updateEvent() {
-        console.log($scope)
         let meditationName = $scope.event.selectedMeditation;
         let meditationId = $scope.event.meditationId;
         let meditation = {
@@ -84,7 +83,6 @@
             return (index = i);
             }
           });
-          console.log(meditation)
           // var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
           // var currentMeditations = $scope.$parent.vm.user.meditations.slice(eventIndex, 1)
           // currentEvents.push(vm.event)

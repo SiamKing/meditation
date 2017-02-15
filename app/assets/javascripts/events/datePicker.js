@@ -2,12 +2,20 @@
 
   angular
     .module('meditation')
-    .controller('DatePickerController', ['$scope', '$stateParams', function ($scope, $stateParams) {
+    .controller('DatePickerController', ['$scope', '$stateParams', 'HttpService', function ($scope, $stateParams, HttpService) {
       var vm = this;
 
-      vm.valuationDate = new Date();
+
       vm.valuationDatePickerIsOpen = false;
       vm.opens = [];
+
+      if ($stateParams.id) {
+        HttpService
+          .getObject('events', $stateParams.id)
+          .then(event =>  vm.valuationDate = new Date(event.date))
+      } else {
+          vm.valuationDate = new Date();
+      }
 
       $scope.$watch(function () {
            return vm.valuationDatePickerIsOpen;
