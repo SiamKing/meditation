@@ -9,27 +9,27 @@
       $stateProvider
         .state('users', {
           url: '/users',
-          templateUrl: 'users/users.html',
+          templateUrl: 'users/templates/users.html',
           controller: 'UsersController as vm'
         })
         .state('user', {
           url: '/users/:userId',
-          templateUrl: 'users/user.html',
+          templateUrl: 'users/templates/user.html',
           controller: 'UsersController as vm'
         })
         .state('user.addEvent', {
           url: '/addEvent',
-          templateUrl: 'events/add.event.html',
+          templateUrl: 'events/templates/add.event.html',
           controller: 'EventsController as event'
         })
         .state('user.event', {
           url: '/event/:id',
-          templateUrl: 'events/event.html',
+          templateUrl: 'events/templates/event.html',
           controller: 'EventsController as event'
         })
         .state('user.event.update', {
           url: '/update',
-          templateUrl: 'events/updateEvent.html',
+          templateUrl: 'events/templates/updateEvent.html',
           controller: 'EventsController as event'
         })
         .state('user.update', {
