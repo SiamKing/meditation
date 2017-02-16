@@ -29,6 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'pry'
+gem 'paperclip', '~> 5.0.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
