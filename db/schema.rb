@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170208222536) do
+ActiveRecord::Schema.define(version: 20170216231911) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
@@ -26,11 +26,15 @@ ActiveRecord::Schema.define(version: 20170208222536) do
   create_table "meditations", force: :cascade do |t|
     t.string   "tradition"
     t.text     "instructions"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.integer  "user_id"
     t.text     "about"
     t.string   "name"
+    t.string   "icon_file_name"
+    t.string   "icon_content_type"
+    t.integer  "icon_file_size"
+    t.datetime "icon_updated_at"
     t.index ["user_id"], name: "index_meditations_on_user_id"
   end
 
