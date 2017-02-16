@@ -12,7 +12,13 @@
             </div>
             <br>
               <form class="input-group" ng-submit="vm.createUser()">
-                <input class="form-control transparent-input" placeholder="Enter your name" type="text" ng-model="vm.user.name">
+                <input class="form-control transparent-input"
+                placeholder="Enter your name"
+                type="text"
+                ng-model="vm.user.name"
+                required="required"
+                min-length="2"
+                max-length="20">
                 <span class="input-group-btn">
                   <input class="btn btn-default transparent-input" style="text-transform: uppercase" type="submit" value="Submit">
                 </span>

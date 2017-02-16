@@ -5,11 +5,11 @@
 .navbar {
   padding-left: 30px;
   padding-right: 30px;
+  padding-top: 5px;
   font-family: 'Raleway';
   font-size: 16px;
   color: #007799;
   letter-spacing: -0.77px;
-  padding-top: 10px;
   text-transform: uppercase;
   background-color: #fff;
 }
@@ -32,9 +32,9 @@ body {
 .view {
   background: url(/assets/home_1900wide.png)no-repeat center center fixed;
   -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .container {
@@ -48,15 +48,6 @@ body {
   vertical-align: middle;
 }
 
-
-// /* NAV MEDITATIONS: */
-// font-family: Raleway-Medium;
-// font-size: 16px;
-// color: #007799;
-// letter-spacing: -0.77px;
-//
-//
-//
 .hero-bold {
   font-family: 'Raleway', sans-serif;;
   font-weight: 500;
@@ -67,7 +58,6 @@ body {
   text-transform: uppercase;
 }
 
-//
 .hero-text {
   /* Keep track of how of: */
   font-family: 'Raleway';
@@ -90,48 +80,58 @@ input.transparent-input {
   height: 40px;
 }
 
-input.tranparent-submit {
-  background-color: transparent !important;
-  background: rgba(0,0,0,0.20);
-  border: 1px solid #FFFFFF;
-  border-radius: 1px;
-  font-family: 'Raleway';
-  font-size: 20px;
-  color: #FFFFFF;
-  letter-spacing: 3px;
-  height: 40px;
-  text-transform: uppercase;
-}
-
 input.transparent-input::-webkit-input-placeholder {
-   color: #FFF;
-   font-size: 20px;
-   letter-spacing: 3px;
-   font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input:-moz-placeholder { /* Firefox 18- */
-   color: #FFF;
-   font-size: 20px;
-   letter-spacing: 3px;
-   font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input::-moz-placeholder {  /* Firefox 19+ */
-   color: #FFF;
-   font-size: 20px;
-   letter-spacing: 3px;
-   font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input:-ms-input-placeholder {
-   color: #FFF;
-   font-size: 20px;
-   letter-spacing: 3px;
-   font-family: 'Raleway', sans-serif;
+  color: #FFF;
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
 }
-//
-//
+
+.meditations {
+  background: url(/assets/meditation_1900wide.png) center center;
+  background-size: cover;
+  // opacity: 0.4;
+  // color: white;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: absolute;
+  top:25;left:0;
+  z-index:1;
+}
+
+/* EXPLORE MEDITATIONS: */
+.meditations-jumbo-text {
+  font-family: 'Raleway', sans-serif;;
+  font-weight: 700;
+  font-size: 48px;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+  padding-top:80px;
+}
 // /* Dialog box: */
 // background: rgba(0,0,0,0.20);
 // border: 1px solid #FFFFFF;
@@ -156,9 +156,3 @@ input.transparent-input:-ms-input-placeholder {
 // letter-spacing: 0;
 //
 //
-// /* EXPLORE MEDITATIONS: */
-// font-family: Raleway-Bold;
-// font-size: 48px;
-// color: #FFFFFF;
-// letter-spacing: 0;
-// text-shadow: 0 1px 3px rgba(0,0,0,0.50);
