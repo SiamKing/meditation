@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
 
 /* NAV USER PROFILE: */
 .navbar {
   padding-left: 30px;
   padding-right: 30px;
-  font-family: 'Roboto';
+  font-family: 'Raleway';
   font-size: 16px;
   color: #007799;
   letter-spacing: -0.77px;
@@ -13,10 +14,19 @@
   background-color: #fff;
 }
 
+.navbar li {
+  padding-top: 10px;
+}
+
 html,
 body,
+.container,
 .view {
   height: 100%;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
 }
 
 .view {
@@ -27,27 +37,17 @@ body,
     background-size: cover;
 }
 
-.poop {
-  border-radius: 10px;
-  background-color: #fff;
-  opacity: 0.7;
-  filter: alpha(opacity=75);
+.container {
+  display: table;
+  vertical-align: middle;
+  padding-bottom: 100px;
 }
 
-.poop:hover {
-  opacity: .8;
-    filter: alpha(opacity=100);
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-.welcome {
-  position: absolute;
-  width: 300px;
-  height: 200px;
-  z-index: 15;
-  top: 50%;
-  left: 50%;
-  margin: -100px 0 0 -150px;
-}
 
 // /* NAV MEDITATIONS: */
 // font-family: Raleway-Medium;
@@ -57,19 +57,79 @@ body,
 //
 //
 //
-// /* HERO TEXT: DAILY MEDITATION TIM: */
-// font-family: Raleway-Bold;
-// font-size: 48px;
-// color: #FFFFFF;
-// letter-spacing: 0;
-// text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+.hero-bold {
+  font-family: 'Raleway', sans-serif;;
+  font-weight: 500;
+  font-size: 54px;
+  color: #FFFFFF;
+  letter-spacing: 3.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+}
+
 //
-//
-// /* Keep track of how of: */
-// font-family: Raleway-Regular;
-// font-size: 19px;
-// color: #F4FDFF;
-// letter-spacing: 0.2px;
+.hero-text {
+  /* Keep track of how of: */
+  font-family: 'Raleway';
+  font-size: 17px;
+  color: #FFF;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+}
+
+input.transparent-input {
+  background-color: transparent !important;
+  background: rgba(0,0,0,0.20);
+  border: 1px solid #FFFFFF;
+  border-radius: 1px;
+  font-family: 'Raleway';
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  height: 40px;
+}
+
+input.tranparent-submit {
+  background-color: transparent !important;
+  background: rgba(0,0,0,0.20);
+  border: 1px solid #FFFFFF;
+  border-radius: 1px;
+  font-family: 'Raleway';
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  height: 40px;
+  text-transform: uppercase;
+}
+
+input.transparent-input::-webkit-input-placeholder {
+   color: #FFF;
+   font-size: 20px;
+   letter-spacing: 3px;
+   font-family: 'Raleway', sans-serif;
+}
+
+input.transparent-input:-moz-placeholder { /* Firefox 18- */
+   color: #FFF;
+   font-size: 20px;
+   letter-spacing: 3px;
+   font-family: 'Raleway', sans-serif;
+}
+
+input.transparent-input::-moz-placeholder {  /* Firefox 19+ */
+   color: #FFF;
+   font-size: 20px;
+   letter-spacing: 3px;
+   font-family: 'Raleway', sans-serif;
+}
+
+input.transparent-input:-ms-input-placeholder {
+   color: #FFF;
+   font-size: 20px;
+   letter-spacing: 3px;
+   font-family: 'Raleway', sans-serif;
+}
 //
 //
 // /* Dialog box: */
