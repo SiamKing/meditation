@@ -10,8 +10,8 @@
           templateUrl: 'meditations/templates/meditations.html',
           controller: 'MeditationsController as vm'
         })
-        .state('meditation', {
-          url: 'meditations/:id',
+        .state('meditations.meditation', {
+          url: '/meditations/:id',
           templateUrl: 'meditations/templates/meditation.html',
           controller: 'MeditationsController as vm'
         })

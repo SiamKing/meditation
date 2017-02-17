@@ -1,26 +1,35 @@
-<div class="jumbotron meditations">
-  <div class="container">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="meditations-jumbo-text center">
-        Explore Meditation Techniques
-      </div>
-    </div>
-  </div>
-</div>
-<hr>
-<div class="container">
-  <div class="row row-centered">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="" ng-repeat="meditation in vm.meditations">
-        <div class="col-md-4 col-centered ">
-          <a class="meditations-text" ui-sref="meditation({id: meditation.id})">
-            <img ng-src="{{meditation.icon}}" alt="meditation.name" />
-            <br>
-
-              <span>{{meditation.name}}</span>
-          </a>
+<div id="scrollArea" ng-controller="ScrollController as scroll">
+  <div ng-controller="MeditationsController as vm">
+    <div class="jumbotron meditations">
+      <div class="container">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="meditations-jumbo-text center">
+            Explore Meditation Techniques
+          </div>
         </div>
       </div>
     </div>
+    <hr>
+    <div class="container">
+      <div class="row row-centered">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="" ng-repeat="meditation in vm.meditations">
+            <div class="col-md-4 col-centered ">
+              <a class="meditations-text" ui-sref="meditations.meditation({id: meditation.id})">
+                <img ng-src="{{meditation.icon}}" alt="meditation.name" />
+                <br>
+
+                <span>{{meditation.name}}</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="meditation-scroll">
+      <ui-view></ui-view>
+    </div>
   </div>
+
 </div>

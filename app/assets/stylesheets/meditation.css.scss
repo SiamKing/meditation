@@ -140,9 +140,7 @@ input.transparent-input:-ms-input-placeholder {
 .col-centered {
     display:inline-block;
     float:none;
-    /* reset the text-align */
-    /* inline-block space fix */
-    // margin-right:-4px;
+
     text-align:center;
 
 }
