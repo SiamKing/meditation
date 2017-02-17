@@ -19,5 +19,6 @@
 //= require angular-animate
 //= require angular-touch
 //= require angular-messages
+//= require angular-sanitize
 //= require bootstrap
 //= require_tree .
