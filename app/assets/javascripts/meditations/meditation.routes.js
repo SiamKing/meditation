@@ -11,7 +11,7 @@
           controller: 'MeditationsController as vm'
         })
         .state('meditations.meditation', {
-          url: '/meditations/:id',
+          url: '/:id',
           templateUrl: 'meditations/templates/meditation.html',
           controller: 'MeditationsController as vm'
         })
