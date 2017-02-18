@@ -145,6 +145,16 @@ input.transparent-input:-ms-input-placeholder {
 
 }
 
+/* Scrolling */
+#scrollArea {
+    height: 100%;
+    overflow: auto;
+  }
+
+  #bottom {
+    display: block;
+  }
+
 // /* Dialog box: */
 // background: rgba(0,0,0,0.20);
 // border: 1px solid #FFFFFF;

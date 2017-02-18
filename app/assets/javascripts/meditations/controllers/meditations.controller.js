@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('MeditationsController', ['HttpService', '$stateParams', function(HttpService, $stateParams){
+    .controller('MeditationsController', ['HttpService', '$stateParams', '$location', 'anchorSmoothScroll', '$scope', function(HttpService, $stateParams, $location, anchorSmoothScroll, $scope){
       var vm = this;
 
       HttpService.all('meditations')
@@ -26,6 +26,16 @@
             .addEvent(vm.event)
             .then(event => vm.events.push(event))
             .then(vm.event = {})
+        }
+
+        $scope.gotoElement = function (eID){
+          console.log(eID)
+          // set the location.hash to the id of
+          // the element you wish to scroll to.
+          $location.hash('meditation-scroll');
+
+          // call $anchorScroll()
+          anchorSmoothScroll.scrollTo(eID);
         }
     }])
 }())
