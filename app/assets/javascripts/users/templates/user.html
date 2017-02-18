@@ -18,8 +18,8 @@
       <a ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
         {{vm.user.meditations[$index].name}}</a>
     </div>
-
-    <a ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
+    <br>
+    <a class="btn btn-default" ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
     <ui-view></ui-view>
   </div>
 </div>
