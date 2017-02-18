@@ -1,16 +1,25 @@
-<div class="poop">
-  <h1>
-    <div class="user" >
-      <span data-ng-bind="vm.user.name"></span> <br>
-      Enlightenment: <span data-ng-bind="vm.points"></span>
+<div class="jumbotron meditations">
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="meditations-jumbo-text center">
+        {{vm.user.name}}'s Profile
+      </div>
     </div>
-  </h1>
-  <div ng-repeat="event in vm.user.events track by $index">
-    <a ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
-    {{vm.user.meditations[$index].name}}</a>
   </div>
+</div>
+  <div class="container">
+    <h1>
+      <div class="user" >
+        <span data-ng-bind="vm.user.name"></span> <br>
+        Enlightenment: <span data-ng-bind="vm.points"></span>
+      </div>
+    </h1>
+    <div ng-repeat="event in vm.user.events track by $index">
+      <a ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
+        {{vm.user.meditations[$index].name}}</a>
+    </div>
 
-  <a ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
-  <hr>
-  <ui-view></ui-view>
+    <a ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
+    <ui-view></ui-view>
+  </div>
 </div>
