@@ -24,7 +24,7 @@
           .getObject('events', $stateParams.id)
           .then(function(event) {
             vm.event = event;
-            vm.event.date = new Date(vm.event.date);
+            vm.event.date = new Date(vm.event.date.toDateString());
           });
       }
 

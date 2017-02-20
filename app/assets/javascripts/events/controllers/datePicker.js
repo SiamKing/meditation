@@ -11,7 +11,7 @@
       if ($stateParams.id) {
         HttpService
           .getObject('events', $stateParams.id)
-          .then(function(event){ vm.valuationDate = new Date(event.date)})
+          .then(function(event){ vm.valuationDate = new Date(event.date.toDateString())})
       } else {
           vm.valuationDate = new Date();
       }
