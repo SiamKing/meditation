@@ -75,8 +75,9 @@ body {
 
 /* Main page user input - transparent */
 input.transparent-input {
-  background-color: transparent !important;
-  background: rgba(0,0,0,0.20);
+  // background-color: transparent !important;
+  background-color: #000;
+  background: rgba(0, 0, 0, 0.4);
   border: 1px solid #FFFFFF;
   border-radius: 1px;
   font-family: 'Raleway';
@@ -112,6 +113,15 @@ input.transparent-input:-ms-input-placeholder {
   font-size: 20px;
   letter-spacing: 3px;
   font-family: 'Raleway', sans-serif;
+}
+
+/* User Profile */
+
+.user {
+  background: url(/assets/user_1900wide.png) center center;
+  background-size: cover;
+  height: 300px;
+  margin-top: 50px;
 }
 
 /* Meditaitons Section */

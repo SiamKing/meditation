@@ -8,7 +8,7 @@
 
 
 
-icons = ["app/assets/images/icons/icon1.png", "app/assets/images/icons/icon9.png", "app/assets/images/icons/icon7.png", "app/assets/images/icons/icon3.png", "app/assets/images/icons/icon4.png", "app/assets/images/icons/icon8.png", "app/assets/images/icons/icon5.png", "app/assets/images/icons/icon2.png", "app/assets/images/icons/icon6.png"]
+icons = ["app/assets/images/icons/icon1.png", "app/assets/images/icons/icon9.png", "app/assets/images/icons/icon7.png", "app/assets/images/icons/icon8.png", "app/assets/images/icons/icon4.png", "app/assets/images/icons/icon3.png", "app/assets/images/icons/icon6.png", "app/assets/images/icons/icon2.png", "app/assets/images/icons/icon5.png"]
 
 meditation_names = ["Mindfulness", "Metta (Loving-Kindness)", "Zen Meditation", 'Qigong (Chi Gong)', "Mantra Meditation (OM)", "Transcendental Meditation (TM)", "Vipassana Meditation", "Chakra Meditation", "Kundalini Meditation"]
 
