@@ -30,6 +30,10 @@ body,
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Raleway', sans-serif;
 }
@@ -147,7 +151,6 @@ input.transparent-input:-ms-input-placeholder {
 
 .meditations-text {
   text-align: center;
-  // width: 60em;
   display:inline-block;
 }
 

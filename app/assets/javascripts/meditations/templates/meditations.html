@@ -33,7 +33,7 @@
     <div class="row row-centered">
       <div ng-repeat="meditation in vm.meditations | filter: vm.filterTradition | filter:vm.search">
         <div class="col-md-4 col-centered icon">
-          <a class="meditations-text hvr-float" ui-sref="meditations.meditation({id: meditation.id})"
+          <a class="meditations-text hvr-grow" style="text-decoration: none" ui-sref="meditations.meditation({id: meditation.id})"
           ng-click="gotoElement('meditation-scroll')">
           <img ng-src="{{meditation.icon}}" alt="meditation.name" />
           <br>
