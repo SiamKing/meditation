@@ -3,11 +3,13 @@
 
   angular
     .module('meditation')
-    .controller('MeditationsController', ['HttpService', '$stateParams', '$location', 'anchorSmoothScroll', '$scope', function(HttpService, $stateParams, $location, anchorSmoothScroll, $scope){
+    .controller('MeditationsController', ['HttpService', '$stateParams', '$location', 'anchorSmoothScroll', '$scope', '$filter', function(HttpService, $stateParams, $location, anchorSmoothScroll, $scope, $filter){
       var vm = this;
+      vm.search = '';
 
       HttpService.all('meditations')
         .then(data => vm.meditations = data)
+
 
         if ($stateParams.id) {
           HttpService
@@ -37,5 +39,6 @@
           // call $anchorScroll()
           anchorSmoothScroll.scrollTo(eID);
         }
+
     }])
 }())

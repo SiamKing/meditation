@@ -11,10 +11,11 @@
   <div class="container container-search">
 	  <div class="row">
         <div class="span12">
-            <form id="custom-search-form" class="form-search form-horizontal pull-right">
+            <form id="custom-search-form" class="form-search form-horizontal pull-right" >
                 <div class="input-append span12">
-                    <input type="text" class="search-query" placeholder="Search">
-                    <button type="submit" class="btn"><i class="glyphicon glyphicon-search"></i></button>
+                  <input type="text" class="search-query" placeholder="Search" ng-model="vm.search">
+                    <i class="glyphicon glyphicon-search"></i>
+                  </input>
                 </div>
             </form>
         </div>
@@ -24,7 +25,7 @@
   <div class="container">
     <div class="row row-centered">
       <div class="col-md-10 col-md-offset-1">
-        <div ng-repeat="meditation in vm.meditations">
+        <div ng-repeat="meditation in vm.meditations | filter:vm.search">
           <div class="col-md-4 col-centered icon">
             <a class="meditations-text" ui-sref="meditations.meditation({id: meditation.id})"
             ng-click="gotoElement('meditation-scroll')">
