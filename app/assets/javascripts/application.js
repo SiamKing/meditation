@@ -20,5 +20,6 @@
 //= require angular-touch
 //= require angular-messages
 //= require angular-sanitize
+//= require angular-filter
 //= require bootstrap
 //= require_tree .

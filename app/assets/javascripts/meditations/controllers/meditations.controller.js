@@ -6,6 +6,7 @@
     .controller('MeditationsController', ['HttpService', '$stateParams', '$location', 'anchorSmoothScroll', '$scope', '$filter', function(HttpService, $stateParams, $location, anchorSmoothScroll, $scope, $filter){
       var vm = this;
       vm.search = '';
+      vm.filterTradition = '';
 
       HttpService.all('meditations')
         .then(data => vm.meditations = data)
@@ -40,5 +41,6 @@
           anchorSmoothScroll.scrollTo(eID);
         }
 
+        vm.traditions = ['Buddhism', 'Hinduism', 'Taoism', 'Zen', 'Chinese', 'Western', 'Yogic', 'Confucianism']
     }])
 }())
