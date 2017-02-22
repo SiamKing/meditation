@@ -3,15 +3,65 @@
 
   angular
     .module('meditation')
-    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', function(HttpService, $state, $stateParams, $scope) {
+    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', function(HttpService, $state, $stateParams, $scope, Auth) {
       var vm = this;
       vm.createUser = createUser;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
       vm.hideDiv = hideDiv;
+      vm.logout = Auth.logout;
+      vm.login = login;
 
-      HttpService.all('users')
-        .then(data => vm.users = data)
+      var credentials = {
+            username: 'TJ',
+            email: 'foo@bar.com',
+            password: 'foobar33'
+        };
+      var config = {
+          headers: {
+              'X-HTTP-Method-Override': 'POST'
+          }
+        };
+
+      function login() {
+        console.log(vm.userForm)
+        Auth.login(vm.userForm, config)
+          .then(function(user){
+            vm.user = user;
+            $state.go('user', {userId: user.id})
+          }, function(error) {
+
+          })
+      }
+
+
+      Auth.currentUser().then(function(user) {
+        vm.user = user;
+      }, function(error) {
+
+      });
+
+
+
+        var configLogout = {
+            headers: {
+                'X-HTTP-Method-Override': 'DELETE'
+            }
+          }
+
+        // Auth.logout(configLogout).then(function(oldUser) {
+        //     // alert(oldUser.name + "you're signed out now.");
+        // }, function(error) {
+        //     // An error occurred logging out.
+        // });
+
+        $scope.$on('devise:logout', function(event, oldCurrentUser) {
+           vm.user = {};
+       });
+
+
+      // HttpService.all('users')
+      //   .then(data => vm.users = data)
 
         if($stateParams.userId) {
           HttpService.getObject('users', $stateParams.userId)

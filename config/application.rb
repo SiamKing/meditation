@@ -12,11 +12,13 @@ module Meditations
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+    config.to_prepare do
+      DeviseController.respond_to :html, :json
+    end
+      config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
   end
 end
-class Application < Rails::Application
-  config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
-end
+
 # via https://gist.github.com/afeld/5704079
 # Rails.application.configure do
 #   config.assets.paths << Rails.root.join('vendor', 'assets', 'components')
