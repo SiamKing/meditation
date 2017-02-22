@@ -18,10 +18,12 @@
 
       function showSignIn() {
         vm.signIn = true;
+        vm.signUp = false;
       }
 
       function showSignUp() {
         vm.signUp = true;
+        vm.signIn = false;
       }
 
       var config = {
@@ -39,7 +41,7 @@
 
           })
       }
-      
+
       Auth.currentUser().then(function(user) {
         vm.user = user;
       }, function(error) {

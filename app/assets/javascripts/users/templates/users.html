@@ -1,6 +1,6 @@
-<div class="view">
+<div class="users-background">
   <div class="container">
-    <div class="row vertical-center-row">
+    <div class="row sign-in">
       <div class="col-lg-12">
         <div class="row ">
           <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" >
@@ -11,11 +11,18 @@
               Keep track of how often you meditate and discover new techniques
             </div>
             <br>
+            <input class="btn transparent-input" ng-click="vm.showSignIn()" value="Sign In">
+            <input class="btn transparent-input pull-right" ng-click="vm.showSignUp()" value="Sign Up">
             <div class="col-md-8 col-md-offset-2">
-              <input class="btn transparent-input" ng-click="vm.showSignIn()" value="Sign In">
-              <input class="btn transparent-input pull-right" ng-click="vm.showSignUp()" value="Sign Up">
-
+              <!-- <input class="btn transparent-input" ng-click="vm.showSignIn()" value="Sign In">
+              <input class="btn transparent-input pull-right" ng-click="vm.showSignUp()" value="Sign Up"> -->
+              <!-- Sign In Form -->
               <form ng-show="vm.signIn" class="input-group" ng-submit="vm.login()">
+                <div ng-include="'signInForm.html'"></div>
+              </form>
+
+              <!-- Sign Up Form -->
+              <form ng-show="vm.signUp" class="input-group" ng-submit="vm.register()">
                 <input class="form-control transparent-input"
                       placeholder="Username"
                       type="text"
@@ -23,32 +30,39 @@
                       required="required"
                       min-length="2"
                       max-length="20">
-                <div class="">
-
-                </div>
-                <input class="form-control transparent-input"
-                      placeholder="Email"
-                      type="email"
-                      ng-model="vm.userForm.email"
-                      required="required"
-                      min-length="2"
-                      max-length="20">
-                <input class="form-control transparent-input"
-                      placeholder="Password"
-                      type="password"
-                      ng-model="vm.userForm.password"
-                      required="required"
-                      min-length="2"
-                      max-length="20">
-                <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" value="Submit">
+                <div ng-include="'signInForm.html'"></div>
               </form>
             </div>
 
-              <!-- <button ng-click="vm.logout()">Logout</button> -->
           </div>
-        </div>
 
+            <button ng-click="vm.logout()">Logout</button>
+          </div>
+
+        </div>
       </div>
     </div>
   </div>
+  <br>
+  <div class="container">
+
 </div>
+
+<script type="text/ng-template" id="signInForm.html">
+  <input class="form-control transparent-input"
+        placeholder="Email"
+        type="email"
+        ng-model="vm.userForm.email"
+        required="required">
+
+  <input class="form-control transparent-input"
+        placeholder="Password"
+        type="password"
+        ng-model="vm.userForm.password"
+        required="required"
+        min-length="8"
+        max-length="20">
+
+  <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" value="Submit">
+
+</script>

@@ -22,35 +22,40 @@
   margin-bottom: 20px;
 }
 
-html,
-body,
-.container,
-.view {
-  height: 100%;
-  width: 100%;
-}
+// html,
+// body,
+// .container,
+// .view {
+//   height: 100%;
+//   width: 100%;
+// }
 
-a {
-  text-decoration: none;
-}
 
 body {
+  margin-top: 100px;
   font-family: 'Raleway', sans-serif;
 }
 
-.view {
+.sign-in {
+  margin-top: 300px;
+}
+
+.users-background {
   background: url(/assets/home_1900wide.png)no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
 }
 
-.container {
-  display: table;
-  vertical-align: middle;
-  padding-bottom: 100px;
-}
+// .container {
+//   display: table;
+//   vertical-align: middle;
+//   padding-bottom: 100px;
+// }
 
 .vertical-center-row {
   display: table-cell;
