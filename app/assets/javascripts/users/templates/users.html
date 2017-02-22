@@ -8,41 +8,43 @@
               Meditation Scheduler
             </div>
             <div class="hero-text">
-              {{vm.user.username}}
               Keep track of how often you meditate and discover new techniques
             </div>
             <br>
-              <form class="input-group" ng-submit="vm.login()">
+            <div class="col-md-8 col-md-offset-2">
+              <input class="btn transparent-input" ng-click="vm.showSignIn()" value="Sign In">
+              <input class="btn transparent-input pull-right" ng-click="vm.showSignUp()" value="Sign Up">
+
+              <form ng-show="vm.signIn" class="input-group" ng-submit="vm.login()">
                 <input class="form-control transparent-input"
-                placeholder="Enter your username"
-                type="text"
-                ng-model="vm.userForm.username"
-                required="required"
-                min-length="2"
-                max-length="20">
+                      placeholder="Username"
+                      type="text"
+                      ng-model="vm.userForm.username"
+                      required="required"
+                      min-length="2"
+                      max-length="20">
                 <div class="">
 
                 </div>
                 <input class="form-control transparent-input"
-                placeholder="Enter your email"
-                type="text"
-                ng-model="vm.userForm.email"
-                required="required"
-                min-length="2"
-                max-length="20">
-
+                      placeholder="Email"
+                      type="email"
+                      ng-model="vm.userForm.email"
+                      required="required"
+                      min-length="2"
+                      max-length="20">
                 <input class="form-control transparent-input"
-                placeholder="Enter your password"
-                type="text"
-                ng-model="vm.userForm.password"
-                required="required"
-                min-length="2"
-                max-length="20">
-                <span class="input-group-btn">
-                  <input class="btn btn-default transparent-input" style="text-transform: uppercase" type="submit" value="Submit">
-                </span>
+                      placeholder="Password"
+                      type="password"
+                      ng-model="vm.userForm.password"
+                      required="required"
+                      min-length="2"
+                      max-length="20">
+                <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" value="Submit">
               </form>
-              <button ng-click="vm.logout()">Logout</button>
+            </div>
+
+              <!-- <button ng-click="vm.logout()">Logout</button> -->
           </div>
         </div>
 

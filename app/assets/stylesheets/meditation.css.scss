@@ -85,38 +85,44 @@ input.transparent-input {
   border: 1px solid #FFFFFF;
   border-radius: 1px;
   font-family: 'Raleway';
-  font-size: 20px;
+  font-size: 14px;
   color: #FFFFFF;
-  letter-spacing: 3px;
+  // letter-spacing: 3px;
   height: 40px;
+  width: 100px;
+  margin-top: 10px;
 }
 
 input.transparent-input::-webkit-input-placeholder {
   color: #FFF;
-  font-size: 20px;
-  letter-spacing: 3px;
+  font-size: 14px;
+  // letter-spacing: 3px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input:-moz-placeholder { /* Firefox 18- */
   color: #FFF;
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: 3px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input::-moz-placeholder {  /* Firefox 19+ */
   color: #FFF;
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: 3px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input:-ms-input-placeholder {
   color: #FFF;
-  font-size: 20px;
+  font-size: 14px;
   letter-spacing: 3px;
   font-family: 'Raleway', sans-serif;
+}
+
+.submit-button {
+  width: 300px;
 }
 
 /* User Profile */

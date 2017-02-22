@@ -11,12 +11,19 @@
       vm.hideDiv = hideDiv;
       vm.logout = Auth.logout;
       vm.login = login;
+      vm.signIn = false;
+      vm.showSignIn = showSignIn;
+      vm.signUp = false;
+      vm.showSignUp = showSignUp;
 
-      var credentials = {
-            username: 'TJ',
-            email: 'foo@bar.com',
-            password: 'foobar33'
-        };
+      function showSignIn() {
+        vm.signIn = true;
+      }
+
+      function showSignUp() {
+        vm.signUp = true;
+      }
+
       var config = {
           headers: {
               'X-HTTP-Method-Override': 'POST'
@@ -24,7 +31,6 @@
         };
 
       function login() {
-        console.log(vm.userForm)
         Auth.login(vm.userForm, config)
           .then(function(user){
             vm.user = user;
@@ -33,8 +39,7 @@
 
           })
       }
-
-
+      
       Auth.currentUser().then(function(user) {
         vm.user = user;
       }, function(error) {
