@@ -21,5 +21,6 @@
 //= require angular-messages
 //= require angular-sanitize
 //= require angular-filter
+//= require angular-devise
 //= require bootstrap
 //= require_tree .
