@@ -19,7 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 4.2'
 gem "bower-rails", "~> 0.11.0"
-
+gem 'devise'
 gem 'angular-rails-templates'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
