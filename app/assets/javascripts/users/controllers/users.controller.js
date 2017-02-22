@@ -5,7 +5,6 @@
     .module('meditation')
     .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', function(HttpService, $state, $stateParams, $scope, Auth) {
       var vm = this;
-      vm.createUser = createUser;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
       vm.hideDiv = hideDiv;
@@ -15,6 +14,7 @@
       vm.showSignIn = showSignIn;
       vm.signUp = false;
       vm.showSignUp = showSignUp;
+      vm.register = register;
 
       function showSignIn() {
         vm.signIn = true;
@@ -26,6 +26,7 @@
         vm.signIn = false;
       }
 
+      // Login
       var config = {
           headers: {
               'X-HTTP-Method-Override': 'POST'
@@ -48,6 +49,22 @@
 
       });
 
+      //  Register
+      function register() {
+        Auth.register(vm.userForm, config)
+          .then(function(registeredUser) {
+              vm.user = registeredUser; // => {id: 1, ect: '...'}
+              $state.go('user');
+          }, function(error) {
+              // Registration failed...
+          });
+      }
+
+
+        $scope.$on('devise:new-registration', function(event, user) {
+            // ...
+        });
+
 
 
         var configLogout = {
@@ -55,12 +72,6 @@
                 'X-HTTP-Method-Override': 'DELETE'
             }
           }
-
-        // Auth.logout(configLogout).then(function(oldUser) {
-        //     // alert(oldUser.name + "you're signed out now.");
-        // }, function(error) {
-        //     // An error occurred logging out.
-        // });
 
         $scope.$on('devise:logout', function(event, oldCurrentUser) {
            vm.user = {};
@@ -76,15 +87,15 @@
             .then(data => vm.points = vm.enlightenmentPoints(data))
         }
 
-      function createUser(userInfo) {
-        HttpService
-          .create('users', vm.user)
-          .then(user => vm.users.push(user))
-          .then(function(user) {
-            var user = user;
-            $state.go('user', {userId: user})
-          })
-      }
+      // function createUser(userInfo) {
+      //   HttpService
+      //     .create('users', vm.user)
+      //     .then(user => vm.users.push(user))
+      //     .then(function(user) {
+      //       var user = user;
+      //       $state.go('user', {userId: user})
+      //     })
+      // }
 
       function enlightenmentPoints(user) {
         return getMinutes(user).reduce(function(a, b) {
