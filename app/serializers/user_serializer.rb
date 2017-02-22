@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :total_time_meditating
+  attributes :id, :username
   has_many :events
   has_many :meditations, through: :events
   class MeditationSerializer < ActiveModel::Serializer
