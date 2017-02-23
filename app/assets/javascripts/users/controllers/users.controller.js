@@ -63,41 +63,39 @@
           });
       }
 
-        $scope.$on('devise:new-registration', function(event, user) {
-            // ...
-        });
+      $scope.$on('devise:new-registration', function(event, user) {
+          // ...
+      });
 
-        var configLogout = {
-            headers: {
-                'X-HTTP-Method-Override': 'DELETE'
-            }
+      var configLogout = {
+          headers: {
+              'X-HTTP-Method-Override': 'DELETE'
           }
-
-        $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
-           vm.user = {};
-           $rootScope.currentUserSignedIn = false;
-           $rootScope.currentUser = {};
-       });
-
-
-      // HttpService.all('users')
-      //   .then(data => vm.users = data)
-
-        if($stateParams.userId) {
-          HttpService.getObject('users', $stateParams.userId)
-            .then(data => vm.user = data)
-            .then(data => vm.points = vm.enlightenmentPoints(data))
         }
 
-      // function createUser(userInfo) {
-      //   HttpService
-      //     .create('users', vm.user)
-      //     .then(user => vm.users.push(user))
-      //     .then(function(user) {
-      //       var user = user;
-      //       $state.go('user', {userId: user})
-      //     })
-      // }
+      $rootScope.logout = function() {
+        Auth.logout(config).then(function(oldUser) {
+          vm.user = {};
+          $rootScope.currentUserSignedIn = false;
+          $rootScope.currentUser = {};
+        }, function(error) {
+            // An error occurred logging out.
+        });
+      }
+
+
+      $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
+         vm.user = {};
+         $rootScope.currentUserSignedIn = false;
+         $rootScope.currentUser = {};
+     });
+
+
+      if($stateParams.userId) {
+        HttpService.getObject('users', $stateParams.userId)
+          .then(data => vm.user = data)
+          .then(data => vm.points = vm.enlightenmentPoints(data))
+      }
 
       function enlightenmentPoints(user) {
         return getMinutes(user).reduce(function(a, b) {

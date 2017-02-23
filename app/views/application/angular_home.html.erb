@@ -1,4 +1,4 @@
-<div ng-controller="CollapseDemoCtrl" id="top">
+<div ng-controller="CollapseDemoCtrl as vm" id="top">
 
   <nav class="navbar navbar-light meditation-navbar navbar-fixed-top" role="navigation">
     <div class="navbar-header">
@@ -19,7 +19,7 @@
       <ul class="nav navbar-nav navbar-right">
           <!-- <li><a class="hvr-grow-shadow" ui-sref="user({userId: userId})">User</a></li> -->
         <li><a class="hvr-grow-shadow" ng-hide="currentUserSignedIn" ui-sref="users">Log In</a></li>
-        <li><a class="hvr-grow-shadow" ng-show="currentUserSignedIn" ng-click="logout()" ui-sref="users">Log Out</a></li>
+        <li><a class="hvr-grow-shadow" ng-show="currentUserSignedIn" ng-hide="!currentUserSignedIn" ng-click="logout(); " ui-sref="users">Log Out</a></li>
         <li><a class="hvr-grow-shadow" ui-sref="meditations">Meditations</a></li>
       </ul>
     </div>
