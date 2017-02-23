@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', function(HttpService, $state, $stateParams, $scope, Auth) {
+    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope) {
       var vm = this;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
@@ -37,6 +37,8 @@
         Auth.login(vm.userForm, config)
           .then(function(user){
             vm.user = user;
+            $rootScope.currentUserSignedIn = true;
+            $rootScope.currentUser = user;
             $state.go('user', {userId: user.id})
           }, function(error) {
 
@@ -54,18 +56,16 @@
         Auth.register(vm.userForm, config)
           .then(function(registeredUser) {
               vm.user = registeredUser; // => {id: 1, ect: '...'}
+              $rootScope.loggedIn = user;
               $state.go('user');
           }, function(error) {
               // Registration failed...
           });
       }
 
-
         $scope.$on('devise:new-registration', function(event, user) {
             // ...
         });
-
-
 
         var configLogout = {
             headers: {
@@ -73,8 +73,10 @@
             }
           }
 
-        $scope.$on('devise:logout', function(event, oldCurrentUser) {
+        $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
            vm.user = {};
+           $rootScope.currentUserSignedIn = false;
+           $rootScope.currentUser = {};
        });
 
 
