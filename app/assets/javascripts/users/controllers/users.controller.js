@@ -40,8 +40,6 @@
             vm.user = user;
             $rootScope.$storage.currentUserSignedIn = true;
             $rootScope.$storage.currentUser = user;
-            console.log(user)
-            console.log($rootScope.$storage.currentUserSignedIn = true)
             $state.go('user', {userId: user.id})
           }, function(error) {
 
@@ -62,7 +60,6 @@
         Auth.register(vm.userForm, config)
           .then(function(registeredUser) {
               vm.user = registeredUser; // => {id: 1, ect: '...'}
-              console.log(vm.user)
               $rootScope.$storage.currentUserSignedIn = true;
               $state.go('user', {userId: vm.user.id});
           }, function(error) {
@@ -72,7 +69,6 @@
 
       $scope.$on('devise:new-registration', function(event, user) {
         vm.user = user; // => {id: 1, ect: '...'}
-        console.log(vm.user)
         $rootScope.$storage.currentUserSignedIn = true;
         $state.go('user', {userId: vm.user.id});
       });
