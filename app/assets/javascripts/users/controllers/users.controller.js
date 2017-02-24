@@ -39,6 +39,7 @@
             vm.user = user;
             $rootScope.currentUserSignedIn = true;
             $rootScope.currentUser = user;
+            console.log($rootScope.currentUserSignedIn = true)
             $state.go('user', {userId: user.id})
           }, function(error) {
 
@@ -56,7 +57,7 @@
         Auth.register(vm.userForm, config)
           .then(function(registeredUser) {
               vm.user = registeredUser; // => {id: 1, ect: '...'}
-              $rootScope.loggedIn = user;
+              $rootScope.currentUserSignedIn = user;
               $state.go('user');
           }, function(error) {
               // Registration failed...
