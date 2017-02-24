@@ -11,7 +11,8 @@
       "angular-messages": "^1.6.2",
       "angular-sanitize": "^1.6.2",
       "angular-filter": "^0.5.15",
-      "angular-devise": "latest"
+      "angular-devise": "latest",
+      "ngstorage": "^0.3.11"
     }
   }
 }

@@ -23,4 +23,5 @@
 //= require angular-filter
 //= require angular-devise
 //= require bootstrap
+//= require ngstorage
 //= require_tree .
