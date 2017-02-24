@@ -62,15 +62,19 @@
         Auth.register(vm.userForm, config)
           .then(function(registeredUser) {
               vm.user = registeredUser; // => {id: 1, ect: '...'}
+              console.log(vm.user)
               $rootScope.$storage.currentUserSignedIn = true;
-              $state.go('user');
+              $state.go('user', {userId: vm.user.id});
           }, function(error) {
               // Registration failed...
           });
       }
 
       $scope.$on('devise:new-registration', function(event, user) {
-          // ...
+        vm.user = user; // => {id: 1, ect: '...'}
+        console.log(vm.user)
+        $rootScope.$storage.currentUserSignedIn = true;
+        $state.go('user', {userId: vm.user.id});
       });
 
       var configLogout = {
