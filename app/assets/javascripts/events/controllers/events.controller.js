@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('EventsController', ['HttpService', '$stateParams', '$state', '$scope', function(HttpService, $stateParams, $state, $scope) {
+    .controller('EventsController', ['HttpService', '$stateParams', '$state', '$scope', '$rootScope', function(HttpService, $stateParams, $state, $scope, $rootScope) {
 
       var vm = this;
       vm.deleteEvent = deleteEvent;
@@ -38,7 +38,7 @@
         vm.event = {
           date: $scope.$$childTail.vm.valuationDate,
           minutes: vm.minutes,
-          user_id: $stateParams.userId,
+          user_id: $rootScope.currentUser.id,
           meditation_id: meditationId
         }
         HttpService

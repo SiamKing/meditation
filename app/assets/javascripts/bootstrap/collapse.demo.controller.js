@@ -9,8 +9,9 @@
       $scope.isCollapsedHorizontal = false;
 
       $scope.getLinkUrl = function() {
-        if ($rootScope.currentUserSignedIn === true) {
-          return "user({userId: $rootScope.currentUser.id})"
+        console.log($rootScope.currentUser)
+        if ($rootScope.currentUser !== undefined) {
+          return $state.href('user', {userId: $rootScope.currentUser.id});
         } else {
           return 'users'
         }

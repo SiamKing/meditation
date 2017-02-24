@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope) {
+    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', '$window', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope, $window) {
       var vm = this;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
@@ -37,27 +37,30 @@
         Auth.login(vm.userForm, config)
           .then(function(user){
             vm.user = user;
-            $rootScope.currentUserSignedIn = true;
-            $rootScope.currentUser = user;
-            console.log($rootScope.currentUserSignedIn = true)
+            $window.sessionStorage.currentUserSignedIn = true;
+            $window.sessionStorage.currentUser = user;
+            console.log($window.sessionStorage.currentUserSignedIn = true)
             $state.go('user', {userId: user.id})
           }, function(error) {
 
           })
       }
 
-      Auth.currentUser().then(function(user) {
-        vm.user = user;
-      }, function(error) {
+      $rootScope.getCurrentUser = function () {
+        Auth.currentUser().then(function(user) {
+          $window.sessionStorage.currentUser = user;
+        }, function(error) {
 
-      });
+        });
+      }
+
 
       //  Register
       function register() {
         Auth.register(vm.userForm, config)
           .then(function(registeredUser) {
               vm.user = registeredUser; // => {id: 1, ect: '...'}
-              $rootScope.currentUserSignedIn = user;
+              $window.sessionStorage.currentUserSignedIn = registeredUser;
               $state.go('user');
           }, function(error) {
               // Registration failed...
@@ -77,8 +80,8 @@
       $rootScope.logout = function() {
         Auth.logout(config).then(function(oldUser) {
           vm.user = {};
-          $rootScope.currentUserSignedIn = false;
-          $rootScope.currentUser = {};
+          $window.sessionStorage.currentUserSignedIn = false;
+          $window.sessionStorage.currentUser = {};
         }, function(error) {
             // An error occurred logging out.
         });
@@ -87,8 +90,8 @@
 
       $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
          vm.user = {};
-         $rootScope.currentUserSignedIn = false;
-         $rootScope.currentUser = {};
+         $window.sessionStorage.currentUserSignedIn = false;
+         $window.sessionStorage.currentUser = {};
      });
 
 
