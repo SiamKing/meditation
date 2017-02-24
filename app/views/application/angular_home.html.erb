@@ -8,8 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="logo">
+      <div class="logo" ng-hide="$storage.currentUserSignedIn === true">
         <a class="navbar-brand navbar-left logo hvr-grow" href ui-sref="users">
+          <img src="assets/logo@2x.png" width="150" height="45">
+        </a>
+      </div>
+      <div class="logo" ng-show="$storage.currentUserSignedIn === true">
+        <a class="navbar-brand navbar-left logo hvr-grow" href ui-sref="user({userId: $storage.currentUser.id})">
           <img src="assets/logo@2x.png" width="150" height="45">
         </a>
       </div>
@@ -21,7 +26,6 @@
         <li><a class="hvr-grow-shadow" ng-hide="$storage.currentUserSignedIn" ui-sref="users">Log In</a></li>
         <li><a class="hvr-grow-shadow" ng-show="$storage.currentUserSignedIn" ng-hide="!$storage.currentUserSignedIn" ng-click="logout(); " ui-sref="users">Log Out</a></li>
         <li><a class="hvr-grow-shadow" ui-sref="meditations">Meditations</a></li>
-        {{$storage.currentUserSignedIn === undefined}}
       </ul>
     </div>
   </nav>

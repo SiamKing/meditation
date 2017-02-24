@@ -8,14 +8,14 @@
       $scope.isCollapsed = false;
       $scope.isCollapsedHorizontal = false;
 
-      $scope.getLinkUrl = function() {
-        console.log($rootScope.currentUser)
-        if ($rootScope.currentUser !== undefined) {
-          return $state.href('user', {userId: $rootScope.currentUser.id});
-        } else {
-          return 'users'
-        }
-
-      }
+      // $scope.getLinkUrl = function() {
+      //   console.log($rootScope.$storage)
+      //   if ($rootScope.$storage !== undefined) {
+      //     return $state.href('user', {userId: $rootScope.$storage.currentUser.id});
+      //   } else {
+      //     return 'users'
+      //   }
+      //
+      // }
   });
 }())
