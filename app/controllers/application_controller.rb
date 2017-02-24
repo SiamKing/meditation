@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   after_filter :set_csrf_cookie_for_ng
@@ -16,11 +16,6 @@ class ApplicationController < ActionController::Base
 
   def verified_request?
     super || valid_authenticity_token?(session, request.headers['X-XSRF-TOKEN'])
-  end
-
-  # In Rails 4.1 and below
-  def verified_request?
-    super || form_authenticity_token == request.headers['X-XSRF-TOKEN']
   end
 
   def configure_permitted_parameters
