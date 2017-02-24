@@ -38,7 +38,7 @@
         vm.event = {
           date: $scope.$$childTail.vm.valuationDate,
           minutes: vm.minutes,
-          user_id: $rootScope.currentUser.id,
+          user_id: $rootScope.$storage.currentUser.id,
           meditation_id: meditationId
         }
         HttpService
@@ -71,7 +71,7 @@
           name: meditationName
         }
         vm.event = {
-          date: $scope.$$childTail.vm.valuationDate,
+          date: $scope.$$childHead.vm.valuationDate,
           minutes: vm.minutes,
           user_id: $stateParams.userId,
           meditation_id: meditationId
