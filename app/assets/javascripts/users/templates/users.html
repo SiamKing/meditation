@@ -15,25 +15,31 @@
               <input class="btn transparent-input" ng-click="vm.showSignIn()" value="Log In">
               <input class="btn transparent-input pull-right" ng-click="vm.showSignUp()" value="Sign Up">
               <!-- Sign In Form -->
-              <form ng-show="vm.signIn" class="input-group" ng-submit="vm.login()">
+              <form name="form" ng-show="vm.signIn" class="input-group" ng-submit="vm.login()" novalidate>
                 <div ng-include="'signInForm.html'"></div>
               </form>
 
               <!-- Sign Up Form -->
-              <form ng-show="vm.signUp" class="input-group" ng-submit="vm.register()">
-                <input class="form-control transparent-input"
-                      placeholder="Username"
-                      type="text"
-                      ng-model="vm.userForm.username"
-                      required="required"
-                      min-length="2"
-                      max-length="20">
-                <div ng-include="'signInForm.html'"></div>
-              </form>
+              <form name="form" ng-show="vm.signUp" class="input-group" ng-submit="vm.register()" novalidate>
+                <div class="form-width" ng-class="{ 'has-error': form.username.$touched && form.username.$invalid}">
+                  <input class="form-control transparent-input"
+                        name="username"
+                        placeholder="Username"
+                        type="text"
+                        ng-model="vm.userForm.username"
+                        required="required"
+                        min-length="2"
+                        max-length="20">
+                  <div class="message-alert" ng-messages="form.username.$error" ng-show="form.username.$touched" role="alert">
+                    <p ng-message="required">Username is Required</p>
+                    <p ng-message="minLength">Your name is too short</p>
+                    <p ng-message="maxLength">Your name is too long</p>
+                  </div>
+                  <div ng-include="'signInForm.html'"></div>
+                  </div>
+                </form>
             </div>
           </div>
-
-            <!-- <button ng-click="logout()">Logout</button> -->
           </div>
         </div>
       </div>
@@ -41,21 +47,35 @@
   </div>
 </div>
 
-<script type="text/ng-template" id="signInForm.html">
-  <input class="form-control transparent-input"
-        placeholder="Email"
-        type="email"
-        ng-model="vm.userForm.email"
-        required="required">
+<script ng-controller="UsersController as vm" type="text/ng-template" id="signInForm.html">
+  <div class="form-width" ng-class="{ 'has-error': form.email.$touched && form.email.$invalid}">
+    <input class="form-control transparent-input"
+          placeholder="Email"
+          name="email"
+          type="email"
+          ng-model="vm.userForm.email"
+          required="required">
+    <div class="message-alert" ng-show="form.email.$touched" ng-messages="form.email.$error" role="alert">
+      <p ng-message="required">Email is Required</p>
+      <p ng-message="email">Must be a valid email address</p>
+    </div>
+  </div>
 
-  <input class="form-control transparent-input"
-        placeholder="Password"
-        type="password"
-        ng-model="vm.userForm.password"
-        required="required"
-        min-length="8"
-        max-length="20">
-
-  <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" value="Submit">
+  <div class="form-width" ng-class="{ 'has-error': form.password.$touched && form.password.$invalid}">
+    <input class="form-control transparent-input"
+          placeholder="Password"
+          name="password"
+          type="password"
+          ng-model="vm.userForm.password"
+          required="required"
+          ng-min-length="8"
+          ng-max-length="20">
+    <div class="message-alert" ng-show="form.password.$touched" ng-messages="form.password.$error" role="alert">
+      <p ng-message="required">Password is Required</p>
+      <p ng-message="minLength">Password must be at least 8 characters</p>
+      <p ng-message="maxLength">Password must be less than 20 characters</p>
+    </div>
+  </div>
+  <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" ng-disabled="form.$invalid" value="Submit">
 
 </script>

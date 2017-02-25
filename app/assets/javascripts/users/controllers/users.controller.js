@@ -35,6 +35,8 @@
         };
 
       function login() {
+        console.log($scope)
+        console.log(vm.userForm)
         Auth.login(vm.userForm, config)
           .then(function(user){
             vm.user = user;
@@ -46,13 +48,13 @@
           })
       }
 
-      $rootScope.getCurrentUser = function () {
-        Auth.currentUser().then(function(user) {
-          $rootScope.$storage.currentUser = user;
-        }, function(error) {
-
-        });
-      }
+      // $rootScope.getCurrentUser = function () {
+      //   Auth.currentUser().then(function(user) {
+      //     $rootScope.$storage.currentUser = user;
+      //   }, function(error) {
+      //
+      //   });
+      // }
 
 
       //  Register
@@ -68,12 +70,12 @@
           });
       }
 
-      $scope.$on('devise:new-registration', function(event, user) {
-        vm.user = user; // => {id: 1, ect: '...'}
-        $rootScope.$storage.currentUserSignedIn = true;
-        $rootScope.$storage.currentUser = user;
-        $state.go('user', {userId: vm.user.id});
-      });
+      // $scope.$on('devise:new-registration', function(event, user) {
+      //   vm.user = user; // => {id: 1, ect: '...'}
+      //   $rootScope.$storage.currentUserSignedIn = true;
+      //   $rootScope.$storage.currentUser = user;
+      //   $state.go('user', {userId: vm.user.id});
+      // });
 
       var configLogout = {
           headers: {
@@ -92,11 +94,11 @@
       }
 
 
-      $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
-         vm.user = {};
-         $rootScope.$storage.currentUserSignedIn = false;
-         $rootScope.$storage.currentUser = {};
-     });
+    //   $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
+    //      vm.user = {};
+    //      $rootScope.$storage.currentUserSignedIn = false;
+    //      $rootScope.$storage.currentUser = {};
+    //  });
 
 
       if($stateParams.userId) {
