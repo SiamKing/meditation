@@ -97,12 +97,14 @@
       }
 
       function deleteEvent() {
+        console.log($scope)
         HttpService
           .destroy('events', $stateParams.id)
           .then(() => {
             var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
             $scope.$parent.vm.user.events = currentEvents;
             $scope.$parent.vm.hideLink = false;
+            $scope.$parent.vm.points -= $scope.event.event.minutes;
             $state.go('user');
           })
 
