@@ -1,10 +1,10 @@
 <div class="row">
-  <div class="col-md-10 col-md-offset-2 event-form-bg">
+  <div class="col-md-8 col-md-offset-2 event-form-bg">
     <div class="event-form">
       <form name="form" ng-submit="event.addEvent()" novalidate>
 
         <!-- Date Picker -->
-        <div class="col-md-2 date-picker" ng-controller="DatePickerController as vm">
+        <div class="col-md-3" ng-controller="DatePickerController as vm">
           <p class="input-group">
             <span class="input-group-btn">
               <button type="button" class="btn btn-default"
@@ -12,7 +12,7 @@
               <i class="glyphicon glyphicon-calendar"></i>
             </button>
           </span>
-          <input type="text" class="form-control"
+          <input type="text" class="form-control minutes"
             uib-datepicker-popup="mediumDate"
             is-open="vm.valuationDatePickerIsOpen"
             ng-click="vm.valuationDatePickerOpen()"
@@ -22,7 +22,7 @@
         <!-- End Date Picker -->
 
         <!-- Minutes -->
-        <div class="col-md-2" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
+        <div class="col-md-3" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
           <input type="number" class="form-control minutes" name="minutes" placeholder="Minutes Meditating" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
           <div ng-if="form.event.minutes.$invalid && form.event.minutes.$dirty" ng-messages="form.event.minutes.$errors">
             <div ng-message="pattern">Minutes must be an integer</div>
@@ -34,7 +34,7 @@
         <!-- Start Meditation Dropdown -->
         <div class="col-md-4 meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
           <span class="btn-group" uib-dropdown keyboard-nav>
-            <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+            <button id="simple-btn-keyboard-nav" type="button" class="btn btn-meditations-dropdown-menu" uib-dropdown-toggle ng-disabled="disabled">
               {{selectedMeditation}} <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
@@ -46,8 +46,11 @@
         </div>
         <!-- End Meditation Dropdown -->
 
+        <!-- Add Meditation Btn -->
+        <div class="col-md-2">
+          <input type="submit" value="Add Meditation" class="btn event-btn" ng-disabled="!form.$valid">
+        </div>
 
-        <input type="submit" value="Add Event" class="btn btn-default" ng-disabled="!form.$valid">
       </form>
 
     </div>

@@ -1,8 +1,5 @@
 /* Add Event Page */
-.dropdown-meditation {
-  padding-top: 6px;
-  margin-left: -25px;
-}
+
 
 .event-form-bg {
   height: 60px;
@@ -14,10 +11,11 @@
 .event-form {
   margin-top: 12px;
 }
-
+ /* Minutes */
 input.minutes {
   /* Minutes Meditating: */
   font-size: 14px;
+  letter-spacing: 2px;
   color: #00A8D0;
   letter-spacing: 0;
   // line-height: 37px;
@@ -30,27 +28,51 @@ input.minutes {
 input.minutes::-webkit-input-placeholder {
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 3px;
+  letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes:-moz-placeholder { /* Firefox 18- */
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes::-moz-placeholder {  /* Firefox 19+ */
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes:-ms-input-placeholder {
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
+}
+/* End Minutes */
+
+/* Meditation Dropdown Menu */
+.btn-meditations-dropdown-menu {
+  background: #FFF;
+  width: 300px;
+  color: #00A8D0;
+  font-size: 14px;
+  letter-spacing: 2px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.event-btn {
+  background: #00A8D0;
+  border: 1px solid rgba(121,125,128,0.30);
+  box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
+  border-radius: 3px;
+  /* Add meditation to ca: */
+  font-family: 'Raleway';
+  font-size: 24px;
+  color: #FFF;
+  letter-spacing: 2px;
+  width: 150px;
 }
