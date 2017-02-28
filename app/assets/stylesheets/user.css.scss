@@ -3,7 +3,7 @@
 .user {
   background: url(/assets/hero-user.png) center center;
   background-size: cover;
-  height: 500px;
+  height: 400px;
 }
 
 .user-jumbotron-large-text {
@@ -25,23 +25,19 @@
   text-align: center;
 }
 
-// /* button */
-// background: #00A8D0;
-// border: 1px solid rgba(121,125,128,0.30);
-// box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
-// border-radius: 3px;
-// /* Add meditation to ca: */
-// font-family: Raleway-Regular;
-// font-size: 24px;
-// color: #FFF;
-//
-//
-//
-// /* FILTER */
-//
-// /* bg box: */
-// background: rgba(0,0,0,0.40);
-// border-radius: 4px;
+.calendar-event-button {
+  background: #00A8D0;
+  border: 1px solid rgba(121,125,128,0.30);
+  box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
+  border-radius: 3px;
+  /* Add meditation to ca: */
+  font-family: 'Raleway';
+  font-size: 24px;
+  color: #FFF;
+  width: 300px;
+}
+
+
 // /* shape: */
 // background: #00A8D0;
 // border: 1px solid rgba(121,125,128,0.30);

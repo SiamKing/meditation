@@ -1,34 +1,9 @@
-<hr>
-<div class="row">
-  <div class="col-md-6 col-sm-6">
+<div class="row row-centered">
+  <div class="col-sm-10 col-md-10 col-sm-offset-2 col-md-offset-2 event-form">
     <form name="form" ng-submit="event.addEvent()" novalidate>
-      <!-- Minutes -->
-      <div class="minutes" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
-        <input type="number" class="form-control" name="minutes" placeholder="Minutes Meditating" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
-        <div ng-if="form.event.minutes.$invalid && form.event.minutes.$dirty" ng-messages="form.event.minutes.$errors">
-          <div ng-message="pattern">Minutes must be an integer</div>
-        </div>
-      </div>
-      <!-- End Minutes -->
-
-
-      <!-- Start Meditation Dropdown -->
-      <div class="meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
-        <span class="btn-group" uib-dropdown keyboard-nav>
-          <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-            {{selectedMeditation}} <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
-            <li ng-repeat="meditation in vm.meditations">
-              <a href="" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)">{{meditation.name}}</a>
-            </li>
-          </ul>
-        </span>
-      </div>
-      <!-- End Meditation Dropdown -->
 
       <!-- Date Picker -->
-      <div class="date-picker" ng-controller="DatePickerController as vm">
+      <div class="col-md-2 date-picker" ng-controller="DatePickerController as vm">
         <p class="input-group">
           <span class="input-group-btn">
             <button type="button" class="btn btn-default"
@@ -43,12 +18,38 @@
           ng-model="vm.valuationDate" />
         </p>
       </div>
-
       <!-- End Date Picker -->
+
+      <!-- Minutes -->
+      <div class="col-md-2 minutes" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
+        <input type="number" class="form-control" name="minutes" placeholder="Minutes Meditating" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
+        <div ng-if="form.event.minutes.$invalid && form.event.minutes.$dirty" ng-messages="form.event.minutes.$errors">
+          <div ng-message="pattern">Minutes must be an integer</div>
+        </div>
+      </div>
+      <!-- End Minutes -->
+
+
+      <!-- Start Meditation Dropdown -->
+      <div class="col-md-4 meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
+        <span class="btn-group" uib-dropdown keyboard-nav>
+          <button id="simple-btn-keyboard-nav" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+            {{selectedMeditation}} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li ng-repeat="meditation in vm.meditations">
+              <a href="" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)">{{meditation.name}}</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+      <!-- End Meditation Dropdown -->
+
+
       <input type="submit" value="Add Event" class="btn btn-default" ng-disabled="!form.$valid">
     </form>
   </div>
 </div>
-<div class="col-sm-2 col-sm-offset-5">
+<!-- <div class="col-sm-2 col-sm-offset-5">
   <button type="button" class="btn btn-default" ng-click="gotoElement('top')">Go to top</button>
-</div>
+</div> -->

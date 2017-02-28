@@ -1,14 +1,20 @@
 <div class="jumbotron user">
-  <div class="container">
-    <div class="col-md-10 col-md-offset-1">
+  <!-- <div class="container"> -->
       <div class="user-jumbotron-large-text center">
         Welcome to your personal meditation calendar
       </div>
       <div class="user-jumbotron-small-text">
         Seeing how much you’ve accomplished will motivate you to keep your practice going!
       </div>
-    </div>
-  </div>
+      <br>
+      <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+          <a class="btn calendar-event-button" ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
+        </div>
+      </div>
+      <br><br>
+      <ui-view></ui-view>
+  <!-- </div> -->
 </div>
   <div class="container">
     <h1>
@@ -22,7 +28,6 @@
         {{vm.user.meditations[$index].name}}</a>
     </div>
     <br>
-    <a class="btn btn-default" ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
-    <ui-view></ui-view>
+
   </div>
 </div>
