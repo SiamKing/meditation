@@ -1,0 +1,56 @@
+/* Add Event Page */
+.dropdown-meditation {
+  padding-top: 6px;
+  margin-left: -25px;
+}
+
+.event-form-bg {
+  height: 60px;
+  width: 100px;
+  background: rgba(0,0,0,0.40);
+  border-radius: 4px;
+}
+
+.event-form {
+  margin-top: 12px;
+}
+
+input.minutes {
+  /* Minutes Meditating: */
+  font-size: 14px;
+  color: #00A8D0;
+  letter-spacing: 0;
+  // line-height: 37px;
+  /* shape: */
+  // background: #F9F9F9;
+  // border: 1px solid rgba(121,125,128,0.30);
+  // border-radius: 3px;
+}
+
+input.minutes::-webkit-input-placeholder {
+  color: #00A8D0;
+  font-size: 14px;
+  // letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.minutes:-moz-placeholder { /* Firefox 18- */
+  color: #00A8D0;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.minutes::-moz-placeholder {  /* Firefox 19+ */
+  color: #00A8D0;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.minutes:-ms-input-placeholder {
+  color: #00A8D0;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
