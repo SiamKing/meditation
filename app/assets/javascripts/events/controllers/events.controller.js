@@ -97,7 +97,6 @@
       }
 
       function deleteEvent() {
-        console.log($scope)
         HttpService
           .destroy('events', $stateParams.id)
           .then(() => {
