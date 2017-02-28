@@ -1,95 +1,98 @@
 /* User Profile */
 
 .user {
-  background: url(/assets/user_1900wide.png) center center;
+  background: url(/assets/hero-user.png) center center;
   background-size: cover;
-  height: 300px;
+  height: 500px;
 }
 
-/* WELCOME TO YOUR PERS: */
-font-family: Raleway-Bold;
-font-size: 38px;
-color: #FFFFFF;
-letter-spacing: 0;
+.user-jumbotron-large-text {
+  padding-top:80px;
+  font-family: 'Raleway';
+  font-size: 32px;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  text-align: center;
+}
 
+.user-jumbotron-small-text {
+  font-family: 'Raleway';
+  font-size: 22px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-align: center;
+}
 
-
-/* Seeing how much you’: */
-font-family: Raleway-Regular;
-font-size: 22px;
-color: #FFFFFF;
-letter-spacing: 0;
-
-
-
-/* button */
-background: #00A8D0;
-border: 1px solid rgba(121,125,128,0.30);
-box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
-border-radius: 3px;
-/* Add meditation to ca: */
-font-family: Raleway-Regular;
-font-size: 24px;
-color: #FFF;
-
-
-
-/* FILTER */
-
-/* bg box: */
-background: rgba(0,0,0,0.40);
-border-radius: 4px;
-/* shape: */
-background: #00A8D0;
-border: 1px solid rgba(121,125,128,0.30);
-box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
-border-radius: 3px;
-/* Add meditation BTN: */
-font-family: Raleway-Regular;
-font-size: 22px;
-color: #F5F5F3;
-line-height: 14px;
-/* shape: */
-background: #F9F9F9;
-border: 1px solid rgba(121,125,128,0.30);
-border-radius: 3px;
-/* Minutes Meditating: */
-font-family: Raleway-Regular;
-font-size: 22px;
-color: #00A8D0;
-letter-spacing: 0;
-line-height: 37px;
-/* shape: */
-background: #F9F9F9;
-border: 1px solid rgba(121,125,128,0.30);
-border-radius: 3px;
-/* Mindfulness: */
-font-family: Raleway-Regular;
-font-size: 22px;
-color: #00A8D0;
-letter-spacing: 0;
-line-height: 37px;
-/* Triangle: */
-background: #00A8D0;
-
-
-
-/* teal logo copy: */
-/* Meditation Tracking */
-font-family: Raleway-Regular;
-font-size: 36px;
-color: #00A8D0;
-letter-spacing: 0;
-/* Enlightenment: 50 po: */
-font-family: Raleway-Regular;
-font-size: 28px;
-color: #007799;
-letter-spacing: 0;
-
-
-/* Feb 19, 2017 for 5 m: */
-font-family: Raleway-Regular;
-font-size: 24px;
-color: #6B6B6B;
-letter-spacing: 0;
-line-height: 42px;
+// /* button */
+// background: #00A8D0;
+// border: 1px solid rgba(121,125,128,0.30);
+// box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
+// border-radius: 3px;
+// /* Add meditation to ca: */
+// font-family: Raleway-Regular;
+// font-size: 24px;
+// color: #FFF;
+//
+//
+//
+// /* FILTER */
+//
+// /* bg box: */
+// background: rgba(0,0,0,0.40);
+// border-radius: 4px;
+// /* shape: */
+// background: #00A8D0;
+// border: 1px solid rgba(121,125,128,0.30);
+// box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
+// border-radius: 3px;
+// /* Add meditation BTN: */
+// font-family: Raleway-Regular;
+// font-size: 22px;
+// color: #F5F5F3;
+// line-height: 14px;
+// /* shape: */
+// background: #F9F9F9;
+// border: 1px solid rgba(121,125,128,0.30);
+// border-radius: 3px;
+// /* Minutes Meditating: */
+// font-family: Raleway-Regular;
+// font-size: 22px;
+// color: #00A8D0;
+// letter-spacing: 0;
+// line-height: 37px;
+// /* shape: */
+// background: #F9F9F9;
+// border: 1px solid rgba(121,125,128,0.30);
+// border-radius: 3px;
+// /* Mindfulness: */
+// font-family: Raleway-Regular;
+// font-size: 22px;
+// color: #00A8D0;
+// letter-spacing: 0;
+// line-height: 37px;
+// /* Triangle: */
+// background: #00A8D0;
+//
+//
+//
+// /* teal logo copy: */
+// /* Meditation Tracking */
+// font-family: Raleway-Regular;
+// font-size: 36px;
+// color: #00A8D0;
+// letter-spacing: 0;
+// /* Enlightenment: 50 po: */
+// font-family: Raleway-Regular;
+// font-size: 28px;
+// color: #007799;
+// letter-spacing: 0;
+//
+//
+// /* Feb 19, 2017 for 5 m: */
+// font-family: Raleway-Regular;
+// font-size: 24px;
+// color: #6B6B6B;
+// letter-spacing: 0;
+// line-height: 42px;
