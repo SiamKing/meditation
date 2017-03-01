@@ -35,12 +35,22 @@
         .state('user.event', {
           url: '/event/:id',
           templateUrl: 'events/templates/event.html',
-          controller: 'EventsController as event'
+          controller: 'EventsController as event',
+          resolve: {
+            authenticate: function(Authenticate, $stateParams) {
+              return Authenticate.authenticate($stateParams.userId);
+            }
+          }
         })
         .state('user.event.update', {
           url: '/update',
           templateUrl: 'events/templates/update.event.html',
-          controller: 'EventsController as event'
+          controller: 'EventsController as event',
+          resolve: {
+            authenticate: function(Authenticate, $stateParams) {
+              return Authenticate.authenticate($stateParams.userId);
+            }
+          }
         })
         .state('user.update', {
           url: 'users/update',
