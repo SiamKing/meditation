@@ -4,7 +4,7 @@
       <form name="form" ng-submit="event.addEvent()" novalidate>
 
         <!-- Date Picker -->
-        <div class="col-md-3" ng-controller="DatePickerController as vm">
+        <div class="col-md-3 date-picker" ng-controller="DatePickerController as vm">
           <p class="input-group">
             <span class="input-group-btn">
               <button type="button" class="btn btn-default"
@@ -39,7 +39,7 @@
             </button>
             <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
               <li ng-repeat="meditation in vm.meditations">
-                <a href="" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)">{{meditation.name}}</a>
+                <a href="" class="meditations-dropdown-menu" ng-click="meditationSelected(meditation.name) ; meditationId(meditation.id)">{{meditation.name}}</a>
               </li>
             </ul>
           </span>

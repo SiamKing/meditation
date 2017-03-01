@@ -3,13 +3,17 @@
 
 .event-form-bg {
   height: 60px;
-  width: 100px;
   background: rgba(0,0,0,0.40);
   border-radius: 4px;
 }
 
 .event-form {
   margin-top: 12px;
+}
+
+/* Date Picker */
+.date-picker {
+  margin-left: -5px;
 }
  /* Minutes */
 input.minutes {
@@ -28,28 +32,28 @@ input.minutes {
 input.minutes::-webkit-input-placeholder {
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes:-moz-placeholder { /* Firefox 18- */
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes::-moz-placeholder {  /* Firefox 19+ */
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes:-ms-input-placeholder {
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 /* End Minutes */
@@ -57,14 +61,22 @@ input.minutes:-ms-input-placeholder {
 /* Meditation Dropdown Menu */
 .btn-meditations-dropdown-menu {
   background: #FFF;
-  width: 300px;
+  width: 280px;
   color: #00A8D0;
   font-size: 14px;
-  letter-spacing: 2px;
+  // letter-spacing: 1.5px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.meditations-dropdown-menu {
+  color: #00A8D0;
+  font-size: 14px;
+  // letter-spacing: 1.5px;
   font-family: 'Raleway', sans-serif;
 }
 
 .event-btn {
+  margin-left: -10px;
   background: #00A8D0;
   border: 1px solid rgba(121,125,128,0.30);
   box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
@@ -73,6 +85,6 @@ input.minutes:-ms-input-placeholder {
   font-family: 'Raleway';
   font-size: 24px;
   color: #FFF;
-  letter-spacing: 2px;
+  // letter-spacing: 2px;
   width: 150px;
 }
