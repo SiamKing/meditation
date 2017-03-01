@@ -1,5 +1,5 @@
 <div class="jumbotron user">
-  <!-- <div class="container"> -->
+  <div class="container">
       <div class="user-jumbotron-large-text center">
         Welcome to your personal meditation calendar
       </div>
@@ -7,24 +7,27 @@
         Seeing how much you’ve accomplished will motivate you to keep your practice going!
       </div>
       <br>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-5">
+      <div class="row row-centered">
+        <div class="col-centered">
           <a class="btn calendar-event-button" ui-sref="user.addEvent" ng-click="vm.hideDiv()" ng-hide="vm.hideLink">Add new calendar event</a>
         </div>
       </div>
       <br><br><br>
       <ui-view></ui-view>
-  <!-- </div> -->
+  </div>
 </div>
   <div class="container">
-    <h1>
-      <div class="">
-        <span data-ng-bind="vm.user.username"></span> <br>
-        Enlightenment: <span data-ng-bind="vm.points"></span>
+    <div class="row user-meditation-row">
+      <div class="col-md-6 user-meditation">
+        <img src="assets/teal-logo.svg" alt="logo" class="meditation-logo">  Meditation Tracking
       </div>
-    </h1>
+      <div class="col-md-6 enlightenment-points">
+        Enlightenment: {{vm.points}} points
+      </div>
+    </div>
+    <hr class="blue-hr">
     <div ng-repeat="event in vm.user.events track by $index">
-      <a ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
+      <a class="user-meditation-list" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
         {{vm.user.meditations[$index].name}}</a>
     </div>
     <br>

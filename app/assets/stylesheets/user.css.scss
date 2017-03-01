@@ -1,4 +1,7 @@
 /* User Profile */
+.blue-hr {
+  border: 1px solid #00A8D0;
+}
 
 .user {
   background: url(/assets/hero-user.png) center center;
@@ -63,23 +66,47 @@
 // background: #00A8D0;
 //
 //
-//
+.user-meditation {
+  font-family: 'Raleway';
+  font-size: 36px;
+  color: #00A8D0;
+  letter-spacing: 0;
+}
 // /* teal logo copy: */
 // /* Meditation Tracking */
-// font-family: Raleway-Regular;
-// font-size: 36px;
-// color: #00A8D0;
-// letter-spacing: 0;
-// /* Enlightenment: 50 po: */
-// font-family: Raleway-Regular;
-// font-size: 28px;
-// color: #007799;
-// letter-spacing: 0;
 //
-//
-// /* Feb 19, 2017 for 5 m: */
-// font-family: Raleway-Regular;
-// font-size: 24px;
-// color: #6B6B6B;
-// letter-spacing: 0;
-// line-height: 42px;
+.enlightenment-points {
+  font-family: 'Raleway';
+  font-size: 28px;
+  color: #007799;
+  letter-spacing: 0;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.user-meditation-row {
+  margin-bottom: -10px;
+}
+
+.user-meditation-list {
+  font-family: 'Raleway';
+  font-size: 24px;
+  color: #6B6B6B;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+.user-meditation-event {
+  font-family: 'Raleway';
+  font-size: 24px;
+  color: #FFF;
+  letter-spacing: 0;
+  line-height: 42px;
+}
+
+.meditation-logo {
+  width: 200px;
+  height: 50px;
+  margin-left: -60px;
+  margin-right: -60px;
+}

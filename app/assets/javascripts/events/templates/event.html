@@ -1,7 +1,5 @@
-<br>
-<hr>
-<br>
-<div class="container">
+
+<div class="container user-meditation-event">
   {{event.event.date | date: medium}} for {{event.event.minutes}} minutes --
   {{event.event.meditation.name}} --
   <button class="btn btn-default" ui-sref="user.event.update({id: event.event.id})" ng-click="event.getEvent()">Update</button>
