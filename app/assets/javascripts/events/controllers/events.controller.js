@@ -29,18 +29,20 @@
       }
 
       function addEvent() {
-        let meditationName = $scope.$$childHead.selectedMeditation;
-        let meditationId = $scope.$$childHead.vm.meditationId;
+        console.log($scope)
+        let meditationName = $scope.$$childTail.selectedMeditation;
+        let meditationId = $scope.$$childTail.vm.meditationId;
         let meditation = {
           id: meditationId,
           name: meditationName
         }
         vm.event = {
-          date: $scope.$$childTail.vm.valuationDate,
+          date: $scope.$$childHead.vm.valuationDate,
           minutes: vm.minutes,
           user_id: $rootScope.$storage.currentUser.id,
           meditation_id: meditationId
         }
+        console.log(vm.event)
         HttpService
           .addEvent(vm.event)
           .then(data => vm.event.id = data.data.id)
@@ -48,7 +50,7 @@
           $scope.$parent.vm.user.events.push(vm.event);
           $scope.$parent.vm.points += parseInt(vm.minutes);
           vm.minutes = '';
-          $scope.$$childHead.selectedMeditation = $scope.$$childHead.vm.meditations[0].name;
+          $scope.$$childHead.selectedMeditation = $scope.$$childTail.vm.meditations[0].name;
           $scope.$$childTail.vm.valuationDate = new Date();
           $scope.form.$setPristine();
           $scope.form.$setUntouched();

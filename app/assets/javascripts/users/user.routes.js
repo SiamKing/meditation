@@ -29,7 +29,7 @@
         })
         .state('user.event.update', {
           url: '/update',
-          templateUrl: 'events/templates/updateEvent.html',
+          templateUrl: 'events/templates/update.event.html',
           controller: 'EventsController as event'
         })
         .state('user.update', {

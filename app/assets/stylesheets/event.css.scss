@@ -13,48 +13,37 @@
 
 /* Date Picker */
 .date-picker {
-  border-radius: 3px;
   margin-left: -5px;
 }
  /* Minutes */
 input.minutes {
-  /* Minutes Meditating: */
   font-size: 14px;
   letter-spacing: 2px;
   color: #00A8D0;
   letter-spacing: 0;
-  // line-height: 37px;
-  /* shape: */
-  // background: #F9F9F9;
-  // border: 1px solid rgba(121,125,128,0.30);
-  // border-radius: 3px;
 }
 
 input.minutes::-webkit-input-placeholder {
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes:-moz-placeholder { /* Firefox 18- */
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes::-moz-placeholder {  /* Firefox 19+ */
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 
 input.minutes:-ms-input-placeholder {
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 2px;
   font-family: 'Raleway', sans-serif;
 }
 /* End Minutes */
@@ -65,14 +54,12 @@ input.minutes:-ms-input-placeholder {
   width: 280px;
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 1.5px;
   font-family: 'Raleway', sans-serif;
 }
 
 .meditations-dropdown-menu {
   color: #00A8D0;
   font-size: 14px;
-  // letter-spacing: 1.5px;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -82,10 +69,14 @@ input.minutes:-ms-input-placeholder {
   border: 1px solid rgba(121,125,128,0.30);
   box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
   border-radius: 3px;
-  /* Add meditation to ca: */
   font-family: 'Raleway';
   font-size: 24px;
   color: #FFF;
   // letter-spacing: 2px;
   width: 150px;
+}
+
+/* Event */
+.user-meditation-event {
+  text-align: center;
 }

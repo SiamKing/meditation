@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 event-form-bg">
+    <div class="event-form">
+      <form name="form" ng-submit="event.updateEvent()" novalidate>
+
+        <!-- Date Picker -->
+        <div class="col-md-3 date-picker" ng-controller="DatePickerController as vm">
+          <p class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-default"
+              ng-click="vm.valuationDatePickerOpen($event)">
+              <i class="glyphicon glyphicon-calendar"></i>
+            </button>
+          </span>
+          <input type="text" class="form-control minutes"
+            uib-datepicker-popup="mediumDate"
+            is-open="vm.valuationDatePickerIsOpen"
+            ng-click="vm.valuationDatePickerOpen()"
+            ng-model="vm.valuationDate" />
+          </p>
+        </div>
+      <!-- End Date Picker -->
+        <!-- Minutes -->
+        <div class="form-group col-md-3" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
+          <input type="number" class="form-control minutes" name="minutes" placeholder="{{event.event.minutes}} minutes" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
+          <div ng-if="form.minutes.$invalid && form.minutes.$dirty" ng-messages="form.minutes.$error">
+            <div ng-message="pattern">Minutes must be an integer</div>
+          </div>
+        </div>
+        <!-- End Minutes -->
+
+      <!-- Start Meditation Dropdown -->
+      <div class="col-md-4 meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
+        <span class="btn-group" uib-dropdown keyboard-nav>
+          <button id="simple-btn-keyboard-nav" type="button" class="btn btn-meditations-dropdown-menu" uib-dropdown-toggle ng-disabled="disabled">
+            {{event.selectedMeditation === undefined ? event.event.meditation.name : event.selectedMeditation}} <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+            <li ng-repeat="meditation in vm.meditations">
+              <a href="" class="meditations-dropdown-menu" ng-click="event.meditationSelected(meditation.name) ; event.setMeditationId(meditation.id)">{{meditation.name}}</a>
+            </li>
+          </ul>
+        </span>
+      </div>
+      <!-- End Meditation Dropdown -->
+      <div class="col-md-2">
+        <input type="submit" value="Update Event" class="btn event-btn" ng-disabled="!form.$valid">
+      </div>
+    </form>
+  </div>
+</div>
+</div>

@@ -22,9 +22,9 @@
         <!-- End Date Picker -->
 
         <!-- Minutes -->
-        <div class="col-md-3" class="form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
+        <div class="col-md-3 form-group" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
           <input type="number" class="form-control minutes" name="minutes" placeholder="Minutes Meditating" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
-          <div ng-if="form.event.minutes.$invalid && form.event.minutes.$dirty" ng-messages="form.event.minutes.$errors">
+          <div ng-if="form.event.minutes.$invalid && form.event.minutes.$dirty" ng-messages="form.event.minutes.$error">
             <div ng-message="pattern">Minutes must be an integer</div>
           </div>
         </div>
