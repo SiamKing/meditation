@@ -35,8 +35,6 @@
         };
 
       function login() {
-        console.log($scope)
-        console.log(vm.userForm)
         Auth.login(vm.userForm, config)
           .then(function(user){
             vm.user = user;

@@ -26,7 +26,7 @@
       </div>
     </div>
     <hr class="blue-hr">
-    <div ng-repeat="event in vm.user.events track by $index | toArray:true | orderBy : 'date'">
+    <div ng-repeat="event in vm.user.events track by $index">
       <a class="user-meditation-list" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
         {{vm.user.meditations[$index].name}}</a>
     </div>

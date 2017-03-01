@@ -4,23 +4,33 @@
   angular
     .module('meditation')
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-      // $urlRouterProvider.otherwise('/users');
+      $urlRouterProvider.otherwise('/');
 
       $stateProvider
         .state('users', {
-          url: '/users',
+          url: '/',
           templateUrl: 'users/templates/users.html',
           controller: 'UsersController as vm'
         })
         .state('user', {
           url: '/users/:userId',
           templateUrl: 'users/templates/user.html',
-          controller: 'UsersController as vm'
+          controller: 'UsersController as vm',
+          resolve: {
+            authenticate: function(Authenticate, $stateParams) {
+              return Authenticate.authenticate($stateParams.userId);
+            }
+          }
         })
         .state('user.addEvent', {
           url: '/addEvent',
           templateUrl: 'events/templates/add.event.html',
-          controller: 'EventsController as event'
+          controller: 'EventsController as event',
+          resolve: {
+            authenticate: function(Authenticate, $stateParams) {
+              return Authenticate.authenticate($stateParams.userId);
+            }
+          }
         })
         .state('user.event', {
           url: '/event/:id',
@@ -37,5 +47,6 @@
           templateUrl: 'users/user.update.html',
           controller: 'UsersController as vm'
         });
+
     }])
 }())
