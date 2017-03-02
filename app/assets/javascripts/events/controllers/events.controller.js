@@ -42,7 +42,6 @@
           user_id: $rootScope.$storage.currentUser.id,
           meditation_id: meditationId
         }
-        console.log(vm.event)
         HttpService
           .addEvent(vm.event)
           .then(data => vm.event.id = data.data.id)
@@ -54,6 +53,7 @@
           $scope.$$childTail.vm.valuationDate = new Date();
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
+          $state.go('user')
       }
 
       function updateEvent() {

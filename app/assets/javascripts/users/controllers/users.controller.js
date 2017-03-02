@@ -98,11 +98,18 @@
     //      $rootScope.$storage.currentUser = {};
     //  });
 
+      if ($stateParams.userId) {
+        if(parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
+          HttpService.getObject('users', $stateParams.userId)
+            .then((data) => {
+              vm.user = data;
+              vm.points = vm.enlightenmentPoints(data)
+            })
 
-      if($stateParams.userId) {
-        HttpService.getObject('users', $stateParams.userId)
-          .then(data => vm.user = data)
-          .then(data => vm.points = vm.enlightenmentPoints(data))
+          } else {
+            $state.go('user', {userId: $rootScope.$storage.currentUser.id})
+          }
+
       }
 
       function enlightenmentPoints(user) {

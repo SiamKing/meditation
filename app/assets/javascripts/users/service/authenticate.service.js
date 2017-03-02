@@ -9,6 +9,7 @@
       }
 
       function authenticate(id) {
+        console.log($rootScope.$storage.currentUser)
         if ($rootScope.$storage.currentUserSignedIn) {
           if ($rootScope.$storage.currentUser.id === parseInt(id)) {
             return $q.when();
