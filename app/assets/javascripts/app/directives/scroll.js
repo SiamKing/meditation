@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .directive('ScrollDirective', [function() {
+    .directive('scrollDirective', [function() {
       return {
         template: [
         `<div class="btn-center">

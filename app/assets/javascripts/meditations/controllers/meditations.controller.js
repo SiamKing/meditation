@@ -31,16 +31,6 @@
             .then(vm.event = {})
         }
 
-        $scope.gotoElement = function (eID){
-          console.log(eID)
-          // set the location.hash to the id of
-          // the element you wish to scroll to.
-          $location.hash('meditation-scroll');
-
-          // call $anchorScroll()
-          anchorSmoothScroll.scrollTo(eID);
-        }
-
         vm.traditions = ['Buddhism', 'Hinduism', 'Taoism', 'Zen', 'Chinese', 'Western', 'Yogic', 'Confucianism']
     }])
 }())
