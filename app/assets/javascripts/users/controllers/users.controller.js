@@ -8,7 +8,6 @@
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
       vm.hideDiv = hideDiv;
-      vm.logout = Auth.logout;
       vm.login = login;
       vm.signIn = false;
       vm.showSignIn = showSignIn;
@@ -32,7 +31,7 @@
           headers: {
               'X-HTTP-Method-Override': 'POST'
           }
-        };
+      };
 
       function login() {
         Auth.login(vm.userForm, config)
@@ -75,11 +74,11 @@
       //   $state.go('user', {userId: vm.user.id});
       // });
 
-      var configLogout = {
-          headers: {
-              'X-HTTP-Method-Override': 'DELETE'
-          }
-        }
+      // var configLogout = {
+      //     headers: {
+      //         'X-HTTP-Method-Override': 'DELETE'
+      //     }
+      // }
 
       $rootScope.logout = function() {
         Auth.logout(config).then(function(oldUser) {
@@ -99,13 +98,12 @@
     //  });
 
       if ($stateParams.userId) {
-        if(parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
+        if (parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
           HttpService.getObject('users', $stateParams.userId)
             .then((data) => {
               vm.user = data;
               vm.points = vm.enlightenmentPoints(data)
             })
-
           } else {
             $state.go('user', {userId: $rootScope.$storage.currentUser.id})
           }
