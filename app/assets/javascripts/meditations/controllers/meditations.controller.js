@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('MeditationsController', ['HttpService', '$stateParams', '$location', 'anchorSmoothScroll', '$scope', '$filter', function(HttpService, $stateParams, $location, anchorSmoothScroll, $scope, $filter){
+    .controller('MeditationsController', ['HttpService', '$stateParams', '$location', '$scope', '$filter', function(HttpService, $stateParams, $location, $scope, $filter){
       var vm = this;
       vm.search = '';
       vm.filterTradition = '';
