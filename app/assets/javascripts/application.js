@@ -25,4 +25,5 @@
 //= require bootstrap
 //= require ngstorage
 //= require angular-toArrayFilter
+//= require AngularJS-Toaster
 //= require_tree .
