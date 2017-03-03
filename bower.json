@@ -13,10 +13,6 @@
       "angular-filter": "^0.5.15",
       "angular-devise": "latest",
       "ngstorage": "^0.3.11",
-      "angular-toArrayFilter": "^1.0.1"
-    }
-  },
-  "dependencies": {
-    "AngularJS-Toaster": "angularjs-toaster#^2.1.0"
+      "angular-toArrayFilter": "^1.0.1"    }
   }
 }
