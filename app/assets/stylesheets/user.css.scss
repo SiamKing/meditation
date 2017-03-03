@@ -1,3 +1,102 @@
+/* Sign In Page */
+.sign-in {
+  margin-top: 300px;
+}
+
+.users-background {
+  background: url(/assets/home_1900wide.png)no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: fixed;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hero-bold {
+  font-family: 'Raleway', sans-serif;;
+  font-weight: 500;
+  font-size: 54px;
+  color: #FFFFFF;
+  letter-spacing: 3.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+}
+
+.hero-text {
+  /* Keep track of how of: */
+  font-family: 'Raleway';
+  font-size: 17px;
+  color: #FFF;
+  letter-spacing: 1.2px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+}
+
+/* Main page user input - transparent */
+input.transparent-input {
+  // background-color: transparent !important;
+  background-color: #000;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid #FFFFFF;
+  border-radius: 1px;
+  font-family: 'Raleway';
+  font-size: 14px;
+  color: #FFFFFF;
+  // letter-spacing: 3px;
+  height: 40px;
+  width: 200px;
+  margin-top: 10px;
+}
+
+input.transparent-input::-webkit-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  // letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.transparent-input:-moz-placeholder { /* Firefox 18- */
+  color: #FFF;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.transparent-input::-moz-placeholder {  /* Firefox 19+ */
+  color: #FFF;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.transparent-input:-ms-input-placeholder {
+  color: #FFF;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-family: 'Raleway', sans-serif;
+}
+
+input.submit-button {
+  width: 300px;
+  background-color: #00A8D0;
+  opacity: 0.7;
+}
+
+.form-width {
+  width: 470px;
+}
+
+.message-alert {
+  color: red;
+}
+
 /* User Profile */
 .blue-hr {
   border: 1px solid #00A8D0;
