@@ -102,7 +102,7 @@
           HttpService.getObject('users', $stateParams.userId)
             .then((data) => {
               vm.user = data;
-              vm.points = vm.enlightenmentPoints(data)
+              vm.points = vm.enlightenmentPoints(data);
             })
           } else {
             $state.go('user', {userId: $rootScope.$storage.currentUser.id})

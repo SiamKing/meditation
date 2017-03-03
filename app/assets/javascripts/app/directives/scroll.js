@@ -11,7 +11,6 @@
         </div>`
       ],
       controller: 'ScrollController',
-      controllerAs: 'vm'
     }
     }])
 }())
