@@ -27,11 +27,11 @@
     </div>
     <hr class="blue-hr">
     <div ng-repeat="event in vm.user.events track by $index">
-      <a class="user-meditation-list" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
+      <a class="user-meditation-list" ng-click="gotoElement('top')" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes --
         {{vm.user.meditations[$index].name}}</a>
     </div>
     <br>
   </div>
 </div>
 <br><br><br><br>
-<scroll-directive></scroll-directive>
+<scroll-directive ng-show="vm.user.events.length > 5"></scroll-directive>

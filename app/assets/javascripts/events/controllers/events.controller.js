@@ -94,7 +94,6 @@
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
           $scope.$parent.vm.points += parseInt(vm.minutes);
           $scope.$parent.vm.hideLink = false;
-
           $state.go('user')
         });
       }
@@ -107,6 +106,7 @@
             $scope.$parent.vm.user.events = currentEvents;
             $scope.$parent.vm.hideLink = false;
             $scope.$parent.vm.points -= $scope.event.event.minutes;
+            $scope.$parent.vm.hideLink = false;
             $state.go('user');
           })
 
