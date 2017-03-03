@@ -53,6 +53,7 @@
           $scope.$$childTail.vm.valuationDate = new Date();
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
+          $scope.$parent.vm.hideLink = false;
           $state.go('user')
       }
 
