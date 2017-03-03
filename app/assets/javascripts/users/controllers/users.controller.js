@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', '$localStorage', '$sessionStorage', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope, $localStorage, $sessionStorage) {
+    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', '$localStorage', '$sessionStorage', 'toaster', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope, $localStorage, $sessionStorage, toaster) {
       var vm = this;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
@@ -16,6 +16,9 @@
       vm.register = register;
       $rootScope.$storage = $localStorage;
 
+      $scope.pop = function() {
+        toaster.pop('info', 'title', 'text')
+      }
       function showSignIn() {
         vm.signIn = true;
         vm.signUp = false;
@@ -40,8 +43,9 @@
             $rootScope.$storage.currentUserSignedIn = true;
             $rootScope.$storage.currentUser = user;
             $state.go('user', {userId: user.id})
-          }, function(error) {
 
+          }, function(error) {
+            toaster.pop('error', 'Wrong email/password stupid!')
           })
       }
 

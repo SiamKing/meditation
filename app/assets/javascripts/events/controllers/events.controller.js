@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('EventsController', ['HttpService', '$stateParams', '$state', '$scope', '$rootScope', function(HttpService, $stateParams, $state, $scope, $rootScope) {
+    .controller('EventsController', ['HttpService', '$stateParams', '$state', '$scope', '$rootScope', 'toaster', function(HttpService, $stateParams, $state, $scope, $rootScope, toastr) {
 
       var vm = this;
       vm.deleteEvent = deleteEvent;
@@ -29,7 +29,6 @@
       }
 
       function addEvent() {
-        console.log($scope)
         let meditationName = $scope.$$childTail.selectedMeditation;
         let meditationId = $scope.$$childTail.vm.meditationId;
         let meditation = {
@@ -54,7 +53,8 @@
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
           $scope.$parent.vm.hideLink = false;
-          $state.go('user')
+          $state.go('user');
+          toaster.pop('success', "Great Success");
       }
 
       function updateEvent() {

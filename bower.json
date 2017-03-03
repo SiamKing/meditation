@@ -12,7 +12,8 @@
       "angular-sanitize": "^1.6.2",
       "angular-filter": "^0.5.15",
       "angular-devise": "latest",
-      "ngstorage": "^0.3.11"
+      "ngstorage": "^0.3.11",
+      "AngularJS-Toaster": "angularjs-toaster#^2.1.0"
     }
   }
 }
