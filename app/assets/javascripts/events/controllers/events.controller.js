@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('EventsController', ['HttpService', '$stateParams', '$state', '$scope', '$rootScope', 'toaster', function(HttpService, $stateParams, $state, $scope, $rootScope, toastr) {
+    .controller('EventsController', ['HttpService', '$stateParams', '$state', '$scope', '$rootScope', 'toaster', '$filter', function(HttpService, $stateParams, $state, $scope, $rootScope, toaster, $filter) {
 
       var vm = this;
       vm.deleteEvent = deleteEvent;
@@ -53,8 +53,9 @@
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
           $scope.$parent.vm.hideLink = false;
+          let formattedDate = $filter('date')(vm.event.date, "mediumDate")
+          toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been added to calendar`);
           $state.go('user');
-          toaster.pop('success', "Great Success");
       }
 
       function updateEvent() {
