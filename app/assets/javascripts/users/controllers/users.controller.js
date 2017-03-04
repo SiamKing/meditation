@@ -16,9 +16,6 @@
       vm.register = register;
       $rootScope.$storage = $localStorage;
 
-      $scope.pop = function() {
-        toaster.pop('info', 'title', 'text')
-      }
       function showSignIn() {
         vm.signIn = true;
         vm.signUp = false;
@@ -43,9 +40,9 @@
             $rootScope.$storage.currentUserSignedIn = true;
             $rootScope.$storage.currentUser = user;
             $state.go('user', {userId: user.id})
-
+            toaster.pop('success', `Welcome ${vm.user.username}!`);
           }, function(error) {
-            toaster.pop('error', 'Wrong email/password stupid!')
+            toaster.pop('error', 'Wrong email/password combination!', 'Please try again')
           })
       }
 
@@ -66,8 +63,13 @@
               $rootScope.$storage.currentUserSignedIn = true;
               $rootScope.$storage.currentUser = registeredUser;
               $state.go('user', {userId: vm.user.id});
+              toaster.pop('success', `Welcome ${vm.user.username}!`);
           }, function(error) {
-              // Registration failed...
+            if (error.data.errors.email !== undefined) {
+              toaster.pop('error', 'Email has already been used', 'Please try another one')
+            } else {
+              toaster.pop('error', 'Username has already been taken', 'Please try another one')
+            }
           });
       }
 
