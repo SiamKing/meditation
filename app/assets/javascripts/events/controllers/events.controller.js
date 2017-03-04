@@ -95,6 +95,8 @@
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
           $scope.$parent.vm.points += parseInt(vm.minutes);
           $scope.$parent.vm.hideLink = false;
+          let formattedDate = $filter('date')(vm.event.date, "mediumDate")
+          toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been updated`);
           $state.go('user')
         });
       }
@@ -108,6 +110,7 @@
             $scope.$parent.vm.hideLink = false;
             $scope.$parent.vm.points -= $scope.event.event.minutes;
             $scope.$parent.vm.hideLink = false;
+            toaster.pop('success', 'Event deleted from calendar')
             $state.go('user');
           })
 
