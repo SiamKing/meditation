@@ -39,8 +39,9 @@
             vm.user = user;
             $rootScope.$storage.currentUserSignedIn = true;
             $rootScope.$storage.currentUser = user;
-            $state.go('user', {userId: user.id})
             toaster.pop('success', `Welcome ${vm.user.username}!`);
+            $state.go('user', {userId: user.id})
+
           }, function(error) {
             toaster.pop('error', 'Wrong email/password combination!', 'Please try again')
           })
@@ -91,6 +92,7 @@
           vm.user = {};
           $rootScope.$storage.currentUserSignedIn = false;
           $rootScope.$storage.currentUser = {};
+          toaster.pop('success', 'You have been logged out successfully', 'Hope to see you soon!')
         }, function(error) {
             // An error occurred logging out.
         });
