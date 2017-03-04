@@ -9,22 +9,22 @@
       vm.deleteEvent = deleteEvent;
       vm.addEvent = addEvent;
       vm.updateEvent = updateEvent;
+      vm.setMeditationId = setMeditationId;
+      vm.meditationSelected = meditationSelected;
 
-
-      vm.setMeditationId = function(meditationId) {
+      function setMeditationId(meditationId) {
         vm.meditationId = meditationId;
       }
 
-      vm.meditationSelected = function (meditation) {
+      function meditationSelected(meditation) {
         vm.selectedMeditation = meditation;
       }
 
       if ($stateParams.id) {
         HttpService
           .getObject('events', $stateParams.id)
-          .then(function(event) {
+          .then(event => {
             vm.event = event;
-            vm.event.date = new Date(vm.event.date);
           });
       }
 
@@ -82,16 +82,11 @@
         }
         HttpService
           .updateEvent(vm.event, $stateParams.id)
-          .then((data) => {
+          .then(data => {
           vm.event.id = data.data.id
-          var index;
-          var eventIndex = $scope.$parent.vm.user.events.some(function(event, i) {
-            if (event.id === parseInt($stateParams.id)) {
-            return (index = i);
-            }
-          });
-          $scope.$parent.vm.user.meditations.splice(index, 1, meditation);
-          $scope.$parent.vm.user.events.splice(index, 1, vm.event);
+          let eventIndex = $scope.$parent.vm.user.events.findIndex(event => event.id === parseInt($stateParams.id))
+          $scope.$parent.vm.user.meditations.splice(eventIndex, 1, meditation);
+          $scope.$parent.vm.user.events.splice(eventIndex, 1, vm.event);
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
           $scope.$parent.vm.points += parseInt(vm.minutes);
           $scope.$parent.vm.hideLink = false;
@@ -113,7 +108,6 @@
             toaster.pop('success', 'Event deleted from calendar')
             $state.go('user');
           })
-
       }
 
     }])
