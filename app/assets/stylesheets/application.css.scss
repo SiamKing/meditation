@@ -16,3 +16,23 @@
  *= require_self
  */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700');
+
+#toast-container > .toast-success {
+  background-image: url("/assets/icons/meditator.png") !important;
+  background-size: 50px 50px;
+  background-position:2% 50%;
+}
+
+#toast-container > .toast-error {
+  background-image: url("/assets/icons/hand.png") !important;
+  background-size: 60px 60px;
+  background-position:2% 50%;
+}
+
+.toast-title {
+  padding-left: 10px;
+}
+
+.toast-message {
+  padding-left: 10px;
+}
