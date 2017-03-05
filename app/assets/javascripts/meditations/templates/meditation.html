@@ -1,11 +1,12 @@
 <hr>
-<br><br><br><br><br>
-<div class="container" id="meditation-scroll">
-  <h1>{{vm.meditation.name}}</h1>
-  <h3>About</h3>
-  <p>{{vm.meditation.about}}</p>
-  <h3>Instructions</h3>
-  <p>{{vm.meditation.instructions}}</p>
+<div class="meditation-container" >
+  <img ng-src="{{vm.meditation.icon}}"/>
+    <h1>{{vm.meditation.name}}</h1>
+    <h3>About</h3>
+    <p>{{vm.meditation.about}}</p>
+    <h3 >Instructions</h3>
+    <p>{{vm.meditation.instructions}}</p>
+    <p id="meditation-scroll"></p>
+    <br><br><br><br><br><br>
+    <scroll-directive></scroll-directive>
 </div>
-<br><br><br><br>
-<scroll-directive></scroll-directive>

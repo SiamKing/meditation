@@ -25,7 +25,7 @@
 
 #toast-container > .toast-error {
   background-image: url("/assets/icons/hand.png") !important;
-  background-size: 60px 60px;
+  background-size: 50px 50px;
   background-position:2% 50%;
 }
 
@@ -36,3 +36,10 @@
 .toast-message {
   padding-left: 10px;
 }
+
+// .center-btn {
+//   margin: 0 auto;
+//     text-align: center;
+//     width: inherit;
+//     display: inline-block;
+// }

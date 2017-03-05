@@ -1,7 +1,7 @@
 
 <div class="container user-meditation-event">
-  {{event.event.date | date: medium}} for {{event.event.minutes}} minutes --
-  {{event.event.meditation.name}} --
+  {{event.event.date | date: medium}} for {{event.event.minutes}} minutes &mdash;
+  {{event.event.meditation.name}} &mdash;
   <button class="btn btn-default" ui-sref="user.event.update({id: event.event.id})" ng-click="event.getEvent()">Update</button>
   <button class="btn btn-default" ng-click="event.deleteEvent()">Delete</button>
 

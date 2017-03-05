@@ -6,7 +6,7 @@
     .directive('scrollDirective', [function() {
       return {
         template: [
-        `<div class="btn-center">
+        `<div class="text-center">
           <button type="button" class="btn btn-default" ng-click="gotoElement('top')">Go to top</button>
         </div>`
       ],

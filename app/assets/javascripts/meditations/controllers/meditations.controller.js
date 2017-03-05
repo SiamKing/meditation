@@ -11,7 +11,6 @@
       HttpService.all('meditations')
         .then(data => vm.meditations = data)
 
-
         if ($stateParams.id) {
           HttpService
             .getObject('meditations', $stateParams.id)
