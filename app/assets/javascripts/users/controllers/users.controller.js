@@ -43,7 +43,7 @@
             $state.go('user', {userId: user.id})
 
           }, function(error) {
-            toaster.pop('error', 'Wrong email/password combination!', 'Please try again')
+            toaster.pop('error', 'Wrong email/password combination!', 'Take a breath and try again')
           })
       }
 
@@ -92,9 +92,9 @@
           vm.user = {};
           $rootScope.$storage.currentUserSignedIn = false;
           $rootScope.$storage.currentUser = {};
-          toaster.pop('success', 'You have been logged out successfully', 'Hope to see you soon!')
+          toaster.pop('success', 'You have been logged out successfully', 'Namaste!')
         }, function(error) {
-            // An error occurred logging out.
+            toaster.pop('error', 'An error occurred', 'Please try again')
         });
       }
 
@@ -104,7 +104,7 @@
     //      $rootScope.$storage.currentUserSignedIn = false;
     //      $rootScope.$storage.currentUser = {};
     //  });
-    
+
       if ($stateParams.userId && $rootScope.$storage.currentUserSignedIn) {
         if (parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
           HttpService.getObject('users', $stateParams.userId)
