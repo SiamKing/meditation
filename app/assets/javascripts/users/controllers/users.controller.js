@@ -104,8 +104,8 @@
     //      $rootScope.$storage.currentUserSignedIn = false;
     //      $rootScope.$storage.currentUser = {};
     //  });
-
-      if ($stateParams.userId) {
+    
+      if ($stateParams.userId && $rootScope.$storage.currentUserSignedIn) {
         if (parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
           HttpService.getObject('users', $stateParams.userId)
             .then((data) => {
@@ -115,7 +115,8 @@
           } else {
             $state.go('user', {userId: $rootScope.$storage.currentUser.id})
           }
-
+      } else {
+        $state.go('users');
       }
 
       function enlightenmentPoints(user) {
