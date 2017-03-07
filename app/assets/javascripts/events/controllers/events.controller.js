@@ -52,7 +52,7 @@
           $scope.$$childTail.vm.valuationDate = new Date();
           $scope.form.$setPristine();
           $scope.form.$setUntouched();
-          $scope.$parent.vm.hideLink = false;
+          $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
           toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been added to calendar`);
           $state.go('user');
@@ -89,7 +89,7 @@
           $scope.$parent.vm.user.events.splice(eventIndex, 1, vm.event);
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
           $scope.$parent.vm.points += parseInt(vm.minutes);
-          $scope.$parent.vm.hideLink = false;
+          $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
           toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been updated`);
           $state.go('user')
@@ -104,9 +104,8 @@
             var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
             var meditation = $scope.$parent.vm.user.meditations.splice(index, 1);
             $scope.$parent.vm.user.events = currentEvents;
-            $scope.$parent.vm.hideLink = false;
             $scope.$parent.vm.points -= $scope.event.event.minutes;
-            $scope.$parent.vm.hideLink = false;
+            $scope.$parent.vm.hideCalendarBtn = false;
             toaster.pop('success', 'Event deleted from calendar')
             $state.go('user', ({userId: $stateParams.userId}));
           })
