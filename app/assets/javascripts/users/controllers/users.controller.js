@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', '$localStorage', '$sessionStorage', 'toaster', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope, $localStorage, $sessionStorage, toaster) {
+    .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', '$localStorage', 'toaster', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope, $localStorage, toaster) {
       var vm = this;
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideLink = false;
