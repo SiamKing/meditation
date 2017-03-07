@@ -62,7 +62,7 @@
         let meditationName;
         let meditationId;
 
-        if ($scope.event.selectedMeditation) {
+        if ($scope.event.selectedMeditation) { // if selected meditation changes, we hve to look in a different scope
           meditationName = $scope.event.selectedMeditation;
           meditationId = $scope.event.meditationId;
         } else {
