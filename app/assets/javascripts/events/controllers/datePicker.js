@@ -11,7 +11,7 @@
       if ($stateParams.id) {
         HttpService
           .getObject('events', $stateParams.id)
-          .then(function(event){
+          .then(function(event){         // if stateParams exist then this is an update form and we need to prefill the date with event.date
             vm.valuationDate = new Date(event.date);
           })
       } else {
