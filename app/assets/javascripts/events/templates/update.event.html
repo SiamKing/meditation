@@ -4,29 +4,10 @@
       <form name="form" ng-submit="event.updateEvent()" novalidate>
 
         <!-- Date Picker -->
-        <div class="col-md-3 date-picker" ng-controller="DatePickerController as vm">
-          <p class="input-group">
-            <span class="input-group-btn">
-              <button type="button" class="btn btn-default"
-              ng-click="vm.valuationDatePickerOpen($event)">
-              <i class="glyphicon glyphicon-calendar"></i>
-            </button>
-          </span>
-          <input type="text" class="form-control minutes"
-            uib-datepicker-popup="mediumDate"
-            is-open="vm.valuationDatePickerIsOpen"
-            ng-click="vm.valuationDatePickerOpen()"
-            ng-model="vm.valuationDate" />
-          </p>
-        </div>
+      <date-picker></date-picker>
       <!-- End Date Picker -->
         <!-- Minutes -->
-        <div class="form-group col-md-3" ng-class="{ 'has-error': form.minutes.$touched && form.minutes.$invalid}">
-          <input type="number" class="form-control minutes" name="minutes" placeholder="{{event.event.minutes}} minutes" ng-model="event.minutes" required="required" data-ng-pattern="/^\d+$/">
-          <div ng-if="form.minutes.$invalid && form.minutes.$dirty" ng-messages="form.minutes.$error">
-            <div ng-message="pattern">Minutes must be an integer</div>
-          </div>
-        </div>
+      <minutes></minutes>
         <!-- End Minutes -->
 
       <!-- Start Meditation Dropdown -->
