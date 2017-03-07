@@ -6,8 +6,8 @@
     .controller('UsersController', ['HttpService', '$state', '$stateParams', '$scope', 'Auth', '$rootScope', '$localStorage', 'toaster', function(HttpService, $state, $stateParams, $scope, Auth, $rootScope, $localStorage, toaster) {
       var vm = this;
       vm.enlightenmentPoints = enlightenmentPoints;
-      vm.hideLink = false;
-      vm.hideDiv = hideDiv;
+      vm.hideCalendarBtn = false;
+      vm.hideCalendarEventBtn = hideCalendarEventBtn;
       vm.login = login;
       vm.signIn = false;
       vm.showSignIn = showSignIn;
@@ -54,7 +54,7 @@
       function register() {
         Auth.register(vm.userForm, config)
           .then(function(user) {
-            signInCallback(user);
+            signInHelper(user);
           }, function(error) {
             if (error.data.errors.email !== undefined) {
               toaster.pop('error', 'Email has already been used', 'Please try another one')
@@ -102,8 +102,8 @@
         })
       }
 
-      function hideDiv() {
-        return vm.hideLink = true;
+      function hideCalendarEventBtn() {
+        return vm.hideCalendarBtn = true;
       }
 
     }])
