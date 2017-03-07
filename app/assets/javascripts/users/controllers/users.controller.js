@@ -64,19 +64,6 @@
           });
       }
 
-      // $scope.$on('devise:new-registration', function(event, user) {
-      //   vm.user = user; // => {id: 1, ect: '...'}
-      //   $rootScope.$storage.currentUserSignedIn = true;
-      //   $rootScope.$storage.currentUser = user;
-      //   $state.go('user', {userId: vm.user.id});
-      // });
-
-      // var configLogout = {
-      //     headers: {
-      //         'X-HTTP-Method-Override': 'DELETE'
-      //     }
-      // }
-
       $rootScope.logout = function() {
         Auth.logout(config).then(function(oldUser) {
           vm.user = {};
@@ -88,13 +75,7 @@
         });
       }
 
-
-    //   $rootScope.$on('devise:logout', function(event, oldCurrentUser) {
-    //      vm.user = {};
-    //      $rootScope.$storage.currentUserSignedIn = false;
-    //      $rootScope.$storage.currentUser = {};
-    //  });
-
+      // Gets current User json if they are signed in
       if ($stateParams.userId && $rootScope.$storage.currentUserSignedIn) {
         if (parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
           HttpService.getObject('users', $stateParams.userId)
