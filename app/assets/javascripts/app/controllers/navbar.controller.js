@@ -9,15 +9,5 @@
       $scope.isCollapsedHorizontal = false;
       $scope.$storage = $localStorage;
 
-
-      // $scope.getLinkUrl = function() {
-      //   console.log($rootScope.$storage)
-      //   if ($rootScope.$storage !== undefined) {
-      //     return $state.href('user', {userId: $rootScope.$storage.currentUser.id});
-      //   } else {
-      //     return 'users'
-      //   }
-      //
-      // }
   }]);
 }())
