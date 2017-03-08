@@ -29,6 +29,7 @@
       }
 
       function addEvent() {
+        console.log($scope)
         let meditationName = $scope.$$childTail.selectedMeditation;
         let meditationId = $scope.$$childTail.vm.meditationId;
         let meditation = {
@@ -41,17 +42,18 @@
           user_id: $rootScope.$storage.currentUser.id,
           meditation_id: meditationId
         }
+        console.log(vm.event)
         HttpService
           .addEvent(vm.event)
           .then(data => vm.event.id = data.data.id)
           $scope.$parent.vm.user.meditations.push(meditation);
           $scope.$parent.vm.user.events.push(vm.event);
           $scope.$parent.vm.points += parseInt(vm.minutes);
-          vm.minutes = '';
-          $scope.$$childHead.selectedMeditation = $scope.$$childTail.vm.meditations[0].name;
-          $scope.$$childTail.vm.valuationDate = new Date();
-          $scope.form.$setPristine();
-          $scope.form.$setUntouched();
+          // vm.minutes = '';
+          // $scope.$$childHead.selectedMeditation = $scope.$$childTail.vm.meditations[0].name;
+          // $scope.$$childTail.vm.valuationDate = new Date();
+          // $scope.form.$setPristine();
+          // $scope.form.$setUntouched();
           $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
           toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been added to calendar`);
@@ -76,7 +78,7 @@
         }
         vm.event = {
           date: $scope.$$childHead.vm.valuationDate,
-          minutes: vm.minutes,
+          minutes: vm.event.minutes,
           user_id: $stateParams.userId,
           meditation_id: meditationId
         }
@@ -88,7 +90,7 @@
           $scope.$parent.vm.user.meditations.splice(eventIndex, 1, meditation);
           $scope.$parent.vm.user.events.splice(eventIndex, 1, vm.event);
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
-          $scope.$parent.vm.points += parseInt(vm.minutes);
+          $scope.$parent.vm.points += parseInt(vm.event.minutes);
           $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
           toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been updated`);
