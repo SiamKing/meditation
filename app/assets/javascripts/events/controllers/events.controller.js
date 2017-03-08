@@ -29,9 +29,8 @@
       }
 
       function addEvent() {
-        console.log($scope)
         let meditationName = $scope.$$childTail.selectedMeditation;
-        let meditationId = $scope.$$childTail.vm.meditationId;
+        let meditationId = $scope.$$childTail.$$childTail.vm.meditationId;
         let meditation = {
           id: meditationId,
           name: meditationName
@@ -42,7 +41,6 @@
           user_id: $rootScope.$storage.currentUser.id,
           meditation_id: meditationId
         }
-        console.log(vm.event)
         HttpService
           .addEvent(vm.event)
           .then(data => vm.event.id = data.data.id)
@@ -64,7 +62,7 @@
         let meditationName;
         let meditationId;
 
-        if ($scope.event.selectedMeditation) { // if selected meditation changes, we hve to look in a different scope
+        if ($scope.event.selectedMeditation) { // if selected meditation changes, we have to look in a different scope
           meditationName = $scope.event.selectedMeditation;
           meditationId = $scope.event.meditationId;
         } else {

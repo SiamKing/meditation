@@ -6,7 +6,8 @@
       var vm = this;
 
       HttpService.all('meditations')
-        .then(function(data) {
+        .then((data) => {
+          console.log(data)
           vm.meditations = data;
           $scope.selectedMeditation = vm.meditations[0].name;
           vm.meditationId = vm.meditations[0].id;
