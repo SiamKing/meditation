@@ -3,7 +3,7 @@
 
   angular
     .module('meditation')
-    .controller('CollapseDemoCtrl', ['$scope', '$rootScope', '$state', '$localStorage', function ($scope, $rootScope, $state, $localStorage) {
+    .controller('NavbarController', ['$scope', '$rootScope', '$state', '$localStorage', function ($scope, $rootScope, $state, $localStorage) {
       $scope.isNavCollapsed = true;
       $scope.isCollapsed = false;
       $scope.isCollapsedHorizontal = false;
