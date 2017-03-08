@@ -8,7 +8,9 @@
       <minutes></minutes>
 
       <!-- Start Meditation Dropdown -->
-      <div class="col-md-4 meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
+
+      <meditation-dropdown ></meditation-dropdown>
+      <!-- <div class="col-md-4 meditations-dropdown-menu" ng-controller="MeditationsDropdownController as vm">
         <span class="btn-group" uib-dropdown keyboard-nav>
           <button id="simple-btn-keyboard-nav" type="button" class="btn btn-meditations-dropdown-menu" uib-dropdown-toggle ng-disabled="disabled">
             {{event.selectedMeditation === undefined ? event.event.meditation.name : event.selectedMeditation}} <span class="caret"></span>
@@ -19,7 +21,7 @@
             </li>
           </ul>
         </span>
-      </div>
+      </div> -->
       <!-- End Meditation Dropdown -->
       <div class="col-md-2">
         <input type="submit" value="Update Event" class="btn event-btn" ng-disabled="!form.$valid">

@@ -29,8 +29,9 @@
       }
 
       function addEvent() {
+        // console.log($scope)
         let meditationName = $scope.$$childTail.selectedMeditation;
-        let meditationId = $scope.$$childTail.$$childTail.vm.meditationId;
+        let meditationId = $scope.vm.meditationId;
         let meditation = {
           id: meditationId,
           name: meditationName
@@ -59,16 +60,12 @@
       }
 
       function updateEvent() {
-        let meditationName;
-        let meditationId;
+        // console.log($scope)
+        console.log(vm)
+        // if selected meditation changes, we have to look in a different scope
+        let meditationName = $scope.selectedMeditation;
+        let meditationId = $scope.vm.meditationId;
 
-        if ($scope.event.selectedMeditation) { // if selected meditation changes, we have to look in a different scope
-          meditationName = $scope.event.selectedMeditation;
-          meditationId = $scope.event.meditationId;
-        } else {
-          meditationName = $scope.$parent.event.event.meditation.name;
-          meditationId = $scope.$parent.event.event.meditation_id;
-        }
 
         let meditation = {
           id: meditationId,
@@ -76,7 +73,7 @@
         }
         vm.event = {
           date: $scope.$$childHead.vm.valuationDate,
-          minutes: vm.event.minutes,
+          minutes: vm.minutes,
           user_id: $stateParams.userId,
           meditation_id: meditationId
         }
@@ -97,6 +94,8 @@
       }
 
       function deleteEvent() {
+        let formattedDate = $filter('date')(vm.event.date, "mediumDate")
+        let meditationName = vm.event.meditation.name;
         HttpService
           .destroy('events', $stateParams.id)
           .then(() => {
@@ -106,7 +105,7 @@
             $scope.$parent.vm.user.events = currentEvents;
             $scope.$parent.vm.points -= $scope.event.event.minutes;
             $scope.$parent.vm.hideCalendarBtn = false;
-            toaster.pop('success', 'Event deleted from calendar')
+            toaster.pop('success', `${meditationName} on ${formattedDate} has been deleted from the calendar`)
             $state.go('user', ({userId: $stateParams.userId}));
           })
       }

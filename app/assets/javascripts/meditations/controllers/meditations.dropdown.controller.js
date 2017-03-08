@@ -7,10 +7,17 @@
 
       HttpService.all('meditations')
         .then((data) => {
-          console.log(data)
           vm.meditations = data;
-          $scope.selectedMeditation = vm.meditations[0].name;
-          vm.meditationId = vm.meditations[0].id;
+          if ($stateParams.id) {
+            HttpService.getObject('events', $stateParams.id)
+              .then((event) => {
+                $scope.selectedMeditation = event.meditation.name;
+                vm.meditationId = event.meditation.id;
+              })
+          } else {
+              $scope.selectedMeditation = vm.meditations[0].name;
+              vm.meditationId = vm.meditations[0].id;
+            }
         });
 
       $scope.status = {
