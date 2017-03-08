@@ -29,7 +29,6 @@
       }
 
       function addEvent() {
-        // console.log($scope)
         let meditationName = $scope.$$childTail.selectedMeditation;
         let meditationId = $scope.vm.meditationId;
         let meditation = {
@@ -48,11 +47,6 @@
           $scope.$parent.vm.user.meditations.push(meditation);
           $scope.$parent.vm.user.events.push(vm.event);
           $scope.$parent.vm.points += parseInt(vm.minutes);
-          // vm.minutes = '';
-          // $scope.$$childHead.selectedMeditation = $scope.$$childTail.vm.meditations[0].name;
-          // $scope.$$childTail.vm.valuationDate = new Date();
-          // $scope.form.$setPristine();
-          // $scope.form.$setUntouched();
           $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
           toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been added to calendar`);
@@ -60,12 +54,8 @@
       }
 
       function updateEvent() {
-        // console.log($scope)
-        console.log(vm)
-        // if selected meditation changes, we have to look in a different scope
         let meditationName = $scope.selectedMeditation;
         let meditationId = $scope.vm.meditationId;
-
 
         let meditation = {
           id: meditationId,
