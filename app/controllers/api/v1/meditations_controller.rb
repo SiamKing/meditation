@@ -13,28 +13,6 @@ class Api::V1::MeditationsController < ApplicationController
     end
   end
 
-  def create
-    meditation = Meditation.new(meditation_params)
-    if meditation.save
-      render json: meditation
-    else
-      render json: { message: "Meditation was not created", status: 500 }, status: 500
-    end
-  end
-
-  def update
-    if @meditation.update(meditation_params)
-      render json: @meditation
-    else
-      render json: { message: "Meditation was not updated", status: 500 }, status: 500
-    end
-  end
-
-  def destroy
-    @meditation.destroy
-    render json: { message: 'Meditation was destroyed', status: 200 }, status: 200
-  end
-
   private
 
     def meditation_params
