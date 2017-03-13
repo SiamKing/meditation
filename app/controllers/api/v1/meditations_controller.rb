@@ -38,7 +38,7 @@ class Api::V1::MeditationsController < ApplicationController
   private
 
     def meditation_params
-      params.require(:meditation).permit(:name, :tradition, :instructions, :user_id)
+      params.require(:meditation).permit(:name, :tradition, :instructions)
     end
 
     def find_meditation
