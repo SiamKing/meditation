@@ -14,7 +14,7 @@
         </a>
       </div>
       <div class="logo" ng-show="$storage.currentUserSignedIn === true">
-        <a class="navbar-brand navbar-left logo hvr-grow" href ui-sref="user({userId: $storage.currentUser.id})">
+        <a class="navbar-brand navbar-left logo hvr-grow" href ui-sref="user({userId: $storage.currentUser.id})" ng-click="showCalendarEventBtn()">
           <img src="assets/logo@2x.png" width="150" height="45">
         </a>
       </div>

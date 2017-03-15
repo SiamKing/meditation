@@ -8,6 +8,7 @@
       vm.enlightenmentPoints = enlightenmentPoints;
       vm.hideCalendarBtn = false;
       vm.hideCalendarEventBtn = hideCalendarEventBtn;
+      $rootScope.showCalendarEventBtn = showCalendarEventBtn;
       vm.login = login;
       vm.signIn = false;
       vm.showSignIn = showSignIn;
@@ -93,6 +94,10 @@
 
       function hideCalendarEventBtn() {
         return vm.hideCalendarBtn = true;
+      }
+
+      function showCalendarEventBtn() {
+        return vm.hideCalendarBtn = false;
       }
 
     }])
