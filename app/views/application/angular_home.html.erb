@@ -24,7 +24,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a class="hvr-grow-shadow" ui-sref="meditations">Meditations</a></li>
         <li><a class="hvr-grow-shadow" ng-hide="$storage.currentUserSignedIn" ui-sref="users">Log In</a></li>
-        <li><a class="hvr-grow-shadow" ng-show="$storage.currentUserSignedIn" ng-hide="!$storage.currentUserSignedIn" ng-click="logout(); " ui-sref="users">Log Out</a></li>
+        <li><a class="hvr-grow-shadow" ng-show="$storage.currentUserSignedIn" ng-hide="!$storage.currentUserSignedIn" ng-click="logout();" ui-sref="users">Log Out</a></li>
       </ul>
     </div>
   </nav>

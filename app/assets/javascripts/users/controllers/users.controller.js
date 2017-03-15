@@ -64,17 +64,6 @@
           });
       }
 
-      $rootScope.logout = function() {
-        Auth.logout(config).then(function(oldUser) {
-          vm.user = {};
-          $rootScope.$storage.currentUserSignedIn = false;
-          $rootScope.$storage.currentUser = {};
-          toaster.pop('success', 'You have been logged out successfully', 'Namaste!')
-        }, function(error) {
-            toaster.pop('error', 'An error occurred', 'Please try again')
-        });
-      }
-
       // Gets current User json if they are signed in
       if ($stateParams.userId && $rootScope.$storage.currentUserSignedIn) {
         if (parseInt($stateParams.userId) === $rootScope.$storage.currentUser.id) {
