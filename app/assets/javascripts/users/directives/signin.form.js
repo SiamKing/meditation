@@ -7,7 +7,6 @@
       return {
         template: [
           `<form name="signInForm" ng-show="vm.signIn" class="input-group" ng-submit="vm.login()" novalidate>
-            <!-- <div ng-include="'signInForm.html'"></div> -->
             <div class="form-width" ng-class="{ 'has-error': signInForm.email.$touched && signInForm.email.$invalid}">
               <input class="form-control transparent-input"
                     placeholder="Email"
