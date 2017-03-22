@@ -26,3 +26,16 @@ Run 'bower install --save' in your terminal to download Angular dependencies.
 Run rails server in your terminal and head over to http://localhost:3000/#!/ in your browser
 
 Create a user and get your butt on a cushion. Add the type of meditation, how long you meditated, and the date to your calendar. Namaste
+
+## Authors
+
+[TJ Hill](https://github.com/SiamKing) - code
+[Ally Smith](https://www.linkedin.com/in/ally-smith-designer/) - design
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
