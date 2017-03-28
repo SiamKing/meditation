@@ -72,7 +72,7 @@
           .then(data => {
           vm.event.id = data.data.id
           let eventIndex = $scope.$parent.vm.user.events.findIndex(event => event.id === parseInt($stateParams.id))
-          $scope.$parent.vm.user.meditations.splice(eventIndex, 1, meditation);
+          vm.event.meditation = meditation;
           $scope.$parent.vm.user.events.splice(eventIndex, 1, vm.event);
           $scope.$parent.vm.points -= $scope.$parent.event.event.minutes;
           $scope.$parent.vm.points += parseInt(vm.event.minutes);
