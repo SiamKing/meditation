@@ -16,13 +16,35 @@
       vm.showSignUp = showSignUp;
       vm.register = register;
       $rootScope.$storage = $localStorage;
+      vm.sortMeditation = sortMeditation;
+      vm.sortDate = sortDate;
 
-      vm.sortDate = function () {
+      function sortDate() {
         vm.user.events.sort(function(a, b) {
           return (new Date(a.date)) - (new Date(b.date));
         })
-      };
+      }
 
+      function sortMeditation() {
+        vm.user.events.sort(function(a, b) {
+          if (a.meditation.name < b.meditation.name) {
+            return -1;
+          } else if (a.meditation.name > b.meditation.name) {
+            return 1;
+          } else {
+            let dateA = new Date(a.date);
+            let dateB = new Date(b.date);
+
+            if (dateA > dateB) {
+              return 1;
+            } else if (dateA < dateB) {
+              return -1;
+            } else {
+              return 0;
+            }
+          }
+        })
+      }
 
       function showSignIn() {
         vm.signIn = true;
@@ -79,6 +101,7 @@
             .then((data) => {
               vm.user = data;
               vm.points = vm.enlightenmentPoints(data);
+              vm.sortDate();
             })
           } else {
             $state.go('user', {userId: $rootScope.$storage.currentUser.id})
