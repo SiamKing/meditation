@@ -19,6 +19,19 @@
       vm.sortMeditation = sortMeditation;
       vm.sortDate = sortDate;
 
+      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation"]
+
+      vm.sortBy = function() {
+        if (vm.selectedOption === vm.options[0]) {
+          vm.sortDate();
+          vm.user.events.reverse();
+        } else if (vm.selectedOption === vm.options[1]) {
+          vm.sortDate()
+        } else if (vm.selectedOption === vm.options[2]) {
+          vm.sortMeditation();
+        }
+      };
+
       function sortDate() {
         vm.user.events.sort(function(a, b) {
           return (new Date(a.date)) - (new Date(b.date));
@@ -102,6 +115,7 @@
               vm.user = data;
               vm.points = vm.enlightenmentPoints(data);
               vm.sortDate();
+              vm.user.events.reverse();
             })
           } else {
             $state.go('user', {userId: $rootScope.$storage.currentUser.id})

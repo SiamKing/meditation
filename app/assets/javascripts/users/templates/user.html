@@ -27,7 +27,17 @@
       </div>
     </div>
     <hr class="blue-hr">
-    <button type="button" class="btn btn-default" ng-click="vm.sortMeditation()">Sort by meditation</button>
+    <!-- <button type="button" class="btn btn-default" ng-click="vm.sortMeditation()">Sort by meditation</button> -->
+    <div class="container">
+      <div class="col-md-3 col-md-offset-9 dropdown-meditation">
+        <div class="button-group">
+          <select class="btn btn-default btn-lg dropdown-toggle dropdown-text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="vm.selectedOption" ng-change="vm.sortBy()" ng-options="option for option in vm.options">
+            <option value="" disabled selected>Sort Events By</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <div ng-repeat="event in vm.user.events">
       <a class="user-meditation-list" style="text-decoration: none" ng-click="gotoElement('top')" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes &mdash;
         {{event.meditation.name}}</a>
