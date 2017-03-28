@@ -27,9 +27,9 @@
       </div>
     </div>
     <hr class="blue-hr">
-    <div ng-repeat="event in vm.user.events track by $index">
+    <div ng-repeat="event in vm.user.events">
       <a class="user-meditation-list" style="text-decoration: none" ng-click="gotoElement('top')" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes &mdash;
-        {{vm.user.meditations[$index].name}}</a>
+        {{event.meditation.name}}</a>
     </div>
     <br>
   </div>
