@@ -20,14 +20,14 @@
     <div class="row user-meditation-row">
       <div class="col-md-6 user-meditation">
         <img src="assets/teal-logo.svg" alt="logo" class="meditation-logo">  Meditation Tracking
-        <button ng-click="vm.sortDate()">Sort Date</button>
+        <!-- <button ng-click="vm.sortDate()">Sort Date</button> -->
       </div>
       <div class="col-md-6 enlightenment-points">
         Enlightenment: {{vm.points}} points
       </div>
     </div>
     <hr class="blue-hr">
-    <div ng-repeat="event in vm.user.events">
+    <div ng-repeat="event in vm.user.events | orderBy: '-date'">
       <a class="user-meditation-list" style="text-decoration: none" ng-click="gotoElement('top')" ui-sref="user.event({id: event.id})">{{event.date | date: medium}} for {{event.minutes}} minutes &mdash;
         {{event.meditation.name}}</a>
     </div>
