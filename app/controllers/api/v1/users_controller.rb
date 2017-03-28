@@ -8,7 +8,7 @@ class Api::V1::UsersController < ApplicationController
 
   def show
     if @user
-      render json: @user
+      render json: @user, include: { events: [:minutes, meditation: [:name]]}
     else
       render json: { message: "Could not find user", status: 404 }, status: 404
     end

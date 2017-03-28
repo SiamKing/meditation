@@ -19,9 +19,7 @@
 
       vm.sortDate = function () {
         vm.user.events.sort(function(a, b) {
-          a = new Date(a.date)
-          b = new Date(b.date)
-          return a - b;
+          return (new Date(a.date)) - (new Date(b.date));
         })
       };
 

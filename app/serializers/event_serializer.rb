@@ -5,4 +5,5 @@ class EventSerializer < ActiveModel::Serializer
   class MeditationSerializer < ActiveModel::Serializer
     attributes :id, :name
   end
+
 end
