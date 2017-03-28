@@ -18,19 +18,27 @@
       $rootScope.$storage = $localStorage;
       vm.sortMeditation = sortMeditation;
       vm.sortDate = sortDate;
+      vm.sortBy = sortBy;
+      vm.sortMinutes = sortMinutes;
 
-      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation"]
+      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation", "Minutes"]
 
-      vm.sortBy = function() {
+      function sortBy() {
         if (vm.selectedOption === vm.options[0]) {
           vm.sortDate();
           vm.user.events.reverse();
         } else if (vm.selectedOption === vm.options[1]) {
-          vm.sortDate()
+          vm.sortDate();
         } else if (vm.selectedOption === vm.options[2]) {
           vm.sortMeditation();
+        } else if (vm.selectedOption === vm.options[3]) {
+          vm.sortMinutes();
         }
       };
+
+      function sortMinutes() {
+        vm.user.events.sort((a, b) => parseInt(a.minutes) - parseInt(b.minutes))
+      }
 
       function sortDate() {
         vm.user.events.sort(function(a, b) {
