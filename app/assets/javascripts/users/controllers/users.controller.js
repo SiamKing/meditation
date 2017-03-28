@@ -21,7 +21,7 @@
       vm.sortBy = sortBy;
       vm.sortMinutes = sortMinutes;
 
-      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation", "Minutes"]
+      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation", "Minutes (Asc)", "Minutes (Desc)"]
 
       function sortBy() {
         if (vm.selectedOption === vm.options[0]) {
@@ -33,6 +33,9 @@
           vm.sortMeditation();
         } else if (vm.selectedOption === vm.options[3]) {
           vm.sortMinutes();
+        } else if (vm.selectedOption === vm.options[4]) {
+          vm.sortMinutes();
+          vm.user.events.reverse();
         }
       };
 
@@ -41,13 +44,11 @@
       }
 
       function sortDate() {
-        vm.user.events.sort(function(a, b) {
-          return (new Date(a.date)) - (new Date(b.date));
-        })
+        vm.user.events.sort((a, b) => (new Date(a.date)) - (new Date(b.date)));
       }
 
       function sortMeditation() {
-        vm.user.events.sort(function(a, b) {
+        vm.user.events.sort((a, b) => {
           if (a.meditation.name < b.meditation.name) {
             return -1;
           } else if (a.meditation.name > b.meditation.name) {
@@ -133,9 +134,7 @@
       }
 
       function enlightenmentPoints(user) {
-        return getMinutes(user).reduce(function(a, b) {
-          return a + b;
-        }, 0);
+        return getMinutes(user).reduce((a, b) => a + b);
       }
 
       function getMinutes(user) {
