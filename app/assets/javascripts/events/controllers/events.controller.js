@@ -44,7 +44,7 @@
         HttpService
           .addEvent(vm.event)
           .then(data => vm.event.id = data.data.id)
-          $scope.$parent.vm.user.meditations.push(meditation);
+          vm.event.meditation = meditation;
           $scope.$parent.vm.user.events.push(vm.event);
           $scope.$parent.vm.points += parseInt(vm.minutes);
           $scope.$parent.vm.hideCalendarBtn = false;
