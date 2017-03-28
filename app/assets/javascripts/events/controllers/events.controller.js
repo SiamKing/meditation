@@ -91,7 +91,6 @@
           .then(() => {
             var index = $scope.$parent.vm.user.events.findIndex(event => event.id === parseInt($stateParams.id))
             var currentEvents = $scope.$parent.vm.user.events.filter(event => event.id !== parseInt($stateParams.id));
-            var meditation = $scope.$parent.vm.user.meditations.splice(index, 1);
             $scope.$parent.vm.user.events = currentEvents;
             $scope.$parent.vm.points -= $scope.event.event.minutes;
             $scope.$parent.vm.hideCalendarBtn = false;
