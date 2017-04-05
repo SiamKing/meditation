@@ -26,9 +26,9 @@
       function sortBy() {
         if (vm.selectedOption === vm.options[0]) {
           vm.sortDate();
-          vm.user.events.reverse();
         } else if (vm.selectedOption === vm.options[1]) {
           vm.sortDate();
+          vm.user.events.reverse();
         } else if (vm.selectedOption === vm.options[2]) {
           vm.sortMeditation();
         } else if (vm.selectedOption === vm.options[3]) {
