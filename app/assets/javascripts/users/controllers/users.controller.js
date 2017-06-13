@@ -20,8 +20,13 @@
       vm.sortDate = sortDate;
       vm.sortBy = sortBy;
       vm.sortMinutes = sortMinutes;
+      vm.sortZen = sortZen;
 
-      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation", "Minutes (Asc)", "Minutes (Desc)"]
+      function sortZen() {
+        return vm.user.events = vm.user.events.filter(v => v.meditation.name === "Zen Meditation");
+      }
+
+      vm.options = ["Date (Asc)", "Date (Desc)", "Meditation", "Minutes (Asc)", "Minutes (Desc)"];
 
       function sortBy() {
         if (vm.selectedOption === vm.options[0]) {
@@ -57,10 +62,10 @@
             let dateA = new Date(a.date);
             let dateB = new Date(b.date);
 
-            if (dateA > dateB) {
-              return 1;
-            } else if (dateA < dateB) {
+            if (dateA < dateB) {
               return -1;
+            } else if (dateA > dateB) {
+              return 1;
             } else {
               return 0;
             }
