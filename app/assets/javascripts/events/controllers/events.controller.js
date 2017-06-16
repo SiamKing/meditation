@@ -49,7 +49,7 @@
           $scope.$parent.vm.points += parseInt(vm.minutes);
           $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
-          toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been added to calendar`);
+          toaster.pop('success', meditation.name + ' on ' + formattedDate + ' for ' + vm.event.minutes + ' minutes has been added to calendar');
           $state.go('user');
       }
 
@@ -78,7 +78,7 @@
           $scope.$parent.vm.points += parseInt(vm.event.minutes);
           $scope.$parent.vm.hideCalendarBtn = false;
           let formattedDate = $filter('date')(vm.event.date, "mediumDate")
-          toaster.pop('success', `${meditation.name} on ${formattedDate} for ${vm.event.minutes} minutes has been updated`);
+          toaster.pop('success', meditation.name + ' on ' + formattedDate + ' for ' + vm.event.minutes + ' minutes has been updated');
           $state.go('user')
         });
       }
@@ -94,7 +94,7 @@
             $scope.$parent.vm.user.events = currentEvents;
             $scope.$parent.vm.points -= $scope.event.event.minutes;
             $scope.$parent.vm.hideCalendarBtn = false;
-            toaster.pop('success', `${meditationName} on ${formattedDate} has been deleted from the calendar`)
+            toaster.pop('success', meditationName + ' on ' + formattedDate + ' has been deleted from the calendar')
             $state.go('user', ({userId: $stateParams.userId}));
           })
       }

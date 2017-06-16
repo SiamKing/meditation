@@ -5,12 +5,12 @@
     .module('meditation')
     .factory('HttpService', ['$http', function($http) {
       return {
-        all,
-        getObject,
-        create,
-        addEvent,
-        updateEvent,
-        destroy
+        all: all,
+        getObject: getObject,
+        create: create,
+        addEvent: addEvent,
+        updateEvent: updateEvent,
+        destroy: destroy
       }
 
       function all(param) {
@@ -73,7 +73,7 @@
       function updateEvent(eventInfo, id) {
         const req = {
           method: 'PATCH',
-          url: `/api/v1/events/${id}`,
+          url: '/api/v1/events/' + id,
           data: {
             event: eventInfo
           }
@@ -85,7 +85,7 @@
       function destroy(param, id) {
         const req = {
           method: 'DELETE',
-          url: `/api/v1/${param}/${id}`
+          url: '/api/v1/' + param + '/' + id
         }
         return $http(req)
           .then(response => response.data)

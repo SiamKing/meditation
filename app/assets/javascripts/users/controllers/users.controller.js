@@ -104,7 +104,7 @@
         $rootScope.$storage.currentUserSignedIn = true;
         $rootScope.$storage.currentUser = user;
         $state.go('user', {userId: vm.user.id});
-        toaster.pop('success', `Welcome ${vm.user.username}!`);
+        toaster.pop('success', 'Welcome ' + vm.user.username + '!');
       }
 
       //  Register
