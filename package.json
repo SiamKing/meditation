@@ -1,0 +1,27 @@
+{
+  "name": "meditations",
+  "version": "1.0.0",
+  "description": "meditation app",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiamKing/meditation.git"
+  },
+  "keywords": [
+    "medidate"
+  ],
+  "author": "TJ Hill",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SiamKing/meditation/issues"
+  },
+  "homepage": "https://github.com/SiamKing/meditation#readme"
+}
