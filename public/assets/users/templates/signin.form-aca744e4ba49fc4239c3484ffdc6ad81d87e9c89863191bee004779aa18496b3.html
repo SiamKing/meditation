@@ -1,0 +1,31 @@
+<form name="signInForm" ng-show="vm.signIn" class="input-group" ng-submit="vm.login()" novalidate>
+  <div class="form-width" ng-class="{ 'has-error': signInForm.email.$touched && signInForm.email.$invalid}">
+    <input class="form-control transparent-input"
+          placeholder="Email"
+          name="email"
+          type="email"
+          ng-model="vm.userForm.email"
+          required="required">
+    <div class="message-alert" ng-show="signInForm.email.$touched" ng-messages="signInForm.email.$error" role="alert">
+      <p ng-message="required">Email is Required</p>
+      <p ng-message="email">Must be a valid email address</p>
+    </div>
+  </div>
+
+  <div class="form-width" ng-class="{ 'has-error': signInForm.password.$touched && signInForm.password.$invalid}">
+    <input class="form-control transparent-input"
+          placeholder="Password"
+          name="password"
+          type="password"
+          ng-model="vm.userForm.password"
+          required="required"
+          ng-minlength="8"
+          ng-maxlength="20">
+    <div class="message-alert" ng-show="signInForm.password.$touched" ng-messages="signInForm.password.$error" role="alert">
+      <p ng-message="required">Password is Required</p>
+      <p ng-message="minlength">Password must be at least 8 characters</p>
+      <p ng-message="maxlength">Password must be less than 20 characters</p>
+    </div>
+  </div>
+  <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" ng-disabled="signInForm.$invalid" value="Submit">
+</form>

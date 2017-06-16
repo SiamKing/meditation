@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-10 col-md-offset-1 event-form-bg">
+    <div class="event-form">
+      <form name="form" ng-submit="event.updateEvent()" novalidate>
+
+      <date-picker></date-picker>
+
+      <minutes></minutes>
+
+      <!-- Start Meditation Dropdown -->
+
+      <meditation-dropdown ></meditation-dropdown>
+
+      <!-- End Meditation Dropdown -->
+      <div class="col-md-2">
+        <input type="submit" value="Update Event" class="btn event-btn" ng-disabled="!form.$valid">
+      </div>
+    </form>
+  </div>
+</div>
+</div>

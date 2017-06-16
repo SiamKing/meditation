@@ -1,0 +1,49 @@
+<div>
+  <div class="jumbotron meditations">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1">
+        <div class="meditations-jumbo-text center">
+          Explore Meditation Techniques
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container container-search">
+	  <div class="row">
+      <div class="col-md-8 col-md-offset-1">
+        <div class="input-group">
+          <span class="input-group-addon">
+              <i class="glyphicon glyphicon-search"></i>
+          </span>
+            <input ng-model="vm.search" type="text"  class="form-control input-search" placeholder="Search"/>
+
+        </div>
+      </div>
+        <div class="col-md-3 dropdown-meditation">
+          <div class="button-group">
+            <select class="btn btn-default btn-lg dropdown-toggle dropdown-text" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ng-model="vm.filterTradition" ng-options="tradition for tradition in vm.traditions">
+              <option value="" disabled selected>Search by Tradition</option>
+            </select>
+          </div>
+        </div>
+  	</div>
+  </div>
+  <div class="container">
+    <div class="row row-centered">
+      <div ng-repeat="meditation in vm.meditations | filter: vm.filterTradition | filter:vm.search">
+        <div class="col-md-4 col-centered icon">
+          <a class="meditations-text hvr-grow" style="text-decoration: none" ui-sref="meditations.meditation({id: meditation.id})"
+          ng-click="gotoElement('meditation-scroll')">
+          <img ng-src="{{meditation.icon}}" alt="meditation.name" />
+          <br>
+          <span>{{meditation.name}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+<br><br><br><br><br>
+  <div id="meditation-scroll">
+    <ui-view></ui-view>
+  </div>
+</div>

@@ -23,6 +23,7 @@ gem 'paperclip', '~> 5.0.0'
 gem 'sprockets'
 gem 'sprockets-rails', github: 'rails/sprockets-rails'
 gem 'babel-transpiler'
+gem 'ngannotate-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
