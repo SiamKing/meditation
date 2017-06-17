@@ -5,6 +5,8 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.2.3'
+
 gem 'rails', '~> 5.0.1'
 
 gem 'puma', '~> 3.0'
@@ -26,6 +28,7 @@ gem 'sprockets-es6'
 gem 'babel-transpiler'
 gem 'ngannotate-rails'
 gem 'webpacker', '~> 2.0'
+gem 'pg'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
