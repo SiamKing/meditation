@@ -15,14 +15,22 @@
 
       function all(param) {
         return $http.get('/api/v1/' + param)
-          .then(response => response.data)
-          .catch(err => console.log(err))
+          .then(function(response) {
+            return response.data
+          })
+          .catch(function(err) {
+            console.log(err);
+          })
       }
 
       function getObject(param, id) {
         return $http.get('api/v1/' + param + '/' + id)
-          .then(response => response.data)
-          .catch(err => console.log(err))
+          .then(function(response) {
+            return response.data;
+          })
+          .catch(function(err) {
+            console.log(err);
+          })
       }
 
       function create(param, info) {
@@ -38,8 +46,12 @@
             }
           }
           return $http(req)
-            .then(response => response.data)
-            .catch(err => console.log(err))
+            .then(function(response) {
+              return response.data;
+            })
+            .catch(function(err) {
+              console.log(err);
+            })
         } else if (param === "meditations") {
           const req = {
             method: 'POST',
@@ -52,8 +64,12 @@
             }
           }
           return $http(req)
-            .then(response => response.data)
-            .catch(err => console.log(err))
+            .then(function(response) {
+              return response.data;
+            })
+            .catch(function(err) {
+              console.log(err);
+            })
         }
       }
 
@@ -88,8 +104,12 @@
           url: '/api/v1/' + param + '/' + id
         }
         return $http(req)
-          .then(response => response.data)
-          .catch(err => console.log(err))
+          .then(function(response) {
+            return response.data;
+          })
+          .catch(function(err) {
+            console.log(err);
+          })
       }
 
     }])
