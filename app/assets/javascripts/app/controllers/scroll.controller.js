@@ -3,17 +3,13 @@
 
   angular
     .module('meditation')
-    .controller('ScrollController', function($rootScope, $location, anchorSmoothScroll) {
+    .controller('ScrollController', ['$rootScope', '$location', 'anchorSmoothScroll', function($rootScope, $location, anchorSmoothScroll) {
+      $rootScope.gotoElement = function (eID) {
+        $location.hash(eID);
 
-        $rootScope.gotoElement = function (eID){
-          console.log(eID)
-          // set the location.hash to the id of
-          // the element you wish to scroll to.
-          $location.hash(eID);
+        anchorSmoothScroll.scrollTo(eID);
 
-          // call $anchorScroll()
-          anchorSmoothScroll.scrollTo(eID);
+      }
 
-        };
-      });
+    }]);
 }())
