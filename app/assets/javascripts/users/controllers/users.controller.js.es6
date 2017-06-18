@@ -139,7 +139,8 @@
       }
 
       function enlightenmentPoints(user) {
-        return getMinutes(user).reduce((a, b) => a + b);
+        console.log(user.events.length )
+        return user.events.length !== 0 ? getMinutes(user).reduce((a, b) => a + b) : 0;
       }
 
       function getMinutes(user) {

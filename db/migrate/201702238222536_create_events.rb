@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.references :user, foreign_key: true
       t.references :meditation, foreign_key: true
       t.integer :minutes
-      t.date :datetime
+      t.datetime :date
 
       t.timestamps
     end

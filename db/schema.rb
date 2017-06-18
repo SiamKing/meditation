@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 201702238222536) do
     t.integer  "user_id"
     t.integer  "meditation_id"
     t.integer  "minutes"
-    t.date     "datetime"
+    t.datetime "date"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.index ["meditation_id"], name: "index_events_on_meditation_id"
