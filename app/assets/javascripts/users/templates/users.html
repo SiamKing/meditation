@@ -1,29 +1,32 @@
-<div class="users-background">
+<div class="users-background vertical-center" data-img-width="1600" data-img-height="1064" data-diff="100">
   <div class="container">
-    <div class="row sign-in">
-      <div class="col-lg-12">
-        <div class="row ">
-          <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2" >
-            <div class="hero-bold">
-              Meditation Scheduler
-            </div>
-            <div class="hero-text">
-              Keep track of how often you meditate and discover new techniques
-            </div>
+    <div class="row">
+      <div class="center-block hero">
+        <div class="hero-bold">
+          Meditation Scheduler
+        </div>
+        <div class="hero-text">
+          Keep track of how often you meditate and discover new techniques
+        </div>
 
-            <br>
-            <div class="col-md-8 col-md-offset-2">
+        <br>
+        <div class="sign-in-form">
+          <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-2 col-md-offset-2">
               <input class="btn transparent-input" ng-click="vm.showSignIn()" value="Log In">
-              <input class="btn transparent-input pull-right" ng-click="vm.showSignUp()" value="Sign Up">
-              <!-- Sign In Form -->
-              <sign-in-form></sign-in-form>
-
-              <!-- Sign Up Form -->
-              <sign-up-form></sign-up-form>
             </div>
-          </div>
+            <div class="col-md-2 col-md-offset-5">
+              <input class="btn transparent-input " ng-click="vm.showSignUp()" value="Sign Up">
+            </div>
+
+            <!-- Sign In Form -->
+            <sign-in-form></sign-in-form>
+
+            <!-- Sign Up Form -->
+            <sign-up-form></sign-up-form>
           </div>
         </div>
+
       </div>
     </div>
   </div>
