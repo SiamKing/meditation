@@ -2,7 +2,6 @@
 .vertical-center {
   height:100%;
   width:100%;
-
   text-align: center;  /* align the inline(-block) elements horizontally */
   font: 0/0 a;         /* remove the gap between inline(-block) elements */
 }
@@ -19,10 +18,11 @@
   display: inline-block;
   vertical-align: middle;  /* vertical alignment of the inline element */
                            /* reset the font property */
-  font: 16px/1 "Ralway", Helvetica, Arial, sans-serif;
+  font: 16px/1 "Raleway", sans-serif;
 }
 
 .hero {
+  margin-top: 200px;
   width: 800px;
   max-width: 100%;
 }
@@ -31,6 +31,7 @@
   background-image: url('/assets/home_1900wide.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
+  background-position:50% 50%9 !important;
   // padding-top: 40px;
   overflow: hidden;
   -webkit-background-size: cover;
@@ -38,8 +39,13 @@
   -o-background-size: cover;
   background-size: cover;
   position: fixed;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 40px;
+}
+.users-background.overflow {
+  height: auto;
   min-height: 100%;
-  min-width: 100%;
 }
 
 .vertical-center-row {
@@ -48,19 +54,19 @@
 }
 
 .hero-bold {
-  font-family: 'Raleway', sans-serif;;
+  text-align: center;
   font-weight: 500;
   font-size: 54px;
   color: #FFFFFF;
   letter-spacing: 3.5px;
   text-shadow: 1px 1px 3px rgba(0,0,0, 0.9);
   text-transform: uppercase;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .hero-text {
   /* Keep track of how of: */
-  font-family: 'Raleway';
+  text-align: center;
   font-size: 17px;
   color: #FFF;
   letter-spacing: 1.2px;
@@ -81,7 +87,6 @@ input.transparent-input {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid #FFFFFF;
   border-radius: 1px;
-  font-family: 'Raleway';
   font-size: 14px;
   color: #FFFFFF;
   // letter-spacing: 3px;
@@ -94,28 +99,24 @@ input.transparent-input::-webkit-input-placeholder {
   color: #FFF;
   font-size: 14px;
   // letter-spacing: 3px;
-  font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input:-moz-placeholder { /* Firefox 18- */
   color: #FFF;
   font-size: 14px;
   letter-spacing: 3px;
-  font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input::-moz-placeholder {  /* Firefox 19+ */
   color: #FFF;
   font-size: 14px;
   letter-spacing: 3px;
-  font-family: 'Raleway', sans-serif;
 }
 
 input.transparent-input:-ms-input-placeholder {
   color: #FFF;
   font-size: 14px;
   letter-spacing: 3px;
-  font-family: 'Raleway', sans-serif;
 }
 
 input.submit-button {
@@ -146,7 +147,6 @@ input.submit-button {
 
 .user-jumbotron-large-text {
   padding-top:80px;
-  font-family: 'Raleway';
   font-size: 32px;
   font-weight: 600;
   color: #FFFFFF;
@@ -156,7 +156,6 @@ input.submit-button {
 }
 
 .user-jumbotron-small-text {
-  font-family: 'Raleway';
   font-size: 22px;
   color: #FFFFFF;
   letter-spacing: 0;
@@ -169,49 +168,20 @@ input.submit-button {
   box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
   border-radius: 3px;
   /* Add meditation to ca: */
-  font-family: 'Raleway';
   font-size: 24px;
   color: #FFF;
   width: 300px;
 }
 
-
-// /* shape: */
-// background: #00A8D0;
-// border: 1px solid rgba(121,125,128,0.30);
-// box-shadow: inset 1px 1px 3px 0 rgba(121,125,128,0.20);
-// border-radius: 3px;
-// /* Add meditation BTN: */
-// font-family: Raleway-Regular;
-// font-size: 22px;
-// color: #F5F5F3;
-// line-height: 14px;
-// /* shape: */
-// background: #F9F9F9;
-// border: 1px solid rgba(121,125,128,0.30);
-// border-radius: 3px;
-
-// /* Mindfulness: */
-// font-family: Raleway-Regular;
-// font-size: 22px;
-// color: #00A8D0;
-// letter-spacing: 0;
-// line-height: 37px;
-// /* Triangle: */
-// background: #00A8D0;
-//
-//
 .user-meditation {
-  font-family: 'Raleway';
   font-size: 36px;
   color: #00A8D0;
   letter-spacing: 0;
 }
-// /* teal logo copy: */
-// /* Meditation Tracking */
-//
+
+/* ------ Meditation Tracking ------ */
+
 .enlightenment-points {
-  font-family: 'Raleway';
   font-size: 28px;
   color: #007799;
   letter-spacing: 0;
@@ -224,7 +194,6 @@ input.submit-button {
 }
 
 .user-meditation-list {
-  font-family: 'Raleway';
   font-size: 24px;
   color: #6B6B6B;
   letter-spacing: 0;
@@ -233,7 +202,6 @@ input.submit-button {
 }
 
 .user-meditation-event {
-  font-family: 'Raleway';
   font-size: 24px;
   color: #FFF;
   letter-spacing: 0;
