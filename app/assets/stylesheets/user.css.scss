@@ -80,9 +80,55 @@
   max-width: 100%;
   width: 400px;
 }
+.log-in {
+  width: 100px;
+  margin-left: 77px;
+}
+.sign-up {
+  width: 100px;
+  margin-left: 190px;
+}
+
+@media only screen and (max-width: 992px) {
+
+  .log-in {
+    margin-left: 120px;
+  }
+  .sign-up {
+    margin-left: 120px;
+  }
+  .sign-in-form {
+    margin-left: 60px !important;
+  }
+
+
+}
+
+@media only screen and (max-width: 780px) {
+  input.transparent.butn {
+    width: 117px !important;
+  }
+  .form-width {
+    margin-left: 58px;
+    width: 234px !important;
+  }
+  input.submit-button {
+    margin-left: 58px;
+    width: 234px !important;
+  }
+  .sign-in-form {
+    margin-left: 100px !important;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .sign-in-form {
+    margin-left: 60px !important;
+  }
+}
 
 /* Main page user input - transparent */
-input.transparent-input {
+input.transparent {
   // background-color: transparent !important;
   background-color: #000;
   background: rgba(0, 0, 0, 0.4);
@@ -92,29 +138,33 @@ input.transparent-input {
   color: #FFFFFF;
   // letter-spacing: 3px;
   height: 40px;
-  width: 200px;
+
   margin-top: 10px;
 }
 
-input.transparent-input::-webkit-input-placeholder {
+input.transparent.butn {
+    width: 200px;
+}
+
+input.transparent::-webkit-input-placeholder {
   color: #FFF;
   font-size: 14px;
   // letter-spacing: 3px;
 }
 
-input.transparent-input:-moz-placeholder { /* Firefox 18- */
+input.transparent:-moz-placeholder { /* Firefox 18- */
   color: #FFF;
   font-size: 14px;
   letter-spacing: 3px;
 }
 
-input.transparent-input::-moz-placeholder {  /* Firefox 19+ */
+input.transparent::-moz-placeholder {  /* Firefox 19+ */
   color: #FFF;
   font-size: 14px;
   letter-spacing: 3px;
 }
 
-input.transparent-input:-ms-input-placeholder {
+input.transparent:-ms-input-placeholder {
   color: #FFF;
   font-size: 14px;
   letter-spacing: 3px;

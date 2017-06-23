@@ -1,6 +1,6 @@
 <form name="signInForm" ng-show="vm.signIn" class="input-group" ng-submit="vm.login()" novalidate>
   <div class="form-width" ng-class="{ 'has-error': signInForm.email.$touched && signInForm.email.$invalid}">
-    <input class="form-control transparent-input"
+    <input class="form-control transparent input"
           placeholder="Email"
           name="email"
           type="email"
@@ -13,7 +13,7 @@
   </div>
 
   <div class="form-width" ng-class="{ 'has-error': signInForm.password.$touched && signInForm.password.$invalid}">
-    <input class="form-control transparent-input"
+    <input class="form-control transparent input"
           placeholder="Password"
           name="password"
           type="password"
@@ -27,5 +27,5 @@
       <p ng-message="maxlength">Password must be less than 20 characters</p>
     </div>
   </div>
-  <input class="transparent-input submit-button" style="text-transform: uppercase" type="submit" ng-disabled="signInForm.$invalid" value="Submit">
+  <input class="transparent input submit-button" style="text-transform: uppercase" type="submit" ng-disabled="signInForm.$invalid" value="Submit">
 </form>
