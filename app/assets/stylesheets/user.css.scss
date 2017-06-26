@@ -1,26 +1,4 @@
 /* Sign In Page */
-.vertical-center {
-  height:100%;
-  width:100%;
-  text-align: center;  /* align the inline(-block) elements horizontally */
-  font: 0/0 a;         /* remove the gap between inline(-block) elements */
-}
-
-.vertical-center:before {    /* create a full-height inline block pseudo=element */
-  content: " ";
-  display: inline-block;
-  vertical-align: middle;    /* vertical alignment of the inline element */
-  height: 100%;
-}
-
-.vertical-center > .container {
-  max-width: 100%;
-  display: inline-block;
-  vertical-align: middle;  /* vertical alignment of the inline element */
-                           /* reset the font property */
-  font: 16px/1 "Raleway", sans-serif;
-}
-
 .hero {
   margin-top: 200px;
   width: 800px;
@@ -28,12 +6,13 @@
 }
 
 .users-background {
-  background-image: url('/assets/home_1900wide.png');
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-position:50% 50%9 !important;
-  // padding-top: 40px;
-  overflow: hidden;
+  background: url('/assets/home_1900wide.png') no-repeat center center;
+  height: 100vh;
+  // background-repeat: no-repeat;
+  // background-position: 50% 50%;
+  // background-position:50% 50%9 !important;
+  // // padding-top: 40px;
+  // overflow: hidden;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -42,6 +21,7 @@
   height: 100%;
   width: 100%;
   padding-bottom: 40px;
+
 }
 .users-background.overflow {
   height: auto;
@@ -74,36 +54,39 @@
   text-transform: uppercase;
 }
 
-.sign-in-form {
-  text-align: center;
-  padding-left: 50px !important;
-  max-width: 100%;
+.signin-form {
+
+  // margin: 0 auto;
+  // text-align: center;
+  // max-width: 100%;
   width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .log-in {
   width: 100px;
-  margin-left: 77px;
 }
 .sign-up {
   width: 100px;
-  margin-left: 190px;
+  margin-left: 88px;
 }
 
-@media only screen and (max-width: 992px) {
-
-  .log-in {
-    margin-left: 120px;
-  }
-  .sign-up {
-    margin-left: 120px;
-  }
-  .sign-in-form {
-    margin-left: 60px !important;
-  }
-
-
-}
-
+// @media only screen and (max-width: 992px) {
+//
+//   .log-in {
+//     margin-left: 130px;
+//   }
+//   .sign-up {
+//     margin-left: 130px;
+//   }
+//   .sign-in-form {
+//     margin-left: 60px !important;
+//   }
+//
+//
+// }
+//
 @media only screen and (max-width: 780px) {
   input.transparent.butn {
     width: 117px !important;
@@ -116,16 +99,16 @@
     margin-left: 58px;
     width: 234px !important;
   }
-  .sign-in-form {
-    margin-left: 100px !important;
-  }
+  // .sign-in-form {
+  //   margin-left: 100px !important;
+  // }
 }
-
-@media only screen and (max-width: 700px) {
-  .sign-in-form {
-    margin-left: 60px !important;
-  }
-}
+//
+// @media only screen and (max-width: 580px) {
+//   .sign-in-form {
+//     margin-left: 60px !important;
+//   }
+// }
 
 /* Main page user input - transparent */
 input.transparent {
