@@ -102,6 +102,12 @@
   .hero-bold {
     font-size: 40px;
   }
+  .navbar-toggle {
+    margin-right: -10px !important;
+  }
+  .logo {
+    margin-left: -10px !important;
+  }
 }
 @media only screen and (max-width: 390px) {
   .hero-bold {

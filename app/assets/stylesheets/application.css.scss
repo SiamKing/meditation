@@ -20,6 +20,13 @@ body, html {
   height: 100%;
   font-family: 'Raleway', sans-serif !important;
 }
+.navbar-toggle {
+  margin-top: 18px !important;
+  border: 1px solid #00A8D0 !important;
+}
+span.icon-bar {
+  background-color: #00A8D0 !important;
+}
 #toast-container > .toast-success {
   background-image: url("/assets/icons/meditator.png") !important;
   background-size: 50px 50px;
