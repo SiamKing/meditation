@@ -1,37 +1,25 @@
 /* Sign In Page */
 .hero {
-  margin-top: 200px;
+  margin-top: 300px;
   width: 800px;
   max-width: 100%;
 }
 
 .users-background {
-  background: url('/assets/home_1900wide.png') no-repeat center center;
-  height: 100vh;
-  // background-repeat: no-repeat;
-  // background-position: 50% 50%;
-  // background-position:50% 50%9 !important;
-  // // padding-top: 40px;
-  // overflow: hidden;
+  background: url('/assets/home_1900wide.png') no-repeat center center fixed;
+  min-height: 100%;
+  max-width: 100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  position: fixed;
-  height: 100%;
-  width: 100%;
   padding-bottom: 40px;
 
 }
-.users-background.overflow {
-  height: auto;
-  min-height: 100%;
-}
-
-.vertical-center-row {
-  display: table-cell;
-  vertical-align: middle;
-}
+// .users-background.overflow {
+//   height: auto;
+//   min-height: 100%;
+// }
 
 .hero-bold {
   text-align: center;
@@ -54,74 +42,103 @@
   text-transform: uppercase;
 }
 
-.signin-form {
-
-  // margin: 0 auto;
-  // text-align: center;
-  // max-width: 100%;
-  width: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+// ---- SIGN IN FORM ----- //
+.sign-log-form {
+  margin-left: 30px;
 }
+
 .log-in {
   width: 100px;
+  max-width: 100%;
 }
 .sign-up {
+  padding-left: 38px !important;
   width: 100px;
-  margin-left: 88px;
+  max-width: 100%;
 }
 
-// @media only screen and (max-width: 992px) {
-//
-//   .log-in {
-//     margin-left: 130px;
-//   }
-//   .sign-up {
-//     margin-left: 130px;
-//   }
-//   .sign-in-form {
-//     margin-left: 60px !important;
-//   }
-//
-//
-// }
-//
+@media only screen and (max-width: 992px) {
+  .sign-log-form {
+    margin-left: 0px;
+  }
+  .sign-up {
+    padding-left: 52px !important;
+  }
+
+}
+
 @media only screen and (max-width: 780px) {
+  .sign-log-form {
+    margin-left: 115px;
+  }
   input.transparent.butn {
-    width: 117px !important;
+    width: 97px !important;
   }
   .form-width {
-    margin-left: 58px;
     width: 234px !important;
   }
   input.submit-button {
-    margin-left: 58px;
+    margin-left: 0px !important;
     width: 234px !important;
   }
-  // .sign-in-form {
-  //   margin-left: 100px !important;
-  // }
+  .sign-up {
+    padding-left: 0px !important;
+    margin-left: 52px !important;
+  }
+
 }
 //
-// @media only screen and (max-width: 580px) {
-//   .sign-in-form {
-//     margin-left: 60px !important;
-//   }
-// }
+@media only screen and (max-width: 580px) {
+  .hero {
+    margin-top: 200px;
+  }
+  .sign-log-form {
+    margin-left: 15px;
+  }
+  .sign-up {
+    padding-left: 60px !important;
+    margin-left: 60px !important;
+  }
+  .hero-bold {
+    font-size: 40px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .hero-bold {
+    font-size: 36px;
+  }
+  .hero-text {
+    font-size: 16px;
+  }
+  .sign-log-form {
+    margin-left: 10px;
+  }
+  .sign-up {
+    padding-left: 20px !important;
+    margin-left: 60px !important;
+  }
+  .form-width {
+    width: 193px !important;
+  }
+  input.submit-button {
+    width: 193px !important;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .sign-log-form {
+    margin-left: 0px;
+  }
+}
 
 /* Main page user input - transparent */
 input.transparent {
-  // background-color: transparent !important;
   background-color: #000;
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid #FFFFFF;
   border-radius: 1px;
   font-size: 14px;
   color: #FFFFFF;
-  // letter-spacing: 3px;
   height: 40px;
-
   margin-top: 10px;
 }
 
@@ -132,35 +149,33 @@ input.transparent.butn {
 input.transparent::-webkit-input-placeholder {
   color: #FFF;
   font-size: 14px;
-  // letter-spacing: 3px;
 }
 
 input.transparent:-moz-placeholder { /* Firefox 18- */
   color: #FFF;
   font-size: 14px;
-  letter-spacing: 3px;
 }
 
 input.transparent::-moz-placeholder {  /* Firefox 19+ */
   color: #FFF;
   font-size: 14px;
-  letter-spacing: 3px;
 }
 
 input.transparent:-ms-input-placeholder {
   color: #FFF;
   font-size: 14px;
-  letter-spacing: 3px;
 }
 
 input.submit-button {
   width: 300px;
   background-color: #00A8D0;
   opacity: 0.7;
+  margin-left: 75px;
 }
 
 .form-width {
-  width: 468px;
+  // width: 446px;
+  width: 32em;
   max-width: 100%;
 }
 
