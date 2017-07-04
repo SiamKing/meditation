@@ -135,3 +135,9 @@ input.input-search {
   margin-left: -250px; /* Half the width */
   opacity: .1;
 }
+
+@media only screen and (max-width: 600px) {
+  .meditation-container img {
+    opacity: 0;
+  }
+}
