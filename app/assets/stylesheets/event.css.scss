@@ -90,3 +90,13 @@ input.minutes:-ms-input-placeholder {
     margin-left: -30px !important;
   }
 }
+
+@media (max-width: 992px) {
+  .event-form-bg {
+    margin-top: -20px;
+  }
+  .meditations-dropdown-menu, .date-picker,
+  .event-minutes, .event-btn {
+    margin-top: 14px;
+  }
+}
