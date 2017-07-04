@@ -6,7 +6,7 @@
     .directive('datePicker', function() {
       return {
         template: [
-          '<div class="col-md-3 date-picker" ng-controller="DatePickerController as vm">',
+          '<div class="col-sm-3 date-picker" ng-controller="DatePickerController as vm">',
               '<p class="input-group">',
                 '<span class="input-group-btn">',
                   '<button type="button" class="btn btn-default" ng-click="vm.valuationDatePickerOpen($event)">',

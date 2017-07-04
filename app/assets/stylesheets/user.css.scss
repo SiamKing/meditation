@@ -60,6 +60,22 @@
   .sign-up {
     padding-left: 52px !important;
   }
+  .user-jumbotron-large-text {
+    font-size: 24px !important;
+  }
+
+  .user-jumbotron-small-text {
+    font-size: 16px !important;
+  }
+  .user-meditation {
+    font-size: 24px !important;
+  }
+  .enlightenment-points {
+    font-size: 20px !important;
+  }
+  .user-meditation-list {
+    font-size: 18px !important;
+  }
 
 }
 
@@ -80,6 +96,13 @@
   .sign-up {
     padding-left: 0px !important;
     margin-left: 52px !important;
+  }
+  .user-jumbotron-large-text {
+    font-size: 0px !important;
+  }
+
+  .user-jumbotron-small-text {
+    font-size: 0px !important;
   }
 
 }
@@ -124,6 +147,15 @@
   }
   input.submit-button {
     width: 193px !important;
+  }
+  .user-meditation {
+    font-size: 20px !important;
+  }
+  .enlightenment-points {
+    font-size: 16px !important;
+  }
+  .user-meditation-list {
+    font-size: 14px !important;
   }
 }
 @media only screen and (max-width: 320px) {
