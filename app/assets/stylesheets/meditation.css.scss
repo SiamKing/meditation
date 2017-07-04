@@ -129,6 +129,8 @@ input.input-search {
   left: 50%;
   width: 500px;
   height: 500px;
+  max-width: 100%;
+  max-height: 100%;
   margin-top: -250px; /* Half the height */
   margin-left: -250px; /* Half the width */
   opacity: .1;
