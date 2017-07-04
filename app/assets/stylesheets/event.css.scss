@@ -95,13 +95,10 @@ input.minutes:-ms-input-placeholder {
   .event-form-bg {
     margin-top: -20px;
   }
-  // .meditations-dropdown-menu, .date-picker,
-  // .event-minutes, .event-btn {
-  //   margin-top: 14px;
-  // }
+
 }
 
-@media (max-width: 768px) {
+@media (max-width: 766px) {
   .event-form-bg {
     height: 200px;
   }
