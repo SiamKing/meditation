@@ -1,0 +1,12 @@
+
+<div class="container user-meditation-event">
+  <div class="row">
+    {{event.event.date | date: medium}} for {{event.event.minutes}} minutes &mdash;
+    <a ui-sref="meditations.meditation({id: event.event.meditation_id})">{{event.event.meditation.name}}</a> &mdash;
+    <button class="btn btn-default" ui-sref="user.event.update({id: event.event.id})" ng-click="event.getEvent()">Update</button>
+    <button class="btn btn-default" ng-click="event.deleteEvent()">Delete</button>
+
+  </div>
+
+</div>
+  <ui-view></ui-view>
