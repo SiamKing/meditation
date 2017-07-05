@@ -98,6 +98,11 @@ input.minutes:-ms-input-placeholder {
   .event-minutes {
     margin-left: -10px;
   }
+  .user-meditation-event {
+    font-size: 20px !important;
+    margin-bottom: 20px;
+    margin-top: -50px;
+  }
 
 }
 
@@ -130,6 +135,11 @@ input.minutes:-ms-input-placeholder {
 @media (max-width: 425px) {
   .event-form-bg {
     margin-left: 25% !important;
+  }
+  .user-meditation-event {
+    font-size: 16px !important;
+    margin-bottom: 20px;
+    margin-top: -60px;
   }
 }
 @media (max-width: 400px) {
