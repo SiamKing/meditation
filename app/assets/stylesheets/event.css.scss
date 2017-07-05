@@ -95,11 +95,50 @@ input.minutes:-ms-input-placeholder {
   .event-form-bg {
     margin-top: -20px;
   }
+  .event-minutes {
+    margin-left: -10px;
+  }
 
 }
 
 @media (max-width: 766px) {
   .event-form-bg {
     height: 200px;
+    width: 220px !important;
+  }
+  .date-picker {
+    width: 240px;
+    radius: .5;
+  }
+  .calendar-event-button {
+    width: 200px !important;
+  }
+  .event-btn {
+    margin-top: 10px;
+    margin-left: 0px !important;
+  }
+  .event-minutes, .date-picker {
+    width: 200px;
+    margin-left: 0px;
+  }
+  .btn-meditations-dropdown-menu {
+    width: 172px;
+  }
+
+}
+
+@media (max-width: 425px) {
+  .event-form-bg {
+    margin-left: 25% !important;
+  }
+}
+@media (max-width: 400px) {
+  .event-form-bg {
+    margin-left: 20% !important;
+  }
+}
+@media (max-width: 330px) {
+  .event-form-bg {
+    margin-left: 15% !important;
   }
 }
