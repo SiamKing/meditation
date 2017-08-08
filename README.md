@@ -4,6 +4,8 @@ The Meditation App allows you to add meditations to your calendar. By seeing how
 
 This app uses a Rails backend as an API and AngularJS front end
 
+To see it in action, head on over to http://medi-date.herokuapp.com
+
 ## Just Git it!
 
 Put a fork in it, copy it, and clone it. Open in your text editor of choice.
