@@ -121,7 +121,7 @@ GEM
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    paperclip (5.0.0)
+    paperclip (5.2.1)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
@@ -229,7 +229,7 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.0.5)
   ngannotate-rails
-  paperclip (~> 5.0.0)
+  paperclip (~> 5.2.0)
   pg
   pry
   puma (~> 3.0)
