@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  get "api/v1/users/demo" => "api/v1/users#demo"
 
   namespace :api do
     namespace :v1 do

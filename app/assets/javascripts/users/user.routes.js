@@ -31,11 +31,6 @@
           url: '/update',
           templateUrl: 'events/templates/update.event.html',
           controller: 'EventsController as event'
-        })
-        .state('user.update', {
-          url: 'users/update',
-          templateUrl: 'users/user.update.html',
-          controller: 'UsersController as vm'
         });
 
     }])

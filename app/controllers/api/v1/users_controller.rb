@@ -36,6 +36,9 @@ class Api::V1::UsersController < ApplicationController
     render json: { message: 'User was destroyed', status: 200 }, status: 200
   end
 
+  def demo
+  end
+
   private
 
     def find_user
